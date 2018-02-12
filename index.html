@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <div class="navright" id="navright">
+  <a href="/Users/Hope/Desktop/index.html" class="active">DEADBUTCOOL</a>
+  </div>
+  <div class="navleft" id="navleft">
+  <a href="/Users/Hope/Desktop/works.html">WORKS</a>
+  <a href="/Users/Hope/Desktop/info.html">INFO</a>
+  <a href="/Users/Hope/Desktop/contact.html">CONTACT</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+ </div>
+
+<div class="independent-studio-c" style="margin:180px;">
+  <p>Independent studio crafting 
+sound-design for Fendi, Chanel, Saint-Lauren and more 
+</p>
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+ <footer><p>2017. Dead But Cool</p></footer>
+</body>
+</html>
