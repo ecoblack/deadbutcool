@@ -123,7 +123,13 @@ section {
 
 /* WORKS 2*/
 
-
+/* VIMEO PLAYER */
+@media screen and (max-width: 375px) {
+iframe {
+        width: 350px;
+        margin-left:-15px;
+ }
+}
 
 /* FOOTER */
 footer  {

@@ -1,5 +1,24 @@
  <section><h1>Independent studio crafting sound-design for Fendi, Chanel, Saint-Lauren  and <a href="/works">more</a> </h1>
-<iframe src="https://player.vimeo.com/video/229141917" width="640" height="274" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+
+
+<div id="made-in-ny"></div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+    var options = {
+        id: 229141917,
+        width: 940,
+        loop: true
+    };
+
+    var player = new Vimeo.Player('made-in-ny', options);
+
+    player.setVolume(0);
+
+    player.on('play', function() {
+        console.log('played the video!');
+    });
+</script>
  </section>
-
-
