@@ -12,33 +12,36 @@ p, h1, h2, h3, h4, h5, h6 {
   font-family: Favorit, sans-serif;
   font-style: normal;
   font-stretch: normal;
-  font-weight: normal;
+  font-weight:100;
   line-height: normal;
   letter-spacing: normal;
 }
 
 a {
  
-  font-family: Canela-Light, Serif;
+  font-family: Canela, serif;
   font-size: 19px;
-  font-weight: 0;
+  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
   text-align: left;
+  outline-offset: -10px;
+  -webkit-font-smoothing: antialiased;
+
 }
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.h1 {
     float: right;
-    display: block;
+    display: inline-block;
   }
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 400px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
     position: absolute;
@@ -69,6 +72,7 @@ a {
 @media screen and (max-width: 1000px) {
 .independent-studio-c p {
     font-size: 4.5em;
+    
  }
  section {
   
@@ -80,6 +84,7 @@ a {
 
 section {
   padding:5%;
+  padding-top:0px;
  h1 {
       font-size:3.5em;
   }
@@ -90,12 +95,13 @@ section {
 .topnav {
     background-color: #000;
     overflow: hidden;
+
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
     float: right;
-    display: block;
+    display: inline-block;
     color: #fff;
     text-align: center;
     padding: 5%;
@@ -120,13 +126,23 @@ section {
     display: none;
 }
 
-
+.player {
+  font-family: Favorit, sans-serif;
+}
 /* WORKS 2*/
 
 /* VIMEO PLAYER */
 @media screen and (max-width: 375px) {
 iframe {
-        width: 350px;
+        width: 90%;
+        
+        float:none;
+ }
+}
+
+@media screen and (min-width: 600px) {
+iframe {
+        width: 90%;
         margin-left:-15px;
  }
 }
@@ -141,7 +157,7 @@ footer  {
   
   font-family: Favorit, sans-serif;
   font-size: 24px;
-  
+  -webkit-font-smoothing: antialiased;
   text-align: left;
   color: #ffffff;
   margin: 4%;
