@@ -12,20 +12,18 @@
 
 <div id="made-in-ny"></div>
 
-<script src="https://player.vimeo.com/api/player.js"></script>
+<div id="player"></div>
+<script src="https://luwes.github.io/vimeowrap.js/vimeowrap.js"></script>
+<script src="https://luwes.github.io/vimeowrap.js/vimeowrap.playlist.js"></script>
 <script>
-    var options = {
-        id: 229141917,
-        width: 940,
-        loop: true
-    };
-
-    var player = new Vimeo.Player('made-in-ny', options);
-
-    player.setVolume(0);
-
-    player.on('play', function() {
-        console.log('played the video!');
+    vimeowrap('player').setup({
+        urls: [
+            'https://vimeo.com/deadbutcool'
+        ],
+        plugins: {
+            'playlist':{}
+        }
     });
 </script>
+
  </section>

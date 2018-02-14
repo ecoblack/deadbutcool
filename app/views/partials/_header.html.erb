@@ -1,15 +1,17 @@
+
+
 <div class="topnav" id="myTopnav">
-  <a href="/" class="active" style="float:left;">DEADBUTCOOL</a>
+  <a href="/" class="active" style="float:left;overflow:visible;">DEADBUTCOOL</a>
   <a href="/works">WORKS</a>
   <a href="/info">INFO</a>
   <a href="/contact">CONTACT</a>
-  <span style="font-size:30px;cursor:pointer;color:red;" onclick="openNav()" style="">MENU</span>
+  <span style="font-size:30px;cursor:pointer;color:white;-webkit-font-smoothing: antialiased;" onclick="openNav()">MENU</span>
 </div>
 
 
 <style>
 body {
-    font-family: 'Canela-Light', sans-serif;
+    
 }
 
 .overlay {
@@ -27,10 +29,10 @@ body {
 
 .overlay-content {
     position: relative;
-    top: 25%;
+    top: 30%;
     width: 100%;
     text-align: center;
-    margin-top: 30px;
+    
 }
 
 .overlay a {
@@ -41,7 +43,7 @@ body {
     text-align: left;
     display: block;
     transition: 0.3s;
-
+    margin-left: 2%;
 }
 
 .overlay a:hover, .overlay a:focus {
@@ -51,41 +53,40 @@ body {
 .overlay .closebtn {
     position: absolute;
     top: 20px;
-    right: 45px;
-    font-size: 50px;
+    right: 25px;
+    font-size: 30px;
 }
 .social a, p {
-	display: inline-block;
-	font-size: 14px;
-	font-family: Favorit, sans-serif;
-}
-@media screen and (max-height: 400px) {
+	display: inline-block;}
+
+@media screen and (max-width: 400px) {
   .overlay a {font-size: 50px}
   .overlay .closebtn {
-    font-size: 40px;
+    font-size: 20px;
     top: 15px;
-    right: 35px;
+    right: 15px;
   }
 }
 </style>
 </head>
 <body>
 
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">CLOSE</a>
+<div id="myNav" class="overlay" style="display:inline-block!important;">
+  <div ><h2 href="/" class="active" style="float:left;overflow:visible;">DEADBUTCOOL</h2><a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:22px!important;display:inline-block;float:right;">CLOSE</a></div>
   <div class="overlay-content">
    <a href="/works">WORKS</a>
   <a href="/info">INFO</a>
   <a href="/contact">CONTACT</a>
+   
   <br>
   <br>
   <br>
-  <div id="social">
+  <div id="social" style="text-align: center;">
   	<p><a href="http://youtube.com/deadbutcool" style="display:inline-block!important;font-size: 18px!important; font-family: Favorit, sans-serif;margin:-2px;">YOUTUBE</a></p> 
   	<p><a href="http://facebook.com/deadbutcool" style="display:inline-block!important;font-size: 18px!important; font-family: Favorit, sans-serif;margin:-2px;">FACEBOOK</a></p>
   	<p><a href="http://soundcloud.com/deadbutcool" style="display:inline-block!important;font-size: 18px!important; font-family: Favorit, sans-serif;margin:-2px;">SOUNDCLOUD</a></p>
   </div>
-  </div>
+ </div>
 </div>
 
 <script>
@@ -97,3 +98,5 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
 </script>
+
+
