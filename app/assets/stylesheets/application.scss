@@ -1,8 +1,13 @@
 /* Universal */
 
+@media (min-width: 420px) {
+    h1 {font-size:60px!important;
+   }
+  
+}
 
-
-body {
+html {
+  
   background-color: #000000;
 }
 
@@ -15,11 +20,13 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight:100;
   line-height: normal;
   letter-spacing: normal;
+   -webkit-font-smoothing: antialiased;
 }
 
 
  section {
   padding: 20px;
+  margin: 20px;
  h1 {
   font-size: 34px;
   
@@ -38,7 +45,10 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* FOOTER */
 footer  {
-font-size: 19px;
+
+  
+  bottom:0;
+  font-size: 19px;
   float: left;
   font-style: normal;
   font-stretch: normal;
@@ -57,15 +67,76 @@ font-size: 19px;
 
 .player {
   font-family: Favorit, sans-serif;
+  width: 100%;
 }
 
 
 
-@media screen and (max-width: 375px) {
-iframe {
-        width: 90%;
-        
-        float:none;
- }
+
+
+
+
+
+/* OVERLAY MOBILE MENU */
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: 000000;
 }
+
+.overlay-content {
+    margin-left:5%;
+    float:left;
+    position: relative;
+    top: 25%;
+    width: 100%;
+    
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+     -webkit-font-smoothing: antialiased;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+.header {
+  display:inline-block!important;
+  position: fixed;
+  top: 0px;
+}
+
+
+
 
