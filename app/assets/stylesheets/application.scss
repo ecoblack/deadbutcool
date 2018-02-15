@@ -1,3 +1,4 @@
+
 /* Universal */
 
 @media (min-width: 420px) {
@@ -33,7 +34,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
  section {
   padding: 20px;
-  margin: 20px;
+  
  h1 {
   font-size: 34px;
   
@@ -50,31 +51,14 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* FOOTER */
-footer  {
 
-  
-  bottom:0;
-  font-size: 19px;
-  float: left;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  font-family: Canela, serif;
-  
-  text-align: left;
-  color: #ffffff;
-  padding: 20px;
-  
-  
-}
 
 /* VIMEO PLAYER */
 
 .player {
   font-family: Favorit, sans-serif;
   width: 100%;
+  margin: 0 0 0 0;
 }
 
 
@@ -138,12 +122,60 @@ footer  {
   }
 }
 
-.header {
-  display:inline-block!important;
-  position: fixed;
-  top: 0px;
+
+/* HEADER */
+
+header {
+  clear: both;
+  padding: 20px;
+  
+}
+
+.header h2 {
+  display: block;
+}
+
+
+@media (min-width: 599px) { div.menu
+{display: none!important;}
 }
 
 
 
+@media (min-width: 420px) {
+    div.navright  {background-color: fff;
+
+
+  @media (max-width: 599px) {
+        display: none!important;
+        font-size: 50px!important;
+   }
+  }
+}
+
+
+@media (max-width: 620px) {
+div.navright {
+        background-color: fff;
+    }
+}
+
+/* FOOTER */
+footer  {
+
+  margin-top:110px;
+  bottom:0;
+  font-size: 2em;
+  float: left;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  font-family: Canela, serif;
+  position: static;
+  color: #ffffff;
+  padding: 20px;
+  
+  
+}
 

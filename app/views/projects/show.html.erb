@@ -1,0 +1,28 @@
+
+  <h1><%= @project.title %></h1>
+  <p><%= @project.description %></p>
+
+  <h1 style="
+	font-family: Favorit, sans-serif;
+	font-size: 34px;
+	font-weight:300;
+	line-height: 1.06;
+	letter-spacing: -0.2px;
+	text-align: left;">Credits: 
+Producer:  Alex Murphy
+Production:  John Smith
+Mixing:  Steve Scooba
+Mastering: 
+Marsie Darthsmooth
+</h1>
+
+<div class="player">
+	<div class="leftcontrol" style="float:left;">
+<p>PREVIOUS PROJECT</p>
+<%= image_tag("icon-previous-mobile.png") %>X
+	</div>
+	<div class="rightcontrol" style="float:right;">
+<p>NEXT PROJECT</p>
+<%=image_tag("icon-next-mobile.png", :style => "float:right;") %>
+</div>
+</div>
