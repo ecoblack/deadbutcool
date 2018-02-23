@@ -7,9 +7,9 @@
 /* Grid styles -------------------------------------------------*/
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(28em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(24em, 1fr));
   grid-gap: 10px;
-  margin: 20px;
+  margin: 0;
 }
 
 .cards {
@@ -25,6 +25,7 @@ article {
 .article-img {
   height: 295px;
   width: 100%;
+
   object-fit: cover;
 }
 
@@ -35,7 +36,7 @@ article {
 
 </style>
 
- 
+<div id="content">
       <section class="cards">
         <article>
           <img class="article-img" src="http://78.media.tumblr.com/e94bf2b37de5025087807868016e373c/tumblr_ou37kv2iib1uduh1yo1_500.gif" alt=" " />
@@ -82,4 +83,4 @@ article {
           </article>
 
       </section>
-
+</div>
