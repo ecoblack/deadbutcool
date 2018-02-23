@@ -1,4 +1,24 @@
 /* Fonts */
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
 
 
 
@@ -22,19 +42,28 @@
 /* Universal */
 
 
-$break-small: 320px;
-$break-large: 1200px;
+ @media (min-width:475px){
+     #deskmenu{
+        display:block;
+        float:right;
+    }
+}
 
 
 
-#menu { margin-left:10px;}
- 
+
+@media only screen and (max-width: 475px) { 
+  #deskmenu { 
+    display: none; 
+  } 
+}
 
 
-
-
- 
-
+/* Desktop*/
+@media screen and (min-width: 475px) {
+  #menu  { display: none; 
+  }
+}
 
 body {
   margin:0px;
@@ -109,7 +138,6 @@ html {
 
   
   top:0px;
-  
   background-color: #000000;
   position:fixed;
   z-index: 2;
@@ -117,14 +145,16 @@ html {
   margin-bottom:50px;
   }
 
-
+navright {
+  float:right;
+}
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    
 }
 
 li {
@@ -138,6 +168,7 @@ li a {
     padding: 20px 20px;
     text-decoration: none;
 }  
+
 
 /* OVERLAY */
 
@@ -188,6 +219,7 @@ li a {
     font-size: 40px;
     top: 15px;
     right: 35px;
+    display: inline-block;
   }
 }
 
@@ -195,7 +227,7 @@ li a {
 
 #content {
   padding: 20px;
-  
+  margin-top:50px;
  
 }
 
@@ -240,3 +272,5 @@ footer {
    left: 0;
    bottom: 0;
    right: 0;}
+
+
