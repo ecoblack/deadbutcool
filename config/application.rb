@@ -13,5 +13,6 @@ module Deadbutcool
     # -- all .rb files in that directory are automatically loaded.
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.precompile << /\.(?:otf|eot|woff|ttf)$/
+    Rails.application.config.assets.precompile += %w( '.otf' ) 
   end
 end
