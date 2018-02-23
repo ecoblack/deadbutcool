@@ -14,14 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
+
 
 function openNav() {
     document.getElementById("myNav").style.display = "block";
@@ -30,3 +23,4 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.display = "none";
 }
+
