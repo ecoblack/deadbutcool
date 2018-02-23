@@ -1,16 +1,80 @@
+/* Fonts */
+
+
+@font-face {
+  font-family: "Canela-Light";
+  src: url(/assets/Canela-Light.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "Favorit_Regular";
+  src: url(/assets/Favorit_Regular.otf) format("truetype");
+}
 
 /* Universal */
 
-@media (min-width: 420px) {
-    h1 {font-size:60px!important;width: 665px;
-  height: 420px;
-  left: 50%;
-  text-align:left;
-  @media (min-width: 960px) {
-  margin: auto;
-    width: 50%;
-    padding:20px;
-   }
+
+$break-small: 320px;
+$break-large: 1200px;
+
+.navright{ display: none;}
+ 
+
+
+
+
+ 
+
+
+body {
+  margin:0px;
+}
+
+a {
+  color:white;
+  font-family: "Canela-Light";
+  font-size: 19px;
+  text-decoration:none;
+  &:hover {
+  text-decoration:underline;
+  }
+}
+h1 {
+  color:white;
+  font-weight: 100;
+  text-align: left;
+  font-family: "Favorit_Regular";
+  -webkit-font-smoothing: subpixel-antialiased;
+
+ }
+
+p {
+  color: white;
+  font-size: 19px;
+  color:white;
+  font-family: "Favorit_Regular";
+  
+}
+
+section a {
+  word-wrap: break-word;
+  color:white;
+  font-family: "Favorit_Regular";
+  font-style: normal;
+  font-stretch: normal;
+  font-weight:100;
+  line-height: normal;
+  letter-spacing: normal;
+  }
+
+@media (max-width: 420px) {
+    h1 {
+  font-size:28px;
+  
+@media (min-width: 460px) {
+ font-size:60px;
+    }
+ 
   }
 }
 
@@ -19,163 +83,46 @@ html {
   background-color: #000000;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-  word-wrap: break-word;
-  color:white;
-  font-family: Favorit, sans-serif;
-  font-style: normal;
-  font-stretch: normal;
-  font-weight:100;
-  line-height: normal;
-  letter-spacing: normal;
-   -webkit-font-smoothing: antialiased;
-}
-
-
- section {
-  padding: 20px;
-  
- h1 {
-  font-size: 34px;
-  
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.06;
-  letter-spacing: -0.2px;
-  text-align: left;
-  }
-
-  p {
-  font-size: 19px;
-  }
-}
-
-
-
-
-/* VIMEO PLAYER */
-
-.player {
-  font-family: Favorit, sans-serif;
-  width: 100%;
-  margin: 0 0 0 0;
-}
-
-
-
-
-
-
-
-
-/* OVERLAY MOBILE MENU */
-
-.overlay {
-    height: 100%;
-    width: 100%;
-    display: none;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    background-color: 000000;
-}
-
-.overlay-content {
-    margin-left:5%;
-    float:left;
-    position: relative;
-    top: 25%;
-    width: 100%;
-    
-    margin-top: 30px;
-}
-
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-     -webkit-font-smoothing: antialiased;
-}
-
-.overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-}
-
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-}
-
-@media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
-
-
-/* HEADER */
-
-header {
-  clear: both;
-  padding: 20px;
-  
-}
-
-.header h2 {
-  display: block;
-}
-
-
-@media (min-width: 599px) { div.menu
-{display: none!important;}
-}
-
-
-
 @media (min-width: 420px) {
-    div.navright  {background-color: fff;
+    section a {
+  font-size:37px;
+  
+@media (min-width: 460px) {
+ font-size:60px;
 
-
-  @media (max-width: 599px) {
-        display: none!important;
-        font-size: 50px!important;
    }
   }
-}
+} 
+/* HEADER */
+header {
+padding: 20px;
+background-color: #000000;
+ position:fixed;
+ z-index: 1;
+  width: 100%;
+  border-style: solid;
+  border-color: red;
+  }
 
+/* CONTENT */ 
 
-@media (max-width: 620px) {
-div.navright {
-        background-color: fff;
-    }
-}
-
-/* FOOTER */
-footer  {
-
-  margin-top:110px;
-  bottom:0;
-  font-size: 2em;
-  float: left;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  font-family: Canela, serif;
-  position: static;
-  color: #ffffff;
+#content {
   padding: 20px;
-  
-  
+  padding-bottom:0px;
+  border-style: solid;
+  border-color: red;
+}
+/* FOOTER */
+footer {
+    border-style: solid;
+    border-color: red;
+   padding: 20px;
 }
 
+@media only screen and (min-width: 440px) {
+  footer p {
+  line-height: 1.21;
+  text-align: left;
+    font-size: 24px;
+  }
+}

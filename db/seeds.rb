@@ -6,3 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+
+Project.create!(title: 'FIRST PROJECT', description: 'Description is here', link: 'vimeo.com/1488', credits: 'Jesus, mom')
+Project.create!(title: '2 PROJECT', description: 'Description is here', link: 'vimeo.com/1488', credits: 'Jesus, mom')
+Project.create!(title: '3 PROJECT', description: 'Description is here', link: 'vimeo.com/1488', credits: 'Jesus, mom')
+Project.create!(title: '4 PROJECT', description: 'Description is here', link: 'vimeo.com/1488', credits: 'Jesus, mom')
+Project.create!(title: 'LAST PROJECT', description: 'Description is here', link: 'vimeo.com/1488', credits: 'Jesus, mom')

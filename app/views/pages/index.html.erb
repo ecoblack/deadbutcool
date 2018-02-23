@@ -13,37 +13,29 @@
 
 
 
-<div id="player"></div>
-<script src="https://luwes.github.io/vimeowrap.js/vimeowrap.js"></script>
-<script src="https://luwes.github.io/vimeowrap.js/vimeowrap.carousel.js"></script>
-<script>
-    vimeowrap('player').setup({
-        width: 760,
-        height: 480,
-        color: 'ffffff',
-        autoplay: false,
-        portrait: false,
-        title: true,
-        byline: false,
-        urls: [
-            'https://vimeo.com/42397960',
-            'https://vimeo.com/user3709818'
-        ],
-        plugins: {
-            'carousel': {
-                 width: 360,
-                 height: 150,
-                 offsetx: 60,
-                 offsety: 20,
-                 visible: 2,
-                 autoplay: true,
-                 thumb: {
-                     width: 150,
-                     height: 112,   
-                     quality: 'large'
-                 }
-            }
-        }
-    });
+<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="src/jquery.vimeo.api.js"></script>
+
+</head>
+<body>
+
+    <!-- Example Vimeo Video Embed -->
+  <iframe width="100%" wmode="transparent" id="video" src="https://player.vimeo.com/video/75689659?background=0&title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=0&amp;api=1&amp;player_id=player_1&amp;hd=1"></iframe>
+
+  <script type="text/javascript">
+  $(document).ready(function($) {
+       $("#video").vimeo("play").on("play", function(e){
+                      console.log("play event was triggered");
+                  })
+                  .on("pause", function(e){
+                      console.log("pause event was triggered");
+                  })
+                  .on("playProgress", function(event, data){
+                      console.log(data);
+                  })
+                  .on("finish", function(e){
+                      vid.vimeo("unload");
+                      console.log("Finished event triggere");
+                  });
+  });
 </script>
- </section>
