@@ -200,6 +200,16 @@ li a {
   border-style: solid;
   border-color: red;
 }
+
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
 /* FOOT3R */
 footer {
     border-style: solid;
@@ -216,4 +226,9 @@ footer {
 }
 
 
+@media only screen and (min-width: 450px) {
+  header {
+  margin-bottom:101px;
+  }
+}
 
