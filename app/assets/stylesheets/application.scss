@@ -53,9 +53,13 @@
   }
 }
 
+html {
+  min-width:320px;
+}
 body {
   margin:0px;
-   min-height: 100%;
+  min-height: 100%;
+
 }
 
 a {
@@ -63,8 +67,10 @@ a {
   font-family: "Canela-Light";
   font-size: 19px;
   text-decoration:none;
+  -webkit-font-smoothing: antialiased;
   &:hover {
   text-decoration:underline;
+  
   }
 }
 h1 {
@@ -73,7 +79,7 @@ h1 {
   text-align: left;
   font-family: "Favorit_Regular";
   
-
+-webkit-font-smoothing: antialiased;
  }
 
 p {
@@ -81,7 +87,7 @@ p {
   font-size: 13px;
  
   font-family: "Favorit_Regular";
-  
+  -webkit-font-smoothing: antialiased;
 }
 
 section a {
@@ -93,6 +99,7 @@ section a {
   font-weight:100;
   line-height: normal;
   letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
   }
 
 @media (max-width: 420px) {
@@ -181,7 +188,7 @@ li a {
 /* FOOT3R */
 footer {
    
-   padding: 20px;
+   padding-left: 20px;
 }
 
 @media only screen and (min-width: 440px) {
@@ -189,6 +196,7 @@ footer {
   line-height: 1.21;
   text-align: left;
     font-size: 24px;
+    bottom:0;
   }
 }
 
