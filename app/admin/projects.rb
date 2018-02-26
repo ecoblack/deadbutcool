@@ -1,5 +1,5 @@
 ActiveAdmin.register Project do
-		permit_params :title, :description, :image, :link, :credits
+		permit_params :title, :description, :link, :credits, :image
 
 		show do |t|
 			attributes_table do
@@ -15,10 +15,10 @@ ActiveAdmin.register Project do
 
 		form :html => { :enctype => "multipart/form-data" } do |f|
 			f.inputs do
-				row :title
-				row :description
-				row :link
-				row :credits
+				f.input :title
+				f.input :description
+				f.input :link
+				f.input :credits
 				f.input :image, hint: f.project.image? ? image_tag(project.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
 			end
 			f.actions

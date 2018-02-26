@@ -6,8 +6,8 @@
   <li style=""> <a href="/info">INFO</a></li>
   <li style="display: inline-block;"><a href="/contact">CONTACT</a></li>
 </div>
- <li style="float:right;display: inline-block;">
-   <h1 id="menu" style="font-family:Canela-Light;color:white;font-size:19px;margin-right:20px;margin:0;z-index: 0;padding:20px;" onclick="openNav()">MENU</h1></li>
+ <li>
+   <li id="menu" onclick="openNav()">MENU</li></li>
 </ul>
 
 
@@ -67,11 +67,10 @@
     font-size: 19px;
 }
 .overlay .logo {
-  
-position: absolute;
-    top: 15px;
-    
-    font-size: 20px;
+  text-decoration: none;
+  position: absolute;
+  top: 15px;
+  font-size: 20px;
 }
 
 .overlay .social {
@@ -82,7 +81,7 @@ padding-left: 20px;
 word-spacing: 10px;
 -webkit-font-smoothing: antialiased;
 position: fixed;
-  bottom: 0;
+  bottom: 40px;
 }
 @media screen and (max-height: 450px) {
   .overlay a {font-size: 20px}
@@ -91,6 +90,18 @@ position: fixed;
     top: 10px;
     right: 20px;
   }
+}
+
+#menu {
+  float:right;
+  color:white;
+  font-family:Canela-Light;
+        font-size: 19px;
+    margin-right: 20px;
+    
+    z-index: 0;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
 }
 </style>
 </head>

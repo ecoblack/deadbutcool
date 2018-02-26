@@ -22,11 +22,44 @@
 
 /* Universal */
 
+ @mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (min-width: 70em) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (min-width: 64em) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 50em) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (min-width: 37.5em)  { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 37.5em)  { @content ; }
+
+  }
+}
+
+
+@include breakpoint(laptop) {
+    #content {
+     top: 50%;
+    left: 50%;
+    float: left;
+    color:green;
+    }
+    footer p {
+    font-size: 27px;
+    padding-left:100px;
+    }
+  }
 
  @media (min-width:475px){
      #deskmenu{
         display:block;
         float:right;
+        padding-right:20px;
     }
 }
 
@@ -45,7 +78,7 @@
   #menu  { display: none; 
   }
   p {
-  color:pink!important;
+  
   font-size: 24px;
   }
   .overlay{
@@ -57,12 +90,12 @@
 }
 
 html {
-  min-width:320px;
+  min-height:100%;
 }
 body {
-  margin:0px;
+  
   min-height: 100%;
-
+   
 }
 
 a {
@@ -124,7 +157,7 @@ html {
 #header {
 
   
-  top:0px;
+  top:0;
   background-color: #000000;
   position:fixed;
   z-index: 2;
@@ -164,9 +197,11 @@ li a {
 /* CONTENT */ 
 
 #content {
-  padding: 20px;
+  max-width: 1350px;
   margin-top:50px;
- 
+  padding-bottom:60px;
+  padding-left:20px;
+  padding-right:20px;
 }
 
 
@@ -174,38 +209,47 @@ li a {
   .overlay a {font-size: 20px}
   .overlay .closebtn {
     font-size: 40px;
-    top: 15px;
+    top: 16px;
     right: 35px;
   }
 }
+
+
 /* FOOT3R */
 footer {
-   
-   padding-left: 20px;
+
+margin-top: 45px;
+  padding-top: 5px;
+ 
    bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   margin-bottom:20px;
+  
+  padding-left: 20px;
+   
+  
 }
 
-@media only screen and (min-width: 440px) {
-  footer p {
-  line-height: 1.21;
-  text-align: left;
-    font-size: 24px;
-    
-  }
-}
 
 
 
 
 /* PROJECT IMG */
+
 .project_img {
-   height:360px;
+   height:auto;
    width: 100%;
   
-    object-fit: cover;
+   
     top: 0;
    left: 0;
    bottom: 0;
    right: 0;}
+
+  img {
+    max-width: 100%;
+    padding: 20px;
+}
 
 
