@@ -5,42 +5,82 @@
 
 
 /* Grid styles -------------------------------------------------*/
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(24em, 1fr));
-  grid-gap: 10px;
-  margin: 0;
+* {
+   box-sizing: border-box;
 }
 
-.cards {
+.x {
+  width:100%;
+  max-width: 1300px;
+  margin: 2em auto;
+  background-color:#eee;
+  overflow:hidden;
   
-  max-width: 100%;
+}
+
+img {
+  max-width:100%;
+  object-fit: cover;
+}
+
+.item {
+  width:25%;
+  float:left;
+  padding:.5em;
+  border:1px dotted #ddd;
+  object-fit: cover;
+  /*background-color:#fff;*/
+}
+
+.item p {
+  min-height:3em;
+  /*background-color:#fed;*/
   
+  font-size:.9em;
+  text-align:center;
 }
 
-article {
-  position: relative;
-   width: 100%;
-   
-}
-
-.article-img {
-   height:220px;
-   width: 100%;
+@media screen and (max-width:1000px) {
   
-    object-fit: cover;
-    top: 0;
-   left: 0;
-   bottom: 0;
-   right: 0;
-}
-#cards:hover .panel {
-    opacity: 0.5;
+/*   body {
+    background-color:#ddf;
+  } */
+  
+  .item {
+    width:33.3%;
+  }
+
 }
 
-#cards:hover .panel:hover {
-    opacity: 1;
+
+@media screen and (max-width:800px) {
+  
+/*   body {
+    background-color:#cdd;
+  } */
+  
+  .item {
+    width:50%;
+  }
+  
+  .item p {
+  font-size:.8em;
+  }
+
 }
+
+@media screen and (max-width:400px) {
+  
+/*   body {
+    background-color:#ded;
+  } */
+  
+  .item {
+    width:100%;
+  }
+
+}
+
 
 /*Default styles*/
 
@@ -48,31 +88,68 @@ article {
 
 </style>
 
-<div id="content">
-      <section class="cards">
-        <article>
-          <img class="article-img" src="http://78.media.tumblr.com/e94bf2b37de5025087807868016e373c/tumblr_ou37kv2iib1uduh1yo1_500.gif" alt=" " />
-          
-        </article>
-        <article>
-          <img class="article-img" src="http://placekitten.com/320/220" alt=" " />
-          
-        </article>
-        <article>
-          <img class="article-img" src="http://78.media.tumblr.com/33b093d2a11186257cb02d65e9a86951/tumblr_o5ydb4MlTA1rcr5dwo1_1280.jpg" alt=" " />
-          
-        </article>
-        <article>
-          <img class="article-img" src="http://placekitten.com/280/250" alt=" " />
-         
-        </article>
-        <article>
-          <img class="article-img" src="http://placekitten.com/310/210" alt=" " />
-         </article>
-        <article>
-          <img class="article-img" src="http://placekitten.com/430/240" alt=" " />
-          </article>
-          
-         
-      </section>
-</div>
+
+
+<div class="x">
+  
+  <div class="item">
+    <img src="http://78.media.tumblr.com/e94bf2b37de5025087807868016e373c/tumblr_ou37kv2iib1uduh1yo1_500.gif">
+   
+  </div>
+  
+  <div class="item">
+    <img src="http://placehold.it/400x300">
+    
+  </div>
+  
+  <div class="item">
+    <img src="http://placehold.it/400x300">
+    
+  </div>
+  
+  <div class="item">
+    <img src="http://placehold.it/400x300">
+    
+  </div>
+  
+  <div class="item">
+    <img src="http://placehold.it/400x300">
+   
+  </div>
+  
+  <div class="item">
+    <img src="http://78.media.tumblr.com/33b093d2a11186257cb02d65e9a86951/tumblr_o5ydb4MlTA1rcr5dwo1_1280.jpg">
+   
+  </div>
+  
+  <div class="item">
+    <img src="http://placehold.it/400x300">
+   
+  </div>
+  
+  <div class="item">
+    <img src="http://placehold.it/400x300">
+    
+  </div>
+  
+  <div class="item">
+    <img src="http://placehold.it/400x300">
+    
+  </div>
+  
+  <div class="item">
+    <img src="http://placehold.it/400x300">
+    
+  </div>
+  
+  <div class="item">
+    <img src="http://placehold.it/400x300">
+  
+  </div>
+  
+  <div class="item">
+    <img src="http://placehold.it/400x300">
+    
+  </div>
+  
+</div> <!--close container-->
