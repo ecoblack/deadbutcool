@@ -24,7 +24,7 @@
 
  @mixin breakpoint($point) {
    @if $point == desktop {
-     @media (min-width: 2500px) { @content ; }
+     @media (min-width: 1700px) { @content ; }
   }
    @else if $point == laptop {
      @media (min-width: 64em) { @content ; }
@@ -44,32 +44,76 @@
 
 @include breakpoint(laptop) {
     #content {
+    top: 50%;
+    left: 50%;
+    float: left;
+    
+    }
+    #info {
+  padding:20px;
+  }
+    #info, #text {
      top: 50%;
     left: 50%;
     float: left;
-    color:green;
+    max-width:90%;
+    display:block;
+    }
+    .footer {
+    padding:0px;
     }
     footer p {
     font-size: 27px;
     }
-    deskmenu a {
+    #header a {
     font-size: 27px;
+
+    }
+    #story p { 
+    float:left;
+    }
+    #header {
+
     }
     img {
-    min-width:350px;
+    min-width:300px;
     }
 
   }
 @include breakpoint(desktop) {
 body {
   min-height: 100%;
+   width: 70%;
+  margin:auto;
 }
+#deskmenu a {
+  font-size:27px;
+  
+  }
+  #deskmenu {
+
+  }
+  
+  #header {
+  width:100%;
+  }
 }
+
+@include breakpoint(mobileonly) {
+  #content {
+  padding:20px;
+  }
+  iframe {
+  width: 100%;
+  }
+  #info {
+  padding:20px;
+}}
  @media (min-width:475px){
      #deskmenu{
         display:block;
         float:right;
-        padding-right:20px;
+        
     }
 }
 
@@ -104,11 +148,10 @@ html {
   min-height:100%;
 }
 body {
-  max-width:1488px;
+  
+  overflow-x: hidden;
   min-height: 100%;
-  left:50%!important;
-  right:50%!important;
-   
+ 
 }
 
 a {
@@ -128,7 +171,7 @@ h1 {
   font-weight: 100;
   text-align: left;
   font-family: "Favorit_Regular";
-  
+  letter-spacing: -0.2px;
 -webkit-font-smoothing: antialiased;
  }
 
@@ -156,6 +199,15 @@ html {
   background-color: #000000;
 }
 
+#contact {
+align-items: center;
+  padding:20px;
+  word-wrap: break-word;
+}
+#info {
+  
+  word-break: break-all;
+}
 @media (min-width: 420px) {
     section a {
   font-size:37px;
@@ -172,10 +224,10 @@ html {
   
   top:0;
   background-color: #000000;
-  position:fixed;
+ 
   z-index: 2;
-  width:100%;
-  margin-bottom:50px;
+  
+  
   }
 
 navright {
@@ -184,7 +236,7 @@ navright {
 
 ul {
     list-style-type: none;
-    margin: 0;
+    
     padding: 0;
     overflow: hidden;
     
@@ -210,9 +262,9 @@ li a {
 /* CONTENT */ 
 
 #content {
-  max-width: 1350px;
-  margin-top:50px;
-  padding-bottom:60px;
+  
+  
+  
 
 }
 
@@ -228,7 +280,7 @@ li a {
 
 .player {
   padding:20px;
-  }
+}
 /* FOOT3R */
 footer {
 
