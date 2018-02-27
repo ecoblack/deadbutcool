@@ -7,13 +7,13 @@
 
 .container {
   width:100%;
-  /*max-width: 1300px;*/
+  /max-width: 2000px;
   overflow:hidden;
   
 }
 
 img {
-  max-width:100%;
+  max-width:500px;
   
 }
 
@@ -57,6 +57,7 @@ img {
   
   .item {
     width:100%;
+    height: 300px;
   }
 
 }
@@ -130,3 +131,17 @@ img {
   </div>
   
 </div> <!--close container-->
+
+
+
+<script>
+
+  
+
+$( "img" ).click(function() {
+  $( this ).fadeOut( 1500, function() {
+    $( "container" ).fadeOut( "slow" );
+$("body").fadeOut(1000);
+  });
+});
+</script>

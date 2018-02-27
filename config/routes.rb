@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   
 	root 'pages#index'
-		get  '/works',   to: 'pages#works'
+		get  '/works',   to: 'projects#index'
 	  	get  '/info',   to: 'pages#info'
   		get  '/contact', to: 'pages#contact'
 

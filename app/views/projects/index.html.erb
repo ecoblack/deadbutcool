@@ -1,25 +1,119 @@
 <p id="notice"><%= notice %></p>
+<style>
 
-<h1>Projects</h1>
+* {
+   box-sizing: border-box;
+}
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+.row {
+  width:100%;
+  /max-width: 2000px;
+  overflow:hidden;
+  object-fit:cover;
+  padding-left: 0;
+}
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+img {
+  width:400px;
+  height: 300px;
+  object-fit:cover;
+  padding:20px;
+}
 
-<br>
+.column {
+  width:25%;
+  float:left;
+  height: 300px;
+ }
+@media screen and (min-width:1024px) {
+.column {
+height: 300px;
+}
+}
+@media screen and (max-width:1023px) {
+  
+/*   body {
+    background-color:#ddf;
+  } */
+  
+  .column {
+    width:33.3%;
 
-<%= link_to 'New Project', new_project_path %>
+    object-fit:cover;
+  }
+  img {
+    min-width: 280px;
+  }
+
+}
+
+
+@media screen and (max-width:860px) {
+  
+/*   body {
+    background-color:#cdd;
+  } */
+  
+  .column {
+    width:50%;
+    height: 270px;
+  }
+  
+}
+
+@media screen and (max-width:536px) {
+  
+/*   body {
+    background-color:#ded;
+  } */
+  
+  .column {
+    width:100%;
+    height: 280px;
+  }
+
+}
+
+
+
+</style>
+
+<section>
+      <div class="container" id="content">
+        
+      
+        <div class="row">
+            <% @projects.each do |project| %>
+
+       
+          <div class="column" >
+    
+             
+              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                
+                </div>
+              </div>
+              <%= image_tag project.image, class: 'img-responsive', style: "width: 100%;min-width: 280px;" %>
+               <%= link_to project.title, project%>
+          </div>
+          
+            <% end %> 
+      </div>
+          
+</section>
+
+
+<script>
+
+ 
+
+
+
+$('img').click(function(){
+     $('img').not(this, "#header").each(function(){
+         $(this).animate({opacity: 0}, 1500);
+     });
+     $(this).delay( 1500 ).fadeOut(2000);
+})
+</script>

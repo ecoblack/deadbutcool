@@ -21,20 +21,19 @@
       <%= image_tag @project.image, class: 'project_img', style: 'width: 100%; height:auto;' %>
 
 
-      <h1><%= @project.credits %></h1>
+      <h1>Credits: <%= @project.credits %></h1>
 
   <h1><%= @project.link %></h1>
 
-	<div class="leftcontrol" style="float:left;">
-		
 
-<%= image_tag("icon-previous-mobile.png") %>X
-	<%= link_to "PREVIOUS PROJECT", @project.prev %></div>
+<div class="leftcontrol" style="float:left;">
+		<%= image_tag("icon-previous-mobile.png") %>X
+	<%= link_to @project.title, @project.prev, remote: true %></div>
 <div>
   
 </div>
 	<div class="rightcontrol" style="float:right;">
-		<%= link_to @project.title.next, @project.next %>
+		  <%= link_to @project.title.next, @project.next, remote: true %>
 		<%=image_tag("icon-next-mobile.png", :style => "float:right;") %>
 	</div>
 </div>
