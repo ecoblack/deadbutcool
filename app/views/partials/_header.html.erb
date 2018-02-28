@@ -58,6 +58,7 @@
 
 .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;
+    text-decoration: underline;
 }
 
 .overlay .closebtn {
@@ -132,5 +133,14 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.display = "none";
 }
+var url = window.location.href;
+
+// Will only work if string in href matches with location
+$('.menu a[href="'+ url +'"]').addClass('active');
+
+// Will also work for relative and absolute hrefs
+$('.menu a').filter(function() {
+    return this.href == url;
+}).addClass('better-active');
 </script>
      

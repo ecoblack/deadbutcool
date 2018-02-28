@@ -24,7 +24,7 @@
 
  @mixin breakpoint($point) {
    @if $point == desktop {
-     @media (min-width: 1700px) { @content ; }
+     @media (min-width: 1900px) { @content ; }
   }
    @else if $point == laptop {
      @media (min-width: 64em) { @content ; }
