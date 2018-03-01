@@ -1,19 +1,18 @@
 <div id="contact">
-  <h1>
+  <h1 style="margin:0;">
   	General inquiries:
 	<a href="mailto:info@deadbutcool.com" style=" color:inherit;
-    text-decoration:none;"><h1><%= @contact[:gen_email] %></h1></a>
+    text-decoration:none;"><h1 style="margin:0;"><%= @contact[:gen_email] %></h1></a>
 	<br>
-	
 	Business inquiries:
 	<a href="mailto:hello@deadbutcool.com" style=" color:inherit;
-	    text-decoration:none;"><h1><%= @contact[:business_email]%></h1></a>
+	    text-decoration:none;"><h1 style="margin:0;"><%= @contact[:business_email]%></h1></a>
 	<br>
 	
-	<a href="tel:+7-322-674-88-03" style=" color:inherit;
-	    text-decoration:none;"><h1>Tel:<%= @contact[:phone]%></h1></a>
+	<a href="tel:<%= @contact[:phone]%>" style=" color:inherit;
+	    text-decoration:none;"><h1 style="margin:0;">Tel:<%= @contact[:phone]%></h1></a>
 	</h1>
-
+	<br>
 		<p >
 			We always looking forward to communicate.  Don’t hesitate to write us directly
 		</p>

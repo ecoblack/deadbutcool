@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 
@@ -24,3 +23,8 @@ function closeNav() {
     document.getElementById("myNav").style.display = "none";
 }
 
+
+
+$ ->
+  $("a[data-remote]").on "ajax:success", (e, data, status, xhr) ->
+    alert "The article was deleted."

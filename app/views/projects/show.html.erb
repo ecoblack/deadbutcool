@@ -1,4 +1,4 @@
-<div id="content">
+<div id="x">
 
 <script>
 .player {
@@ -11,36 +11,80 @@
 
 
 <div class="player">
-	<%= image_tag("snow.jpg", class: "project_img" )%>
+
+  <style>
+.x {
+   background-color: red;
+   position: relative;
+
+   width: 100%;
+   padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.text {
+   position:  absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   text-align: center;
+   font-size: 20px;
+   color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="y"> 
+  <div class="text">16:9 Aspect ratio</div> 
+</div>
+
+
 
 	<h1><%= @project.title %></h1>
 
    <p>I was always somebody who felt quite sorry for myself, what I had not got compared to my friends, how much of a struggle my life seemed to be compared to others. I was caught up in a web of negativity and needed someone or something to help me to escape.<br>
    	 <p>I was always somebody who felt quite sorry for myself, what I had not got compared to my friends, how much of a struggle my life seemed to be compared to others. I was caught up in a web of negativity and needed someone or something to help me to escape.<br>
 
-      <%= image_tag @project.image, class: 'project_img', style: 'width: 100%; height:auto;' %>
+      <%= image_tag @project.image, class: 'project_img', style: 'width: 100%;
+   padding-top: 56.25%;'  %>
 
 
       <h1>Credits: <%= @project.credits %></h1>
 
-  <h1><%= @project.link %></h1>
+<iframe src="https://player.vimeo.com/video/247152884?autoplay=1&loop=1&autopause=0" width="100%" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><%= @project.link %></h1>
 
-
+<div style="display: block;">
 <div class="leftcontrol" style="float:left;">
-		<%= image_tag("icon-previous-mobile.png") %>X
-	<%= link_to @project.title, @project.prev, remote: true %></div>
+		<!-- <%= image_tag("icon-previous-mobile.png", :style => 'max-width:150px;') %>-->
+	<%= link_to @project.previous.title, @project.previous %></div>
 <div>
   
 </div>
 	<div class="rightcontrol" style="float:right;">
-		  <%= link_to @project.title.next, @project.next, remote: true %>
-		<%=image_tag("icon-next-mobile.png", :style => "float:right;") %>
+		  <%= link_to @project.next.title, @project.next, id: 'my-link'%>
+		<!-- <%=image_tag("icon-next-mobile.png", :style => "float:right;max-width:150px;") %> -->
 	</div>
 </div>
 
-
+</div>
 
 
 </div>
 
+<script>
+$(document).ready(function() {
+   //$('#my-link').click(function(event){
+  //   alert('Hooray!');
+$("#my-link").click(function (event) {
+    var urlid = this.id;
+    alert(urlid);
+     event.preventDefault(); // Prevent link from following its href
+  });
+});
 
+$("#my-link").click(function (event) {
+    var urlid = this.url;
+    alert(url);
+});
+</script>

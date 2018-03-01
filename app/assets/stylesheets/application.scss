@@ -108,6 +108,12 @@ body {
   }
   #info {
   padding:20px;
+  section {
+    width: 280px;
+  }
+  #my-link {
+    font-size:13px!important;
+  }
 }}
  @media (min-width:475px){
      #deskmenu{
@@ -149,6 +155,8 @@ html {
 }
 body {
   
+    padding-top: 60px; /* This should be equal to the height of your header */
+
   overflow-x: hidden;
   min-height: 100%;
  
@@ -176,6 +184,8 @@ h1 {
  }
 
 p {
+font-size: 19px;
+  line-height: 1.21;
   color: white;
   font-family: "Favorit_Regular";
   -webkit-font-smoothing: antialiased;
@@ -220,12 +230,15 @@ align-items: center;
 } 
 /* HEADER */
 #header {
-
-  
-  top:0;
+margin:0;
+overflow: hidden;
+     position: fixed;
+    
+    top: 0px;
+    width: 100%;
+    z-index: 9989;
   background-color: #000000;
- 
-  z-index: 2;
+
   
   
   }
@@ -278,9 +291,7 @@ li a {
   }
 }
 
-.player {
-  padding:20px;
-}
+
 /* FOOT3R */
 footer {
 
@@ -304,14 +315,10 @@ margin-top: 45px;
 /* PROJECT IMG */
 
 .project_img {
-   height:auto;
-   width: 100%;
+  width: 100%;
+  height: auto;
   
-   
-    top: 0;
-   left: 0;
-   bottom: 0;
-   right: 0;}
+   }
 
 
 

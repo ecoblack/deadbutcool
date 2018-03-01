@@ -90,31 +90,41 @@ height:293px;
           <div class="column" >
     
              
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                
-                </div>
-              </div>
-              <%= image_tag project.image, class: 'img-responsive', style: "width: 100%;min-width: 280px;" %>
-               
-          </div>
-          
+             <!--     <%= image_tag project.image, class: 'img-responsive', style: "width: 100%;min-width: 280px;" %> -->
+         
+         <%=   link_to (image_tag(project.image, class: 'img-responsive', style: "width: 100%;min-width: 280px;" )), project, remote: true %>
+           </div>
             <% end %> 
       </div>
           
 </section>
 
 
+
 <script>
 
- 
+$(document).ready(function(){
+  $('a').on('click', function(e){
+    $(this).animate({opacity: 0}, 1500);
+    e.preventDefault();
+    $('.container').load($(this).attr('href'));
+  });
+});
 
 
 
-$('img').click(function(){
-     $('img').not(this, "#header").each(function(){
+$('img').click(function()
+{
+     $('img').not(this, "#header").each(function()
+     {
          $(this).animate({opacity: 0}, 1500);
      });
-     $(this).delay( 1500 ).fadeOut(2000);
+     $(this).delay( 1500 ).fadeOut(2000).$('.container').load($(this).attr('href'));
+      //load html from the url and put it in the #content element
+    event.preventDefault(); // 
+    
 })
+
+
+
 </script>

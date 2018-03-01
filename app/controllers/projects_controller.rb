@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-
+  respond_to :html, :js
   # GET /projects
   # GET /projects.json
   def index
@@ -10,8 +10,16 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    
+    @project = Project.find(params[:id])
+
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @project }
+      format.js
+    end
   end
+
 
   # GET /projects/new
   def new
