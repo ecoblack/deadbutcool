@@ -72,7 +72,7 @@ body, #header {
     font-size: 27px;
   }
   .content {
-    padding: 120px 20px;
+    padding: 120px 10px;
   }
   .imgcontent {
   padding-top: 120px;
@@ -90,7 +90,7 @@ body, #header {
     font-size: 19px;
   }
   .content {
-      padding: 75px 20px;
+      padding: 75px 10px;
   }
   
 }
@@ -165,6 +165,14 @@ p {
 
 #maincontent {
     min-height: calc(100vh - 50px);
+    padding-top:75px;
+    padding-left:10px;
+    padding-right:10px;
 
  
+}
+
+
+.control {
+  
 }

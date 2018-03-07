@@ -1,6 +1,7 @@
 
 <ul id="header">
-  <li style="display: inline-block;text-decoration:none;"><a href="/" style="font-family:Canela-Light;font-weight:100;">DEAD BUT COOL</a></li>
+  <li style="display: inline-block;text-decoration:none;"><a href="/" style="font-family:Canela-Light;font-weight:100;"  data-remote="true">DEAD BUT COOL</a></li>
+  
   <div id="deskmenu" >
   <li><%= link_to "WORKS", works_path,  remote: true %></li>
   <li><%= link_to "INFO", info_path,  remote: true, id: "info" %></li>
@@ -36,13 +37,11 @@
 
 <script>
 
-function openNav() {
-    document.getElementById("myNav").style.display = "block";
-}
-
-function closeNav() {
-    document.getElementById("myNav").style.display = "none";
-}
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").html(".closebtn");
+    });
+});
 
 </script>
      

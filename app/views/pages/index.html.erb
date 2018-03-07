@@ -1,4 +1,4 @@
- <div id="maincontent"><section><h1>Independent studio crafting sound-design for Fendi, Chanel, Saint-Lauren  and <a href="/works" data-remote="true" style="word-wrap: break-word;
+  <div id="maincontent"><section><h1>Independent studio crafting sound-design for Fendi, Chanel, Saint-Lauren  and <a href="/works" data-remote="true" style="word-wrap: break-word;
   color:white;
   font-family: Favorit_Regular;
   font-style: normal;
@@ -9,8 +9,30 @@
 
 
 
-<h1 class="marquee"><span>SOUNDTRACK FOR FENDI X POKRAS LAM...</span></h1>
-	
+<p class="marquee"><span>SOUNDTRACK FOR FENDI X POKRAS LAM...</span></p>
+
+
+<!-- VIDEO CONTROLS -->
+
+<div style="display: block;padding:10px;">
+  <div class="leftcontrol" style="float:left;">
+
+      <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.previous), remote: true  %>
+
+  </div>
+
+  <!--<div class="centercontrol" style=" display: flex;
+    flex-wrap: wrap;align-content:center;">
+      <%= image_tag("icon-pause-mobile.png", :style => 'width:150px;height:auto;') %>
+    
+  </div>-->
+
+  <div class="rightcontrol" style="float:right;">
+        
+    <%=   link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.next), remote: true  %>
+  </div>
+</div>
+
 <div id="made-in-ny"></div>
 </div>
 

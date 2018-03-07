@@ -72,6 +72,7 @@ $(function() {
   window.onpopstate = function(e) {
     if ($('body').attr('data-state-href') === location.href) {
       return confirm("ONPOPSTATE");
+      $('#maincontent').fadeOut(1000);
       return false;
     }
     
@@ -116,5 +117,18 @@ $(function() {
       window.title = "Loading...";
     });
 
+  $(getForm).
+    live('ajax:beforeSend', function(xhr) {
+      var href = $(this).attr("action") + "?" + $(this).serialize();
+      
+      pushPageState(getState(this), 'Loading...', href);
+      window.title = "Loading...";
+    });
+    
+  $(getA + ',' + getForm).
+    live('ajax:complete', function(xhr) {
+      $('body').attr('data-state-href', location.href);
+      replacePageState(getState(this), window.title, location.href);
+    });
 });
 

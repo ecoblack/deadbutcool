@@ -1,7 +1,13 @@
 class PagesController < ApplicationController
 respond_to :html, :js
+
+
 	  def index
-		 @projects = Project.all
+		 
+			 respond_to do |format|
+		      format.html
+		      format.js
+	  		end
 	  end
 	
 	  def info
@@ -21,9 +27,9 @@ respond_to :html, :js
 			
 		end
 		def contact
-			respond_to do |format|
-	      format.html # index.html.erb
-	      format.js
-		end
+				respond_to do |format|
+		      format.html # index.html.erb
+		      format.js
+			end
 		end
 end

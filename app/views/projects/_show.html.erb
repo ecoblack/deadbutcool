@@ -13,8 +13,10 @@
     }
     
 </style>
-<div>
 
+<div>
+    <h1><%= @project.link %></h1>
+    <br>
 
 		 <%= image_tag @project.image, class: 'project_img', style: 'max-width:100vw;'  %>
 
@@ -43,15 +45,31 @@
 </div>
 
 
-<%= @project.link %></h1>
 
 
-<%= link_to "PREVIOUS PROJECT", @project.previous %>
 
-<%= link_to "NEXT PROJECT", @project.next %>
+
 </div>
 
 
 
+<div style="display: block;padding:10px;">
+  <div class="leftcontrol" style="float:left;">
+
+      <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.previous), remote: true  %>
+
+  </div>
+
+  <!--<div class="centercontrol" style=" display: flex;
+    flex-wrap: wrap;align-content:center;">
+      <%= image_tag("icon-pause-mobile.png", :style => 'width:150px;height:auto;') %>
+    
+  </div>-->
+
+  <div class="rightcontrol" style="float:right;">
+        
+    <%=   link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.next), remote: true  %>
+  </div>
+</div>
 
 
