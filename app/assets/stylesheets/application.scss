@@ -1,3 +1,8 @@
+@import 'header';
+@import 'footer';
+@import 'works';
+@import 'home';
+@import 'player';
 /* Fonts */
 
 
@@ -24,7 +29,7 @@
 
  @mixin breakpoint($point) {
    @if $point == desktop {
-     @media (min-width: 1900px) { @content ; }
+     @media (min-width: 2100px) { @content ; }
   }
    @else if $point == laptop {
      @media (min-width: 64em) { @content ; }
@@ -41,124 +46,65 @@
   }
 }
 
-
-@include breakpoint(laptop) {
-    #content {
-    top: 50%;
-    left: 50%;
-    float: left;
-    
-    }
-    #info {
-  padding:20px;
-  }
-    #info, #text {
-     top: 50%;
-    left: 50%;
-    float: left;
-    max-width:90%;
-    display:block;
-    }
-    .footer {
-    padding:0px;
-    }
-    footer p {
-    font-size: 27px;
-    }
-    #header a {
-    font-size: 27px;
-
-    }
-    #story p { 
-    float:left;
-    }
-    #header {
-
-    }
-    img {
-    min-width:300px;
-    }
-
-  }
+/* D E S K T O P */
 @include breakpoint(desktop) {
-body {
-  min-height: 100%;
-   width: 70%;
-  margin:auto;
+body, #header {
+  
+  width: 70%;
+  margin:auto!important;
 }
+
 #deskmenu a {
   font-size:27px;
   
   }
-  #deskmenu {
-
-  }
-  
-  #header {
-  width:100%;
-  }
 }
 
-@include breakpoint(mobileonly) {
-  #content {
-  padding:20px;
-  }
-  iframe {
-  width: 100%;
-  }
-  #info {
-  padding:20px;
-  section {
-    width: 280px;
-  }
-  #my-link {
-    font-size:13px!important;
-  }
-}}
- @media (min-width:475px){
-     #deskmenu{
-        display:block;
-        float:right;
-        
-    }
-}
-
-
-
-
-@media only screen and (max-width: 539px) { 
-  #deskmenu { 
-    display: none; 
-  } 
-}
-
-
-
-@media screen and (min-width: 540px) {
-  #menu  { display: none; 
+/* T A B L E T */
+@include breakpoint(tablet) {
+ h1 {
+    font-size: 60px;
   }
   p {
+    font-size: 24px;
+  }
+  #header a {
+    font-size: 27px;
+  }
+  .content {
+    padding: 120px 20px;
+  }
+  .imgcontent {
+  padding-top: 120px;
+  }
   
-  font-size: 24px;
+}
+
+
+/* M O B I L E */
+@include breakpoint(mobileonly) {
+ h1 {
+    font-size: 34px;
   }
-  .overlay{
-  display:none!important;
+  p {
+    font-size: 19px;
   }
-  h1 {
-    font-size: 60px;
+  .content {
+      padding: 75px 20px;
   }
   
 }
 
 html {
-  min-height:100%;
-}
-body {
-  
-    padding-top: 60px; /* This should be equal to the height of your header */
-
-  overflow-x: hidden;
   min-height: 100%;
+  background-color: #000000;
+}
+
+body {
+  min-height:100%;
+margin-top: 100px;
+  margin: 0px;
+  padding: 0px;
  
 }
 
@@ -173,152 +119,52 @@ a {
   
   }
 }
+
 h1 {
-  font-size:34px;
+  overflow-wrap: break-word;
+  
   color:white;
   font-weight: 100;
   text-align: left;
   font-family: "Favorit_Regular";
   letter-spacing: -0.2px;
 -webkit-font-smoothing: antialiased;
- }
+}
 
 p {
-font-size: 19px;
+  
   line-height: 1.21;
   color: white;
   font-family: "Favorit_Regular";
   -webkit-font-smoothing: antialiased;
 }
 
-section a {
-  word-wrap: break-word;
-  color:white;
-  font-family: "Favorit_Regular";
-  font-style: normal;
-  font-stretch: normal;
-  font-weight:100;
-  line-height: normal;
-  letter-spacing: normal;
-  -webkit-font-smoothing: antialiased;
+.content {
+  
+  
+}
+
+
+
+@include breakpoint(laptop) {
+.content  {
+   margin:auto;
+}
+}
+
+
+#contactus {
+  display:inline-block;
+}
+
+
+.info {
+  column-width: 714px;
+}
+
+
+#maincontent {
+    min-height: calc(100vh - 50px);
+
  
 }
-
-html {
-  
-  background-color: #000000;
-}
-
-#contact {
-align-items: center;
-  padding:20px;
-  word-wrap: break-word;
-}
-#info {
-  
-  word-break: break-all;
-}
-@media (min-width: 420px) {
-    section a {
-  font-size:37px;
-  
-@media (min-width: 460px) {
- font-size:60px;
-
-   }
-  }
-} 
-/* HEADER */
-#header {
-margin:0;
-overflow: hidden;
-     position: fixed;
-    
-    top: 0px;
-    width: 100%;
-    z-index: 9989;
-  background-color: #000000;
-
-  
-  
-  }
-
-navright {
-  float:right;
-}
-
-ul {
-    list-style-type: none;
-    
-    padding: 0;
-    overflow: hidden;
-    
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 20px 20px;
-    text-decoration: none;
-    -webkit-font-smoothing: antialiased;
-}  
-
-
-/* OVERLAY */
-
-
-/* CONTENT */ 
-
-#content {
-  
-  
-  
-
-}
-
-
-@media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 16px;
-    right: 35px;
-  }
-}
-
-
-/* FOOT3R */
-footer {
-
-margin-top: 45px;
-  padding-top: 5px;
-     display: flex;
-   bottom:0;
-   width:100%;
-   height:60px;   /* Height of the footer */
-   margin-bottom:20px;
-  
-  padding-left: 20px;
-   
-  
-}
-
-
-
-
-
-/* PROJECT IMG */
-
-.project_img {
-  width: 100%;
-  height: auto;
-  
-   }
-
-
-

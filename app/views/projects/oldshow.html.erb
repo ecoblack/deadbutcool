@@ -153,3 +153,162 @@ function closeNav() {
     <%=image_tag("icon-next-mobile.png", :style => "float:right;") %>
   </div>
 </div>
+
+
+$( "img" ).click(function() {
+  $( this ).fadeOut( 1500, function() {
+    $( "container" ).fadeOut( "slow" );
+$("body").fadeOut(1000);
+  });
+});
+
+
+
+
+$( "img" ).click(function() {
+  $( this ).fadeOut( 1500, function() {
+    $( "container" ).fadeOut( "slow" );
+$("body").fadeOut(1000);
+  });
+});
+
+
+$('img').click(function()
+{
+     $('img').not(this, "#header").each(function()
+     {
+         $(this).animate({opacity: 0}, 1500);
+     });
+     $(this).delay( 1500 ).fadeOut(2000).$('.container').load($(this).attr('href'));
+      //load html from the url and put it in the #content element
+    event.preventDefault(); // 
+    
+})
+
+
+var url = window.location.href;
+
+// Will only work if string in href matches with location
+$('.menu a[href="'+ url +'"]').addClass('active');
+
+// Will also work for relative and absolute hrefs
+$('.menu a').filter(function() {
+    return this.href == url;
+}).addClass('better-active');
+
+
+
+
+$(document).ready(function() {
+   //$('#my-link').click(function(event){
+  //   alert('Hooray!');
+$("#my-link").click(function (event) {
+    var urlid = this.id;
+    alert(urlid);
+     event.preventDefault(); // Prevent link from following its href
+  });
+});
+
+$("#my-link").click(function (event) {
+    var urlid = this.url;
+    load(url);
+});
+
+
+$(document).ready(function(){
+  $('a').on('click', function(e){
+    $(this).animate({opacity: 0}, 1500);
+    e.preventDefault();
+    $('body').load($(this).attr('href'));
+  });
+});
+
+
+$( "img" ).click(function() {
+  $( this ).fadeOut( 1500, function() {
+    $( ".container" ).fadeOut( "slow" );
+$("body").fadeOut(1000);
+  });
+});
+
+
+<script>
+.player {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(24em, 1fr));
+  grid-gap: 10px;
+  margin: 0;
+}
+</script>
+$(document).ready(function(){
+  $('a').on('click', 1000, function(e){
+    $(this).animate({opacity: 0}, 1500);
+    e.preventDefault();
+    $('body').load($(this).attr('href'));
+  });
+   $.ajax({
+        async: true,
+            // make a get request to the server
+            type: 'GET',
+            // get the url from the href attribute of our link
+            url: $(this).attr('href'),
+            // send the last id to our rails app
+          
+            // the response will be a script
+            dataType: 'script',
+
+            // upon success 
+            success: function () {
+                // hide the loading gif
+                $('.loading-gif').hide();
+                // show our load more link
+                $('.load-more').show();
+            }
+        });
+
+});
+$.ajaxPrefilter(function( options, originalOptions, jqXHR ) { options.async = true; });
+
+
+
+
+<%= @contact[:gen_email] %><%= @contact[:business_email]%><%= @contact[:phone]%><%= @contact[:phone]%>
+
+
+
+
+
+<div style="display: block;">
+  <div class="leftcontrol" style="float:left;">
+      <%= image_tag("icon-previous-mobile.png", :style => 'float:left;width:150px;height:auto;') %>
+    <%= link_to 'PREVIOUS', remote: true %>
+  </div>
+
+  <!--<div class="centercontrol" style=" display: flex;
+    flex-wrap: wrap;align-content:center;">
+      <%= image_tag("icon-pause-mobile.png", :style => 'width:150px;height:auto;') %>
+    
+  </div>-->
+
+  <div class="rightcontrol" style="float:right;">
+     
+    <%=image_tag("icon-next-mobile.png", :style => "float:right;width:150px;height:auto;") %>
+     <%= link_to 'NEXT', id: 'my-link', remote: true %>
+  </div>
+</div>
+
+
+
+
+<div style="display: block;">
+  <div class="leftcontrol" style="float:left;">
+      <%= image_tag("icon-previous-mobile.png", :style => 'float:left;max-width:150px;') %>
+    <%= link_to @project.previous.title, @project.previous, remote: true %>
+  </div>
+
+  <div class="rightcontrol" style="float:right;">
+     
+    <%=image_tag("icon-next-mobile.png", :style => "float:right;max-width:150px;") %>
+     <%= link_to @project.next.title, @project.next, id: 'my-link', remote: true %>
+  </div>
+</div>

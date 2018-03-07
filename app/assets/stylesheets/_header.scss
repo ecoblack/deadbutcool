@@ -1,0 +1,182 @@
+
+#header{
+z-index: 5;
+position:fixed;
+background-color: #000000;
+height: 60px;
+width: 100%;
+margin-top:0;
+margin: 0px auto;
+}
+
+/* NAVIGATION LINKS RIGHT */
+navright {
+  float:right;
+}
+
+ul {
+    list-style-type: none;
+    
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}  
+
+
+ @media (min-width:475px){
+     #deskmenu{
+        display:block;
+        float:right;
+        
+    }
+}
+
+@media only screen and (max-width: 539px) { 
+  #deskmenu { 
+    display: none; 
+  } 
+}
+
+
+
+@media screen and (min-width: 540px) {
+  #menu  { display: none; 
+  }
+}
+
+
+
+
+@media screen and (max-width: 450px) {
+  .overlay a {font-size: 20px}
+  .social p {font-size:13px;}
+  .overlay .closebtn {
+    border-style: solid;
+    border-color: red;
+    font-size: 40px;
+    top: 16px;
+    right: 35px;
+  }
+}
+
+
+@media screen and (min-width: 540px) {
+  #menu  { display: none; 
+  }
+  .overlay{
+  display:none!important;
+  }
+  a.closebtn {
+  color:white;
+  }
+  
+}
+
+
+
+/* OVERLAY MENU */
+
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: #000000;
+    z-index: 3;
+    top: 0;
+    left: 0;
+ 
+    overflow-y: none;
+   
+    position:fixed !important;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+
+.overlay-content {
+
+    position: relative;
+    top: 35%;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.overlay a {
+  text-align: left;
+    
+    text-decoration: none;
+    font-size: 48px;
+    color: #ffffff;
+    display: block;
+    transition: 0.6s;
+    padding-left: 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+    text-decoration: underline;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 19px;
+    padding: 20px
+}
+.overlay .logo {
+  text-decoration: none;
+  position: absolute;
+  top: 15px;
+  font-size: 19px;
+  padding: 20px
+}
+
+.overlay .social {
+
+font-size: 13px;
+font-weight: 100;
+padding-left: 20px;
+word-spacing: 10px;
+-webkit-font-smoothing: antialiased;
+position: fixed;
+  bottom: 40px;
+}
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 30px;
+    top: 10px;
+    right: 20px;
+  }
+}
+
+#menu {
+  float:right;
+  color:white;
+  font-family:Canela-Light;
+        font-size: 19px;
+    
+    
+    z-index: 0;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+}
