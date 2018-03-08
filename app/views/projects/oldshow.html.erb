@@ -406,3 +406,18 @@ $.ajaxPrefilter(function( options, originalOptions, jqXHR ) { options.async = tr
       // an error occurred
   });
 </script> -->
+
+require 'open-uri'
+
+url                      = "http://www.vimeo.com/7592893"
+vimeo_video_id           = url.scan(/vimeo.com\/(\d+)\/?/).flatten.to_s               # extract the video id
+vimeo_video_json_url     = "http://vimeo.com/api/v2/video/%s.json" % vimeo_video_id   # API call
+
+# Parse the JSON and extract the thumbnail_large url
+thumbnail_image_location = JSON.parse(open(vimeo_video_json_url).read).first['thumbnail_large'] rescue nil
+
+
+def vimeo_id(url)
+  match = url.match(/https?:\/\/(?:[\w]+\.)*vimeo\.com(?:[\/\w]*\/?)?\/(?<id>[0-9]+)[^\s]*/)
+  match[:id] if match.present?
+end

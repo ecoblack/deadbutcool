@@ -13,6 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+function openNav() {
+    document.getElementById("myNav").style.display = "block";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.display = "none";
+}
+
+
 $('img').click(function()
 {
      $('img').not(this, "#header").each(function()
