@@ -80,7 +80,6 @@ function replacePageState(state, title, href) {
 $(function() {
   window.onpopstate = function(e) {
     if ($('body').attr('data-state-href') === location.href) {
-      return confirm("ONPOPSTATE");
       $('#maincontent').fadeOut(1000);
       return false;
     }
@@ -91,7 +90,7 @@ $(function() {
     
     $.ajax({
      beforeSend:function(){
-     $('#maincontent').fadeOut(1000);
+     return confirm("Are you sure?");
 },
       url: location.href,
       dataType: 'script',
@@ -144,10 +143,3 @@ $(function() {
 
 
 
-
-
-$(document).ajaxStart(function(){
-    alert('SEND');
- }).ajaxStop(function(){
-    alert('COMPLETE');;
- });
