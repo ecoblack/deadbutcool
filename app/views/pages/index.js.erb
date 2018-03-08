@@ -1,0 +1,4 @@
+$("#maincontent").hide();
+$(window).scrollTop(0);
+$("#maincontent").fadeIn(2000);
+$("#maincontent").html( "<%= escape_javascript( render( :partial => "index" ) ) %>" );
