@@ -312,3 +312,97 @@ $.ajaxPrefilter(function( options, originalOptions, jqXHR ) { options.async = tr
      <%= link_to @project.next.title, @project.next, id: 'my-link', remote: true %>
   </div>
 </div>
+
+
+)))))))))))))))))))))))))
+
+
+
+
+<p class="marquee"><span>SOUNDTRACK FOR FENDI X POKRAS LAM...</span></p>
+
+
+<!-- VIDEO CONTROLS -->
+
+<!--<div style="display: block;padding:10px;">
+  <div class="leftcontrol" style="float:left;">
+
+      <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.previous), remote: true  %>
+
+  </div>-->
+
+  <!--<div class="centercontrol" style=" display: flex;
+    flex-wrap: wrap;align-content:center;">
+      <%= image_tag("icon-pause-mobile.png", :style => 'width:150px;height:auto;') %>
+    
+  </div>-->
+
+ <!-- <div class="rightcontrol" style="float:right;">
+        
+    <%=   link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.next), remote: true  %>
+  </div>
+</div>
+
+<div id="made-in-ny"></div>
+</div>-->
+
+
+
+<!-- <script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+    var options = {
+        id: 247152884,
+        width: 640,
+        loop: true,
+        autoplay: true,
+        background: false
+    };
+
+    var player = new Vimeo.Player('made-in-ny', options);
+
+    player.setVolume(0);
+
+   
+
+    player.on('play', function() {
+        console.log('played the video!');
+    });
+
+    player.getVideoTitle().then(function(title) {
+        console.log('title:', title);
+        console.autoplay('autoplay:', autoplay);
+
+        document.getElementsByTagName('span')[0].innerHTML = title;
+    });
+
+  // color was successfully set
+    player.setColor('#ffffff').then(function(color) {
+    
+  }).catch(function(error) {
+      switch (error.name) {
+          case 'ContrastError':
+              // the color was set, but the contrast is outside of the acceptable
+              // range
+              break;
+
+          case 'TypeError':
+              // the string was not a valid hex or rgb color
+              break;
+
+          case 'EmbedSettingsError':
+              // the owner of the video has chosen to use a specific color
+              break;
+
+          default:
+              // some other error occurred
+              break;
+      }
+  });
+
+  
+  player.getVolume().then(function(volume) {
+      volume = 22;
+  }).catch(function(error) {
+      // an error occurred
+  });
+</script> -->
