@@ -91,7 +91,7 @@ $(function() {
     
     $.ajax({
      beforeSend:function(){
-     return confirm("Are you sure?");
+     $('#maincontent').fadeOut(1000);
 },
       url: location.href,
       dataType: 'script',
