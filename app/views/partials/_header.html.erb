@@ -5,7 +5,7 @@
   <div id="deskmenu" >
   <li><%= link_to "WORKS", works_path,  remote: true %></li>
   <li><%= link_to "INFO", info_path,  remote: true, id: "info" %></li>
-  <li><%= link_to "CONTACT", contact_path, remote: true, id: "contact" %></li>
+  <li><%= link_to "CONTACT", contact_path, class: cp(contact_path), remote: true, id: "contact" %></li>
 </div>
  <li>
    <li id="menu" onclick="openNav()">MENU</li></li>
