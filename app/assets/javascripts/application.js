@@ -145,10 +145,10 @@ $(function() {
 
 $(document).ready(function(){
     $(document).ajaxSend(function(event, request, settings) {
-        $('body').fadeOut();
+        alert('SEND');
     });
 
     $(document).ajaxComplete(function(event, request, settings) {
-        $('#header').hide();
+        alert('COMPLETE');
     });
 });
