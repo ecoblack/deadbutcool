@@ -143,12 +143,11 @@ $(function() {
 
 
 
-$(document).ready(function(){
-    $(document).ajaxSend(function(event, request, settings) {
-        alert('SEND');
-    });
 
-    $(document).ajaxComplete(function(event, request, settings) {
-        alert('COMPLETE');
-    });
-});
+
+
+$(document).ajaxStart(function(){
+    alert('SEND');
+ }).ajaxStop(function(){
+    alert('COMPLETE');;
+ });
