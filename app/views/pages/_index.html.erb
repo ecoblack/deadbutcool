@@ -9,12 +9,33 @@
 
 
 
-<p class="marquee"><a>TEST TEST TEST [ENTER FULLSCREEN]</span></p>
+<span class="marquee">TEST TEST TEST [ENTER FULLSCREEN]</span></p>
 	
 <div id="made-in-ny"></div>
+
+
+<br>
+<div style="display: block;padding:10px;">
+  <div class="leftcontrol" style="float:left;">
+
+      <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), remote: true  %>
+
+  </div>
+
+  <!--<div class="centercontrol" style=" display: flex;
+    flex-wrap: wrap;align-content:center;">
+      <%= image_tag("icon-pause-mobile.png", :style => 'width:150px;height:auto;') %>
+    
+  </div>-->
+
+  <div class="rightcontrol" style="float:right;">
+        
+    <%=   link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), remote: true  %>
+  </div>
 </div>
 
 
+</div>
 
 <!-- <script src="https://player.vimeo.com/api/player.js"></script>
 <script>

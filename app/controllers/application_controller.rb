@@ -3,5 +3,9 @@ class ApplicationController < ActionController::Base
  respond_to :html, :js
 	  def index
 		@projects = Project.all
+		project = Project.find(params[:id])
+		project.next = Project.where("id > ?", id).order("id ASC").first || Project.first
+   		project.previous = Project.where("id < ?", id).order("id DESC").first || Project.last
+  
 	end
 end

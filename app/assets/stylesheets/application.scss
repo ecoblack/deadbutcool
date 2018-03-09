@@ -58,6 +58,15 @@ body, #header {
   font-size:27px;
   
   }
+  
+  .mainandtel {
+  width: 50%;
+  margin:auto!important;
+  margin-bottom: 50px;
+  }
+  .independent {
+  width: 70%;
+  }
 }
 
 /* T A B L E T */
@@ -77,10 +86,26 @@ body, #header {
   .imgcontent {
   padding-top: 120px;
   }
+  .mailandtel {
+    margin: auto;
+    width: 70%;
+  }
   
 }
+/* M O B I L E P L U S*/
+@include breakpoint(tablet) {
 
-
+  .mailandtel {
+    margin: auto;
+    width: 60%;
+  }
+  h1 {
+    
+  }
+  .info p {
+    margin-right: 100px;
+  }
+}
 /* M O B I L E */
 @include breakpoint(mobileonly) {
  h1 {
@@ -139,10 +164,6 @@ p {
   -webkit-font-smoothing: antialiased;
 }
 
-.content {
-  
-  
-}
 
 
 
@@ -160,6 +181,7 @@ p {
 
 .info {
   column-width: 714px;
+  
 }
 
 

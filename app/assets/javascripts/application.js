@@ -22,17 +22,6 @@ function closeNav() {
 }
 
 
-$('img').click(function()
-{
-     $('img').not(this, "#header").each(function()
-     {
-         $(this).animate({opacity: 0}, 1500);
-     });
-     $(this).delay( 1500 ).fadeOut(2000).$('.container').load($(this).attr('href'));
-      //load html from the url and put it in the #content element
-    event.preventDefault(); // 
-    
-})
 
 
 
@@ -51,10 +40,14 @@ $('img').click(function()
 
  $(document).on('click', 'a', function(e) {
     history.pushState({}, '', $(this).attr('href'));
+   
+    $('#maincontent').fadeOut(1000);
   });
 
   $(window).bind('popstate', function () {
+    //return confirm("ONPOPSTATE");
     $.get(document.location.href)
+
   });
 
 
@@ -80,6 +73,7 @@ function replacePageState(state, title, href) {
 $(function() {
   window.onpopstate = function(e) {
     if ($('body').attr('data-state-href') === location.href) {
+      
       $('#maincontent').fadeOut(1000);
       return false;
     }
@@ -90,12 +84,12 @@ $(function() {
     
     $.ajax({
      beforeSend:function(){
-     return confirm("Are you sure?");
+     //return confirm("Are you sure?");
 },
       url: location.href,
       dataType: 'script',
       success: function(data, status, xhr) {
-       return confirm("SUCCESS");
+       
       },
       error: function(xhr, status, error) {
         // You may want to do something else depending on the stored state
@@ -103,6 +97,7 @@ $(function() {
       },
       complete: function(xhr, status) {
         $('body').attr('data-state-href', location.href);
+        
       }
     });
   };
@@ -139,6 +134,7 @@ $(function() {
       replacePageState(getState(this), window.title, location.href);
     });
 });
+
 
 
 
