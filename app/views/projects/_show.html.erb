@@ -16,7 +16,7 @@
 
 <div class="top">
   <div class="wrapper">
-    <iframe src="https://player.vimeo.com/video/130272368?title=0&byline=0&portrait=0&transparent=0&autoplay=1" width="640" height="480" frameborder="0" title="Funny Cat Videos For Kids" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe>
+    <iframe src="https://player.vimeo.com/video/<%= vimeo_id(url) %>?title=0&byline=0&portrait=0&transparent=0&autoplay=1" width="640" height="480" frameborder="0" title="Funny Cat Videos For Kids" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe>
   </div>
 </div>
 
@@ -34,8 +34,11 @@
    <p>I was always somebody who felt quite sorry for myself, what I had not got compared to my friends, how much of a struggle my life seemed to be compared to others. I was caught up in a web of negativity and needed someone or something to help me to escape.<br>
    	 <p>I was always somebody who felt quite sorry for myself, what I had not got compared to my friends, how much of a struggle my life seemed to be compared to others. I was caught up in a web of negativity and needed someone or something to help me to escape.<br>
 
-      <%= image_tag @project.image, class: 'project_img', style: 'width: 100%;
-   padding-top: 56.25%;'  %>
+<div class="img_wrap" style=" display:flex;
+  flex-wrap:wrap;margin-top:50px;" >
+      <%= image_tag @project.image, class: 'project_img', style: 'object-fit:cover;width:63vw;
+  height:39vw;width:100%; '  %>
+</div>
 
 </div>
 <div class="credits" style="padding: 10px;">
@@ -49,16 +52,11 @@
 
 
 
-
-</div>
-
-
-
-<div style="display: block;padding:10px;">
+<div style="display: block;padding:10px;margin-bottom:100px;">
   <div class="leftcontrol" style="float:left;">
-
-      <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.previous), remote: true  %>
-
+      <p>PREVIOUS PROJECT</p>
+      <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;padding-right:30px;")), project_url(@project.previous), remote: true  %>
+<p style="float:right;"><%= @project.previous.title %></p>
   </div>
 
   <!--<div class="centercontrol" style=" display: flex;
@@ -68,9 +66,16 @@
   </div>-->
 
   <div class="rightcontrol" style="float:right;">
-        
-    <%=   link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.next), remote: true  %>
+       <p>NEXT PROJECT</p>
+        <%= link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.next), remote: true  %>
+         <p style="float:left!important;padding-right:30px;"><%= @project.next.title %></p>
   </div>
 </div>
+
+</div>
+
+
+
+
 
 

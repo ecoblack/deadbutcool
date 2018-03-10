@@ -1,6 +1,6 @@
 $("#footer").hide();
-$("#maincontent").hide();
-$(window).scrollTop(0);
 $("#maincontent").fadeIn(2000);
+$(window).scrollTop(0);
 $('#maincontent').html("<%= j render 'projects/show', locals: {project: @project} %>");
 $("#footer").fadeIn(8000);
+
