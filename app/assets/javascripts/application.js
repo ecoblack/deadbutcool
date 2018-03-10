@@ -21,11 +21,23 @@ $(document).on('click', 'a', function(e) {
 
   return window.history.pushState(null, "page title", this.href);
 });
+
 $(window).on('popstate', function(e) {
   e.preventDefault();
 ("#maincontent").fadeOut(1000);
   return $.getScript(document.location);
 });
+
+
+
+
+function openNav() {
+    document.getElementById("myNav").style.display = "block";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.display = "none";
+}
 
 
 
