@@ -1,2 +1,6 @@
+$("#footer").hide();
+$("#maincontent").hide();
 $(window).scrollTop(0);
+$("#maincontent").fadeIn(3000);
 $("#maincontent").html( "<%= escape_javascript( render( :partial => "contact" ) ) %>" );
+$("#footer").fadeIn(5000);
