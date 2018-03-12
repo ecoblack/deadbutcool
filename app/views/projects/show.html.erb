@@ -23,7 +23,7 @@
 </div>
 
 
-<div>
+<div id="maincontent">
    
     
 
@@ -34,9 +34,10 @@
   <div class="content"> 
 
   <h1><%= @project.title %></h1>
-
+  <div class="info">
    <p>I was always somebody who felt quite sorry for myself, what I had not got compared to my friends, how much of a struggle my life seemed to be compared to others. I was caught up in a web of negativity and needed someone or something to help me to escape.<br>
-     <p>I was always somebody who felt quite sorry for myself, what I had not got compared to my friends, how much of a struggle my life seemed to be compared to others. I was caught up in a web of negativity and needed someone or something to help me to escape.<br>
+     <p>I was always somebody who felt quite sorry for myself, what I had not got compared to my friends, how much of a struggle my life seemed to be compared to others. I was caught up in a web of negativity and needed someone or something to help me to escape.
+     </div><br>
 <div class="img_wrap" style=" display:flex;
   flex-wrap:wrap;margin-top:50px;" >
       <%= image_tag @project.image, class: 'project_img', style: 'object-fit:cover;width:63vw;
@@ -54,9 +55,9 @@
 
 <div style="display: block;padding:10px;margin-bottom:100px;">
   <div class="leftcontrol" style="float:left;">
-      <p>PREVIOUS PROJECT</p>
+      <p style="font-size:60px;">PREVIOUS PROJECT</p>
       <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;padding-right:30px;")), project_url(@project.previous), remote: true  %>
-<p style="float:right;"><%= @project.previous.title %></p>
+<p style="float:right;"><%= @project.previous.title.upcase %></p>
   </div>
 
   <!--<div class="centercontrol" style=" display: flex;
@@ -66,17 +67,15 @@
   </div>-->
 
   <div class="rightcontrol" style="float:right;">
-<<<<<<< HEAD
-       <p >NEXT PROJECT</p>
-=======
-       <p>NEXT PROJECT</p>
->>>>>>> ce414d6e1567898b63917d4ab3cd7fb78c057b44
+
+       <p style="font-size:60px;">NEXT PROJECT</p>
+
         <%= link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.next), remote: true  %>
-         <p style="float:left!important;padding-right:30px;"><%= @project.next.title %></p>
+         <p style="float:left!important;padding-right:30px;"><%= @project.next.title.upcase %></p>
   </div>
 </div>
 
-
+<br>
 </div>
 
 

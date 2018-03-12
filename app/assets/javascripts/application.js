@@ -16,14 +16,36 @@
 //= require_tree .
 
 
+$(document).ready(function() {
+  // Global ajax cursor change
+  $(document)
+    .ajaxbeforeStart(function () {
+        $('#maincontent').fadeOut(3000);
+    })
+    .ajaxStop(function () {
+        alert('STOP');
+    });
+});
+
 $(document).on('click', 'a', function(e) {
-
- 	$('#maincontent').fadeOut(2000);
-
+	e.preventDefault();
+	//e.preventDefault().$('#maincontent').delay(3000).fadeOut(3000);
+	//alert('0.PREVENT DEFAULT');
+ 	
+ 	//alert('1.HIDE FOOTER');
+ 	
+ 	//alert('2.HIDE MAIN');
   return window.history.pushState(null, "page title", this.href);
 });
 $(window).on('popstate', function(e) {
   e.preventDefault();
-	$('#footer').hide();
+	
   return $.getScript(document.location);
 });
+
+
+
+
+
+
+

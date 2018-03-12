@@ -9,11 +9,6 @@ module ApplicationHelper
       page_title + " | " + base_title                 # String concatenation
     end
   end
-
-
-  def cp(path)
-  "current" if current_page?(path)
-end
 end
 
 
