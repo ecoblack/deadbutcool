@@ -59,7 +59,7 @@ body, #header {
   
   }
   
-  .mainandtel {
+  .mainandtel, section {
   width: 50%;
   margin:auto!important;
   margin-bottom: 50px;
@@ -86,7 +86,7 @@ body, #header {
   .imgcontent {
   padding-top: 120px;
   }
-  .mailandtel {
+  .mailandtel, section {
     margin: auto;
     width: 70%;
   }
@@ -95,7 +95,7 @@ body, #header {
 /* M O B I L E P L U S*/
 @include breakpoint(tablet) {
 
-  .mailandtel {
+  .mailandtel, section {
     margin: auto;
     width: 60%;
   }
