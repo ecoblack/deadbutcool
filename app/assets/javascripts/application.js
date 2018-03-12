@@ -17,15 +17,13 @@
 
 
 $(document).on('click', 'a', function(e) {
-  $('#maincontent').stop().fadeOut( 1000 );
+
+ 	$('#maincontent').fadeOut(2000);
 
   return window.history.pushState(null, "page title", this.href);
 });
 $(window).on('popstate', function(e) {
   e.preventDefault();
-("#maincontent").fadeOut(1000);
+	$('#footer').hide();
   return $.getScript(document.location);
 });
-
-
-
