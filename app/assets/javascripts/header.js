@@ -13,12 +13,3 @@ $(window).scroll(function(e){
 
 // Overlay nav menu
 
-$(document).ready(function(){
-    $("#menu").click(function(){
-        $(".overlay-content").hide();
-        if (typeof jQuery != 'undefined') {  
-    // jQuery is loaded => print the version
-    alert(jQuery.fn.jquery);
-}
-    });
-});

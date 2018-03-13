@@ -7,7 +7,7 @@
   <li><%= link_to "CONTACT", contact_path,  remote: true, id: "contact" %></li>
 </div>
  <li>
-   <span id="menu" class="openbtn" onclick="openNav()">open</span></li>
+   <li id="menu" class="openbtn" onclick="openNav()">MENU</li>
 </ul>
 
 
@@ -17,12 +17,12 @@
 
 
 <div id="myNav" class="overlay">
-  <a href="#" class="logo" style="font-family:Canela-Light;font-weight:100;">DEAD BUT COOL</a>
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">CLOSE</a>
+  
+  
   <div class="overlay-content">
-    <a href="/works">WORKS</a>
-    <a href="/info">INFO</a>
-    <a href="/contact">CONTACT</a>
+     <%= link_to "WORKS", works_path,  remote: true %>
+     <%= link_to "INFO", info_path,  remote: true, id: "info" %>
+     <%= link_to "CONTACT", contact_path,  remote: true, id: "contact" %>
     
   </div>
 
@@ -33,15 +33,10 @@
 </div>
 
 
-
-
-
 <script>
-function openNav() {
-    document.getElementById("myNav").style.height = "100%";
-}
+$( "#menu" ).click(function() {
+  $( "#myNav" ).toggle();
 
-function closeNav() {
-    document.getElementById("myNav").style.height = "0%";
-}
+});
 </script>
+

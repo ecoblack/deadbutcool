@@ -1,3 +1,4 @@
+/* MARQUEE */
 @-webkit-keyframes scroll {
     0% {
         -webkit-transform: translate(0, 0);
@@ -43,3 +44,8 @@
     -moz-animation: scroll 10s infinite linear;
     animation: scroll 10s infinite linear;
 }
+
+/* HOME IMG */
+.home_img {
+object-fit:cover;width:63vw;
+  height:20vw;width:100%; }

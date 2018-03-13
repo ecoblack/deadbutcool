@@ -96,7 +96,7 @@ body, #header {
   
 }
 /* M O B I L E P L U S*/
-@include breakpoint(tablet) {
+@include breakpoint(phablet) {
 
   .mailandtel {
     margin: auto;
@@ -129,6 +129,9 @@ body, #header {
   .mailandtel {
     width:100%;
   }
+  #project_slide {
+  display:none!important;
+}
 }
 
 html {
