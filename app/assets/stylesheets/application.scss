@@ -41,7 +41,7 @@
      @media (min-width: 37.5em)  { @content ; }
   }
   @else if $point == mobileonly {
-     @media (max-width: 37.5em)  { @content ; }
+     @media (max-width: 32.5em)  { @content ; }
 
   }
 }
@@ -59,13 +59,13 @@ body, #header {
   
   }
   
-  .mainandtel, section {
+  .mainandtel {
   width: 50%;
   margin:auto!important;
   margin-bottom: 50px;
   }
   .independent {
-  width: 60%;
+  width: 70%;
   }
 }
 
@@ -86,21 +86,27 @@ body, #header {
   .imgcontent {
   padding-top: 120px;
   }
-  .mailandtel, section {
+  .mailandtel {
     margin: auto;
-    width: 70%;
+    width: 50%;
+  }
+  .independent {
+    width: 80%;
   }
   
 }
 /* M O B I L E P L U S*/
 @include breakpoint(tablet) {
 
-  .mailandtel, section {
+  .mailandtel {
     margin: auto;
     width: 60%;
   }
   h1 {
-    
+    font-size: 60px;
+  }
+  p {
+    font-size: 24px;
   }
   .info p {
     margin-right: 100px;
@@ -117,12 +123,14 @@ body, #header {
   .content {
       padding: 75px 10px;
   }
-  
+  .mailandtel {
+    width:100%;
+  }
 }
 
 html {
-  min-height: 100%;
-  background-color: #000000;
+  min-height: 1000px;
+    background-color: #000000;
 }
 
 body {

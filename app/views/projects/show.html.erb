@@ -55,7 +55,7 @@
 
 <div style="display: block;padding:10px;margin-bottom:100px;">
   <div class="leftcontrol" style="float:left;">
-      <p style="font-size:60px;">PREVIOUS PROJECT</p>
+      <p style="font-size: 24px;">PREVIOUS PROJECT</p>
       <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;padding-right:30px;")), project_url(@project.previous), remote: true  %>
 <p style="float:right;"><%= @project.previous.title.upcase %></p>
   </div>
@@ -68,9 +68,9 @@
 
   <div class="rightcontrol" style="float:right;">
 
-       <p style="font-size:60px;">NEXT PROJECT</p>
+       <p style="font-size:24px;">NEXT PROJECT</p>
 
-        <%= link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.next), remote: true  %>
+        <%= link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.next), remote: true %>
          <p style="float:left!important;padding-right:30px;"><%= @project.next.title.upcase %></p>
   </div>
 </div>

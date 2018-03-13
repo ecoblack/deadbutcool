@@ -13,18 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require projects
+//= require pages
 //= require_tree .
 
 
-$(document).ready(function() {
-  // Global ajax cursor change
-  $(document)
-    .ajaxbeforeStart(function () {
-        $('#maincontent').fadeOut(3000);
-    })
-    .ajaxStop(function () {
-        alert('STOP');
-    });
+
+
+$( document ).ajaxSend(function( event, request, settings ) {
+ $('#maincontent').delay(1000).fadeOut(3000);
 });
 
 $(document).on('click', 'a', function(e) {
@@ -45,7 +41,4 @@ $(window).on('popstate', function(e) {
 
 
 
-
-
-
-
+ 
