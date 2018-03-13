@@ -1,20 +1,3 @@
-<style>.embed-container {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0; overflow: hidden;
-        max-width: 100%; height: auto;
-    }
-    .embed-container iframe, .embed-container object, .embed-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-</style>
-
-
 
 <div class="top">
   <div class="wrapper">
@@ -45,34 +28,40 @@
 </div>
 </div>
 <div class="credits" style="padding: 10px;">
-      <h1>Credits:<br> <%= @project.credits %></h1>
+      <h1>Credits:<br> <%= simple_format(@project.credits, {}, wrapper_tag: "h1") %></h1>
 </div>
 
 
+<div style="display:inline-block;">
+<p style="font-size: 24px;float:left;">PREVIOUS PROJECT</p>
 
+<p style="font-size:24px;float:right;">NEXT PROJECT</p>
+
+</div>
+<br>
 
 
 
 <div style="display: block;padding:10px;margin-bottom:100px;">
-  <div class="leftcontrol" style="float:left;">
-      <p style="font-size:60px;">PREVIOUS PROJECT</p>
-      <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;padding-right:30px;")), project_url(@project.previous), remote: true  %>
-<p style="float:right;"><%= @project.previous.title.upcase %></p>
-  </div>
 
-  <!--<div class="centercontrol" style=" display: flex;
+
+       <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;padding-right:30px;")), project_url(@project.previous), remote: true  %>
+<!-- <p style="float:right;"><%= @project.previous.title.upcase %></p>
+
+
+  <div class="centercontrol" style=" display: flex;
     flex-wrap: wrap;align-content:center;">
       <%= image_tag("icon-pause-mobile.png", :style => 'width:150px;height:auto;') %>
     
-  </div>-->
-
-  <div class="rightcontrol" style="float:right;">
-
-       <p style="font-size:60px;">NEXT PROJECT</p>
-
-        <%= link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.next), remote: true  %>
-         <p style="float:left!important;padding-right:30px;"><%= @project.next.title.upcase %></p>
   </div>
+
+  
+-->
+       
+
+        <%= link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), project_url(@project.next), remote: true %>
+    <!--     <p style="float:left!important;padding-right:30px;"><%= @project.next.title.upcase %></p>-->
+  
 </div>
 
 <br>

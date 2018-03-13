@@ -111,6 +111,9 @@ body, #header {
   .info p {
     margin-right: 100px;
   }
+  .content {
+      padding: 75px 10px;
+  }
 }
 /* M O B I L E */
 @include breakpoint(mobileonly) {
@@ -121,7 +124,7 @@ body, #header {
     font-size: 19px;
   }
   .content {
-      padding: 75px 10px;
+      padding: 50px 10px;
   }
   .mailandtel {
     width:100%;
@@ -176,9 +179,9 @@ p {
 
 
 @include breakpoint(laptop) {
-.content  {
-   margin:auto;
-}
+  .content  {
+     margin:auto;
+  }
 }
 
 
