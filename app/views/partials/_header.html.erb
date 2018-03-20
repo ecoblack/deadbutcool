@@ -2,12 +2,16 @@
   <li style="display: inline-block;"><a href="/" style="font-family:Canela-Light;font-weight:100;text-decoration:none;"  data-remote="true">DEAD BUT COOL</a></li>
 
   <div id="deskmenu" >
-  <li><%= link_to "WORKS", works_path,   remote: true %></li>
-  <li><%= link_to "INFO", info_path,  remote: true, id: "info" %></li>
-  <li><%= link_to "CONTACT", contact_path,  remote: true, id: "contact" %></li>
-</div>
+    <li><%= link_to "WORKS", works_path,   remote: true %></li>
+    <li><%= link_to "INFO", info_path,  remote: true, id: "info" %></li>
+    <li><%= link_to "CONTACT", contact_path,  remote: true, id: "contact" %></li>
+    
+  </div>
  <li>
-   <li id="menu" class="openbtn" onclick="openNav()">MENU</li>
+   <li id="menu" class="openbtn">MENU</li>
+   
+   
+   
 </ul>
 
 
@@ -26,17 +30,11 @@
     
   </div>
 
-  <div class="social" style="">
-    <p> YOUTUBE FACEBOOK SOUNDCLOUD</p>
+  <div class="social" style="white-space: nowrap;display: inline-block;">
+   <p> <span class="youtube"> YOUTUBE</span><span class="facebook"> FACEBOOK </span><span class="soundcloud">SOUNDCLOUD</span></p>
 
   </div>
 </div>
 
 
-<script>
-$( "#menu" ).click(function() {
-  $( "#myNav" ).toggle();
-
-});
-</script>
 

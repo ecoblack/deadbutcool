@@ -3,6 +3,7 @@ respond_to :html, :js
 
 
 	  def index
+	  	@projects = Project.all.paginate(page: params[:page], per_page: 1)
 		 
 			 respond_to do |format|
 		      format.html

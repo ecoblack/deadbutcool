@@ -13,7 +13,7 @@
 
 
 
-
+<li><%= link_to "CLOSE", contact_path,  remote: true, class: "modal" %></li>
 
 
 <div id="myNav" class="overlay">
@@ -27,7 +27,7 @@
   </div>
 
   <div class="social" style="">
-    <p> YOUTUBE FACEBOOK SOUNDCLOUD</p>
+    <p class="youtube"> YOUTUBE</p><p class="facebook"> FACEBOOK</p> <p class="soundcloud">SOUNDCLOUD</p>
 
   </div>
 </div>
@@ -45,3 +45,10 @@ function closeNav() {
     document.getElementById("myNav").style.height = "0%";
 }
 </script>
+ $(function(){
+     $('.pagination a').attr('data-remote', 'true')
+   });
+//Browser history 
+$( document ).ajaxSend(function( event, request, settings ) {
+ 
+});

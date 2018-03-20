@@ -1,89 +1,24 @@
-<div id="maincontent">
-    <section>
+  <% provide(:title, "HOME") %>
+  <div id="maincontent">
+    <section id="welcome">
       <h1>Independent studio crafting sound-design for Fendi, Chanel, Saint-Lauren  and <a href="/works" data-remote="true" style="word-wrap: break-word;color:white; font-family: Favorit_Regular;font-style: normal;font-stretch: normal;font-weight:100;line-height: normal;letter-spacing: normal;font-size: inherit;text-decoration:underline;">more</a>
       </h1>
     </section>
+
 
 <div id="made-in-ny"></div>
 
 <br>
 
-<span class="marquee">TEST TEST TEST [ENTER FULLSCREEN]</span>
 
-<div style="display: block;">
-  <div class="leftcontrol" style="float:left;">
 
-      <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), remote: true  %>
-   </div>
-      
-  <div class="rightcontrol" style="float:right;">
-        
-    <%=   link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), remote: true  %>
-  </div>
-</div>
+<div>
+ 
 
 
 <%= render partial: 'projects/project', locals: { project: Project.last } %>
+
+
+
+
 </div>
-
-
-
-
-<!-- <script src="https://player.vimeo.com/api/player.js"></script>
-<script>
-    var options = {
-        id: 247152884,
-        width: 640,
-        loop: true,
-        autoplay: true,
-        background: false
-    };
-
-    var player = new Vimeo.Player('made-in-ny', options);
-
-    player.setVolume(0);
-
-   
-
-    player.on('play', function() {
-        console.log('played the video!');
-    });
-
-    player.getVideoTitle().then(function(title) {
-        console.log('title:', title);
-        console.autoplay('autoplay:', autoplay);
-
-        document.getElementsByTagName('span')[0].innerHTML = title;
-    });
-
-	// color was successfully set
-    player.setColor('#ffffff').then(function(color) {
-    
-	}).catch(function(error) {
-	    switch (error.name) {
-	        case 'ContrastError':
-	            // the color was set, but the contrast is outside of the acceptable
-	            // range
-	            break;
-
-	        case 'TypeError':
-	            // the string was not a valid hex or rgb color
-	            break;
-
-	        case 'EmbedSettingsError':
-	            // the owner of the video has chosen to use a specific color
-	            break;
-
-	        default:
-	            // some other error occurred
-	            break;
-	    }
-	});
-
-	
-	player.getVolume().then(function(volume) {
-	    volume = 22;
-	}).catch(function(error) {
-	    // an error occurred
-	});
-</script> -->

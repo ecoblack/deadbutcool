@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DEAD BUT COOL</title>
+    <title>DEAD BUT COOL | <%= yield(:title) %></title>
+    
    <%= render 'partials/meta' %>
   </head>
 
   <body>
   	<%= render 'partials/header' %>
-    <section id="maincontent">
-        <%= yield %>
-    </section>
 
-    <div id="main"></div>
+
+    <div id="maincontent">
+
+        <%= yield %>
+
+    </div>
+    
 
     <%= render 'partials/footer' %>
   </body>

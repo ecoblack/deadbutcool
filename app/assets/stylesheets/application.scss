@@ -3,6 +3,7 @@
 @import 'works';
 @import 'home';
 @import 'player';
+@import 'marquee';
 /* Fonts */
 
 
@@ -61,12 +62,13 @@ body, #header {
   
   .mainandtel {
   width: 50%;
-  margin:auto!important;
+  margin:auto;
   margin-bottom: 50px;
   }
   .independent {
   width: 70%;
   }
+  
 }
 
 /* T A B L E T */
@@ -100,7 +102,7 @@ body, #header {
 
   .mailandtel {
     margin: auto;
-    width: 60%;
+    width: 50%;
   }
   h1 {
     font-size: 60px;
@@ -212,3 +214,7 @@ p {
 .current {
   text-decoration:underline!important;
 }
+
+#welcome {
+  width: 75%;
+  }

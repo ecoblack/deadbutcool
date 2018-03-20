@@ -1,4 +1,35 @@
+<br>
 
+<span class="marquee">TEST TEST TEST [ENTER FULLSCREEN]</span>
+
+<div>
+  <div class="leftcontrol" style="float:left;">
+
+      <%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), remote: true  %>
+   </div>
+      
+  <div class="rightcontrol" style="float:right;">
+        
+  <!--  <%=   link_to (image_tag("icon-next-mobile.png", id: 'control-img', class: 'control', :style => "float:right;")), remote: true  %>-->
+
+  </div>
+</div>
+
+<div id="fullscreenvideo">
+<div class="top">
+  <div class="wrapper">
+    <iframe src="https://player.vimeo.com/video/4324232>?title=0&byline=0&portrait=0&transparent=0&autoplay=1" width="640" height="480" frameborder="0" title="Funny Cat Videos For Kids" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe>
+  </div>
+</div>
+
+  </div>
+<%= render partial: 'projects/project', locals: { project: Project.last } %>
+<%= render partial: 'projects/project', locals: { project: Project.last.next } %>
+</div>
+
+
+
+/////////////////////
   <h1><%= @project.title %></h1>
   <p><%= @project.description %></p>
 
@@ -558,4 +589,78 @@ $(function() {
 });
 
 
+
+<!-- <script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+    var options = {
+        id: 247152884,
+        width: 640,
+        loop: true,
+        autoplay: true,
+        background: false
+    };
+
+    var player = new Vimeo.Player('made-in-ny', options);
+
+    player.setVolume(0);
+
+   
+
+    player.on('play', function() {
+        console.log('played the video!');
+    });
+
+    player.getVideoTitle().then(function(title) {
+        console.log('title:', title);
+        console.autoplay('autoplay:', autoplay);
+
+        document.getElementsByTagName('span')[0].innerHTML = title;
+    });
+
+  // color was successfully set
+    player.setColor('#ffffff').then(function(color) {
+    
+  }).catch(function(error) {
+      switch (error.name) {
+          case 'ContrastError':
+              // the color was set, but the contrast is outside of the acceptable
+              // range
+              break;
+
+          case 'TypeError':
+              // the string was not a valid hex or rgb color
+              break;
+
+          case 'EmbedSettingsError':
+              // the owner of the video has chosen to use a specific color
+              break;
+
+          default:
+              // some other error occurred
+              break;
+      }
+  });
+
+  
+  player.getVolume().then(function(volume) {
+      volume = 22;
+  }).catch(function(error) {
+      // an error occurred
+  });
+</script> -->
+<div id="myNav" class="overlay">
+  
+  
+  <div class="overlay-content">
+     <%= link_to "WORKS", works_path,  remote: true %>
+     <%= link_to "INFO", info_path,  remote: true, id: "info" %>
+     <%= link_to "CONTACT", contact_path,  remote: true, id: "contact" %>
+    
+  </div>
+
+  <div class="social" style="white-space: nowrap;display: inline-block;">
+   <p> <span class="youtube"> YOUTUBE</span><span class="facebook"> FACEBOOK </span><span class="soundcloud">SOUNDCLOUD</span></p>
+
+  </div>
+</div>
 

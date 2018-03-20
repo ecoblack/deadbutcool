@@ -14,32 +14,55 @@
 //= require jquery_ujs
 //= require projects
 //= require pages
+//= require overlay
 //= require_tree .
 
 
 
-
-$( document ).ajaxSend(function( event, request, settings ) {
- $('#maincontent').delay(1000).fadeOut(3000);
+ //$(function(){
+  //   $('.pagination a').attr('data-remote', 'true')
+  // });
+//Browser history 
+//$( document ).ajaxSend(function( event, request, settings ) {
  
-});
+//});
+
+//jQuery Simple Modal Example
+
+
+
 
 $(document).on('click', 'a', function(e) {
-	e.preventDefault();
-	//e.preventDefault().$('#maincontent').delay(3000).fadeOut(3000);
-	//alert('0.PREVENT DEFAULT');
- 	
- 	//alert('1.HIDE FOOTER');
- 	
- 	//alert('2.HIDE MAIN');
+
+  e.preventDefault();
+
   return window.history.pushState(null, "page title", this.href);
 });
 $(window).on('popstate', function(e) {
+
   e.preventDefault();
-	
+  
   return $.getScript(document.location);
 });
 
 
+//VIDEO ON HOMEPAGE
 
- 
+
+$(document).on('click', '.home_img', function(e) {
+                  AlertSave();
+});
+    
+
+function AlertSave() {
+
+  $("#deskmenu").delay(1000).fadeOut('slow');
+   $("#maincontent, #footer").fadeOut(1000);
+   $(".home_img").delay(2000).fadeOut('slow').delay(5000).$('#fullscreenvideo').show();
+   $(".modal").delay(1000).fadeIn('slow');
+
+}
+
+
+
+

@@ -11,5 +11,9 @@ $(window).scroll(function(e){
               } 
 });     
 
-// Overlay nav menu
+//toggle overlay menu
 
+$( "#menu" ).click(function() {
+  $( "#myNav" ).toggle();
+
+});
