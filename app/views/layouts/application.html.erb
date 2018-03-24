@@ -18,5 +18,23 @@
     
 
     <%= render 'partials/footer' %>
+
+
+
+
+<script>
+  var iframe = document.querySelector('iframe');
+  var player = new Vimeo.Player(iframe);
+  // Execute the `play` method of the API when something with id start is clicked
+  $("body").on('click', '#start', function() {
+    alert('play');
+    player.play();
+
+  });
+</script>
   </body>
+
+
+
+
 </html>

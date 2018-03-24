@@ -2,18 +2,22 @@
 $(window).scroll(function(e){ 
               var $el = $('#header'); 
 
-              if ($(this).scrollTop() > 200){ 
- 				$('#header').fadeOut(1500); 
+              if ($(this).scrollTop() > 150){ 
+ 				$('#header').fadeOut(1115); 
               }
-              if ($(this).scrollTop() < 200)
+              if ($(this).scrollTop() < 150)
               {
- 				$('#header').fadeIn(1500); 
+ 				$('#header').fadeIn(1111); 
               } 
 });     
 
 //toggle overlay menu
 
-$( "#menu" ).click(function() {
-  $( "#myNav" ).toggle();
 
-});
+
+//underline active menu
+
+
+//TOGGLE MENU BUTTON
+
+

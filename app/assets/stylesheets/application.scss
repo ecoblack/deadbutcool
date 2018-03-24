@@ -30,19 +30,19 @@
 
  @mixin breakpoint($point) {
    @if $point == desktop {
-     @media (min-width: 2100px) { @content ; }
+     @media (min-width: 2550px) { @content ; }
   }
    @else if $point == laptop {
-     @media (min-width: 64em) { @content ; }
+     @media (min-width: 1900px) { @content ; }
   }
     @else if $point == tablet {
-     @media (min-width: 44em) { @content ; }
+     @media (min-width: 1200px) { @content ; }
   }
    @else if $point == phablet {
-     @media (min-width: 37.5em)  { @content ; }
+     @media (min-width: 800px)  { @content ; }
   }
   @else if $point == mobileonly {
-     @media (max-width: 32.5em)  { @content ; }
+     @media (max-width: 550px)  { @content ; }
 
   }
 }
@@ -66,13 +66,29 @@ body, #header {
   margin-bottom: 50px;
   }
   .independent {
-  width: 70%;
+      width: 65%;
   }
-  
+  #maincontent {
+    padding-top:10%;
+   margin-left: 50px;
+   margin-right: 50px;
+  }
+  #footer {
+  margin-left: 20px;
+  }
 }
 
 /* T A B L E T */
 @include breakpoint(tablet) {
+  li a {
+   
+    padding-left:50px;
+    padding-bottom:0px;
+    padding-top:40px;
+  }
+  #header {
+  height: 80px;
+  }
  h1 {
     font-size: 60px;
   }
@@ -82,27 +98,52 @@ body, #header {
   #header a {
     font-size: 27px;
   }
-  .content {
-    padding: 120px 10px;
+  .mailandtel {
+    width:60%;
+    margin:auto;
+
   }
+  #maincontent {
+   min-height: calc(100vh - 50px);
+   padding-top: 200px;
+   margin: 0 50px;
+ 
+}
+.grid {
+  margin-left:-10px;
+  margin-right:-10px;
+}
+.brandlink {
+  display:block;
+}
+.brandlink p{
+  margin:0px;
+  font-size:60px;
+
+}
   .imgcontent {
   padding-top: 120px;
+  margin-left: -10px;
+  margin-right: -10px;
   }
   .mailandtel {
-    margin: auto;
-    width: 50%;
+   
   }
-  .independent {
-    width: 80%;
+ 
+  
+
+  #footer {
+  margin-left: 50px;
   }
   
 }
 /* M O B I L E P L U S*/
 @include breakpoint(phablet) {
-
+  #footer {
+  margin-left: 20px;
+  }
   .mailandtel {
-    margin: auto;
-    width: 50%;
+    
   }
   h1 {
     font-size: 60px;
@@ -114,7 +155,16 @@ body, #header {
     margin-right: 100px;
   }
   .content {
-      padding: 75px 10px;
+      
+  }
+    #maincontent {
+   min-height: calc(100vh - 50px);
+   padding-top: 150px;
+   margin: 0 50px;
+ 
+}
+  #footer {
+  margin-left: 50px;
   }
 }
 /* M O B I L E */
@@ -126,7 +176,7 @@ body, #header {
     font-size: 19px;
   }
   .content {
-      padding: 50px 10px;
+      
   }
   .mailandtel {
     width:100%;
@@ -134,6 +184,21 @@ body, #header {
   #project_slide {
   display:none!important;
 }
+.brandlink {
+  display:none;
+}
+#maincontent {
+   min-height: calc(100vh - 50px);
+   padding-top: 150px;
+   
+ 
+}
+.grid .img-item {
+  margin:10px 20px;
+}
+#footer {
+  margin-left: 20px;
+  }
 }
 
 html {
@@ -163,7 +228,7 @@ a {
 
 h1 {
   overflow-wrap: break-word;
-  
+  line-height: 1;
   color:white;
   font-weight: 100;
   text-align: left;
@@ -174,7 +239,7 @@ h1 {
 
 p {
   margin-top: 0;
-  line-height: 1.21;
+  line-height: 1;
   color: white;
   font-family: "Favorit_Regular";
   -webkit-font-smoothing: antialiased;
@@ -185,7 +250,7 @@ p {
 
 @include breakpoint(laptop) {
   .content  {
-     margin:auto;
+         margin-top: 100px;
   }
 }
 
@@ -196,25 +261,26 @@ p {
 
 
 .info {
-  column-width: 714px;
+  column-width: 600px;
   
 }
 
 
-#maincontent {
-    min-height: calc(100vh - 50px);
-    padding-top:75px;
-    padding-left:10px;
-    padding-right:10px;
-
- 
+html.modal-open {
+     overflow-y: hidden;
 }
 
-
+ .independent {
+    width: 65%;
+  }
 .current {
   text-decoration:underline!important;
 }
 
 #welcome {
-  width: 75%;
+  width: 66%;
   }
+
+.someClass {
+  min-height:800px;
+}

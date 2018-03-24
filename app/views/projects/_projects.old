@@ -1,0 +1,96 @@
+<div class="slide" style="border-style: solid;
+    border-color: red;">
+  
+<% @projects.each do |project| %>
+
+   <div class="top" style="position: relative;">
+  <div class="wrapper">
+        
+
+        <!-- Vimeo iframe -->
+        <iframe id="vi-banner-video" src='https://player.vimeo.com/video/31736822?api=1&loop=1&title=0&byline=0&portrait=0&background=1' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+      </div>
+  <div class="bottom-left"><%= image_tag("icon-previous-mobile.png")%></div>
+  <div class="bottom-center"><%= image_tag("icon-play-desktop.png")%></div>
+  <div class="bottom-right"><%= image_tag("icon-next-mobile.png")%></div>
+  <div class="centered"><p><span style="opacity:0.5;"><%= project.previous.title.upcase  %></span> <span> <%= image_tag("icon-nosound.svg", style: "line-height:1em;")%>&nbsp;<%= project.title.upcase  %> </span>  <span style="opacity:0.5;"> <%= project.next.title.upcase %> </span></p></div>
+</div>
+
+
+<% end %> 
+
+</div>
+
+
+
+_________
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ 
+<script>
+
+</script>
+
+<div class="wrapper">
+  <ul>
+    <li><a class="video"
+           href="https://player.vimeo.com/video/246308092?color=fdfdfd&title=0&byline=0&portrait=0&badge=0"> video 1</a>
+    </li>
+    <li><a class="video" href="https://player.vimeo.com/video/236669087"> video 2</a></li>
+  </ul>
+  <h1 class="play">play</h1>
+  <h1 class="stop">stop</h1>
+  <h1 class="next">NEXT</h1>
+  <h1 class="next">PREVIOUS</h1>
+</div>
+
+______
+INDEX
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdn.rawgit.com/jrue/Vimeo-jQuery-API/master/dist/jquery.vimeo.api.min.js"></script>
+<script>
+  $(document).ready(function () {
+    const $video = $('<iframe/>')
+      .attr('id', 'myvideo')
+      .attr('src', 'https://player.vimeo.com/video/128947850')
+      .appendTo('.wrapper')
+      .vimeoLoad() //call this function after appending your iframe
+      .vimeo('play')
+
+    $('body').on('click', '.video', function (e) {
+      e.preventDefault()
+      const link = $(this).attr('href')
+      $video.attr('src', link)
+    })
+
+    $('.stop').click(function (e) {
+      $video.vimeo('pause')
+    })
+
+    $('.play').click(function (e) {
+      $video.vimeo('play')
+    })
+  })
+</script>
+
+<div class="wrapper">
+  <ul>
+    <li><a class="video"
+           href="https://player.vimeo.com/video/246308092?color=000&title=0&byline=0&portrait=0&badge=0"> video 1</a>
+    </li>
+    <li><a class="video" href="https://player.vimeo.com/video/236669087"> video 2</a></li>
+  </ul>
+  
+</div>
+
+<h1 class="play">play</h1>
+  <h1 class="stop">stop</h1>

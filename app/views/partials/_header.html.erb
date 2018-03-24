@@ -2,14 +2,58 @@
   <li style="display: inline-block;"><a href="/" style="font-family:Canela-Light;font-weight:100;text-decoration:none;"  data-remote="true">DEAD BUT COOL</a></li>
 
   <div id="deskmenu" >
+    
     <li><%= link_to "WORKS", works_path,   remote: true %></li>
     <li><%= link_to "INFO", info_path,  remote: true, id: "info" %></li>
     <li><%= link_to "CONTACT", contact_path,  remote: true, id: "contact" %></li>
-    
+    <li><%= link_to "CLOSE", '#',  style: 'text-decoration:none;display:none;', remote: true, id: "closebtn" %></li>
+  
   </div>
  <li>
    <li id="menu" class="openbtn">MENU</li>
    
-   
+
    
 </ul>
+   <div id="myNav" class="overlay">
+  
+  
+  <div class="overlay-content">
+     <%= link_to "WORKS", works_path,  remote: true %>
+     <%= link_to "INFO", info_path,  remote: true, id: "info" %>
+     <%= link_to "CONTACT", contact_path,  remote: true, id: "contact" %>
+    
+  </div>
+
+  <div class="social" style="white-space: nowrap;display: inline-block;">
+   <p> <span class="youtube">YOUTUBE</span>&nbsp;<span class="facebook">FACEBOOK</span>&nbsp;<span class="soundcloud">SOUNDCLOUD</span></p>
+
+  </div>
+</div>
+
+
+<script>
+//DISABLE SCROLL WHEN MENU OPENED
+$(document).on('click', '.overlay-content a', function() {
+    $("html").removeClass("modal-open");
+    $('#myNav').toggle();
+    $("#menu").text("MENU");
+ });  
+
+$("#menu").click(function() { 
+$('#myNav').toggle('fast', function() {
+    if($(this).is(':visible')) { 
+        $("html").addClass("modal-open");
+        $("#menu").text("CLOSE");
+        
+    }
+    else {
+        
+        $("#menu").text("MENU");
+        $("html").removeClass("modal-open");
+    }
+}); 
+});
+</script>
+
+

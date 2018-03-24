@@ -7,6 +7,7 @@ height: 60px;
 width: 100%;
 margin-top:0;
 margin: 0px auto;
+
 }
 
 /* NAVIGATION LINKS RIGHT */
@@ -30,9 +31,10 @@ li a {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 20px 20px;
+    padding: 20px;
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
+    line-height: 0.8518518518518519;
 }  
 
 
@@ -90,7 +92,7 @@ li a {
 .overlay {
     height: 100%;
     width: 100%;
-    /*display: none;*/
+    display: none;
     background-color: #000000;
     z-index: 3;
     top: 0;
@@ -177,3 +179,11 @@ position: fixed;
     padding: 20px;
     -webkit-font-smoothing: antialiased;
 }
+
+.social p span:hover {
+  text-decoration:underline;
+}
+.info p span:hover {
+  text-decoration:underline;
+}
+

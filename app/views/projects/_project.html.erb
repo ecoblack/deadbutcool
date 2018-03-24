@@ -1,39 +1,12 @@
-<!--<div class="img_wrap" style=" display:flex;
-  flex-wrap:wrap;margin-top:50px;" >
-     <%= image_tag project.image, class: 'home_img', style: ''  %>
-      <%= project.title  %>
-		<%= project.next.title  %>
-</div>-->
+<div class="top">
+<div class="wrapper">
+  <ul>
+    <li><a class="video"
+           href="https://player.vimeo.com/video/246308092?color=fdfdfd&title=0&byline=0&portrait=0&badge=0"> video 1</a>
+    </li>
+    <li><a class="video" href="https://player.vimeo.com/video/236669087"> video 2</a></li>
+  </ul>
 
-
-      <div class="imgcontent" id="grid">
-        
-      
-      
-            <% @projects.each do |project| %>
-
-        <p class="marquee"><span><%= project.previous.title  %> [ENTER FULLSCREEN] <%= project.title  %>  [ENTER FULLSCREEN] <%= project.next.title  %> [ENTER FULLSCREEN]</span></p>
-
-         
-    
-             
-              <!--     <%= image_tag project.image, class: 'img-responsive', style: "width: 100%;min-width: 280px;" %> -->
-         <div id="page_links">
-    <%= paginate @projects, :page_links => false, :previous_label => image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;"), :next_label => image_tag("icon-next-mobile.png", id: 'control-img', class: 'control',:style => "float:right;" ), remote: true %>
+  
 </div>
-<br><br><br>
-       <%= image_tag project.image, class: 'home_img', style: ''  %>
-      
-          
-          
-          <div class="top">
-  <div class="wrapper">
-    <iframe src="https://player.vimeo.com/video/<%= project.link %>?title=0&byline=0&portrait=0&transparent=0&autoplay=1" width="640" height="480" frameborder="0" title="Funny Cat Videos For Kids" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe>
-  </div>
 </div>
-<li><%= link_to "VIEW PROJECT CASE", project,  remote: true, class: "modal" %></li>
-            <% end %> 
-             
-      </div>
-
-     

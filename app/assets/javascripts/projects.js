@@ -1,9 +1,9 @@
 //
 
 
-$('.home_img').click(function()
+$('.img-responsive').click(function()
 {
-     $('.home_img').not(this, "#header").each(function()
+     $('.img-responsive').not(this, "#header").each(function()
      {
          $(this).animate({opacity: 0}, 1500);
      });

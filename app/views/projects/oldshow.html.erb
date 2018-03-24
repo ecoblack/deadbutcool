@@ -648,19 +648,109 @@ $(function() {
       // an error occurred
   });
 </script> -->
-<div id="myNav" class="overlay">
-  
-  
-  <div class="overlay-content">
-     <%= link_to "WORKS", works_path,  remote: true %>
-     <%= link_to "INFO", info_path,  remote: true, id: "info" %>
-     <%= link_to "CONTACT", contact_path,  remote: true, id: "contact" %>
+
+
+
+
+<!--<div class="img_wrap" style=" display:flex;
+  flex-wrap:wrap;margin-top:50px;" >
+     <%= image_tag project.image, class: 'home_img', style: ''  %>
+      <%= project.title  %>
+    <%= project.next.title  %>
+</div>-->
+
+
+      <div class="imgcontent" id="grid">
+        
+      
+      
+            <% @projects.each do |project| %>
+
+        <p class="marquee"><span><%= project.previous.title  %> [ENTER FULLSCREEN] <%= project.title  %>  [ENTER FULLSCREEN] <%= project.next.title  %> [ENTER FULLSCREEN]</span></p>
+
+         
     
-  </div>
+             
+              <!--     <%= image_tag project.image, class: 'img-responsive', style: "width: 100%;min-width: 280px;" %> -->
+         
+<br><br><br>
+       <%= image_tag project.image, class: 'home_img', style: ''  %>
+      
 
-  <div class="social" style="white-space: nowrap;display: inline-block;">
-   <p> <span class="youtube"> YOUTUBE</span><span class="facebook"> FACEBOOK </span><span class="soundcloud">SOUNDCLOUD</span></p>
+<div id="vimeo-wrap" style="padding-top:250px;">
 
-  </div>
+
+
+
+
+
+
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<div >
+
+<div>
+
+    <iframe id="fuckvimeo" src="https://player.vimeo.com/video/<%= project.link %>?title=0&amp;byline=0&amp;portrait=0&amp;color=f2f2ea" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    
+    </div><br>
+<br>
+
+
+    <div >
+<div class="col-lg-12 text-center">
+<button id="start" class="btn btn-danger">Play</button>
+<button class="pause" class="btn btn-danger">Pause</button>
+<button id="set-volume" class="btn btn-danger">Set volume to 0.6</button>
+
+
+<li><%= link_to "VIEW PROJECT CASE", project,  remote: true, class: "modal", style: "color:red;" %></li>
+
+
+    <%= paginate @projects, :page_links => false, :previous_label => image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;border-style: solid;
+    border-color: red;"), :next_label => image_tag("icon-next-mobile.png", id: 'control-img', class: 'control',:style => "float:right;border-style: solid;
+    border-color: red;" ), remote: true %>
+</div>
+</div>
+</div>
+</div>
+    
+
+
+</div>
+</div>
+          
+          
 </div>
 
+
+
+            <% end %> 
+             
+      </div>
+
+     <section id="welcome">
+      <h1>Independent studio crafting sound-design for Fendi, Chanel, Saint-Lauren  and <a href="/works" data-remote="true" style="word-wrap: break-word;color:white; font-family: Favorit_Regular;font-style: normal;font-stretch: normal;font-weight:100;line-height: normal;letter-spacing: normal;font-size: inherit;text-decoration:underline;">more</a>
+      </h1>
+    </section>
+
+
+
+    <div style="position: fixed;
+top:80%;
+         
+  padding-left:20%;
+  padding-right:auto;
+    width: 100%;
+    height: 100%;
+    z-index:99;"><p><span style="opacity:0.5;"><%= project.previous.title  %></span> <span> <%= project.title  %> </span>  <span style="opacity:0.5;"> <%= project.next.title  %> </span></p>
+</div>
+         
+<br>
+    <div style="position: absolute;z-index:99;">
+     <%= paginate @projects, :page_links => false, :previous_label => image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;border-style: solid;
+    border-color: red;"), :next_label => image_tag("icon-next-mobile.png", id: 'control-img', class: 'control',:style => "float:right;border-style: solid;
+    border-color: red;" ), remote: true %>
+
+</div>
