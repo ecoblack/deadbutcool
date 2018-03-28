@@ -1,0 +1,97 @@
+<div class="slide" style="border-style: solid;
+    border-color: red;">
+  
+<% @projects.each do |project| %>
+
+   <div class="top" style="position: relative;">
+  <div class="wrapper">
+        
+
+        <!-- Vimeo iframe -->
+        <iframe src='https://player.vimeo.com/video/<%= project.link %>?title=0&byline=0&portrait=0&transparent=0&color=ffffff&autoplay=1' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+      </div>
+  <div class="bottom-left"><%= image_tag("icon-previous-mobile.png")%></div>
+  <div class="bottom-center"><%= image_tag("icon-play-desktop.png")%></div>
+  <div class="bottom-right"><%= image_tag("icon-next-mobile.png")%></div>
+  <div class="centered"><p><span style="opacity:0.5;"><%= project.previous.title.upcase  %></span> <span> <%= image_tag("icon-nosound.svg", style: "line-height:1em;")%>&nbsp;<%= project.title.upcase  %> </span>  <span style="opacity:0.5;"> <%= project.next.title.upcase %> </span></p></div>
+</div>
+
+
+<% end %> 
+
+</div>
+<div><h1 class="play">Play</h1></div>
+    <div style="position: absolute;display:none;">
+     <%= paginate @projects, :page_links => false, :previous_label => image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;border-style: solid;
+    border-color: red;"), :next_label => image_tag("icon-next-mobile.png", id: 'control-img', class: 'control',:style => "float:right;border-style: solid;
+    border-color: red;" ), remote: true %>
+
+</div>
+
+___________
+
+  <script src="https://cdn.rawgit.com/jrue/Vimeo-jQuery-API/master/dist/jquery.vimeo.api.min.js"></script>
+
+<div class="wrapper">
+  <ul>
+    <li><a class="video"
+           href="https://player.vimeo.com/video/<%= project.link %>?&color=fdfdfd&title=0&byline=0&portrait=0&badge=0&background=1&"> video 1</a>
+    </li>
+    <li><a class="video" href="https://player.vimeo.com/video/236669087"> video 2</a></li>
+  </ul>
+  <button class="play" style="position:absolute;">play</button>
+  <button class="stop">stop</button>
+</div>
+
+<script>
+
+$(document).ready(function($) {
+$( ".play" ).click(function() {
+  $("iframe").vimeo("play");
+});
+
+$( ".pause" ).click(function() {
+  $("iframe").vimeo("pause");
+});
+
+$( ".set-volume" ).click(function() {
+  $("iframe").vimeo("setVolume", 0);
+});
+});
+
+</script>
+
+<div class="slide" style="border-style: solid;
+    border-color: red;">
+  
+<% @projects.each do |project| %>
+
+   <div class="top" style="position: relative;">
+  <div class="wrapper">
+        
+
+        <!-- Vimeo iframe -->
+        <iframe src='https://player.vimeo.com/video/<%= project.link %>?title=0&byline=0&portrait=0&transparent=0&color=ffffff&autoplay=1' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+      </div>
+  <div class="bottom-left"><%= image_tag("icon-previous-mobile.png")%></div>
+  <div class="bottom-center"><%= image_tag("icon-play-desktop.png")%></div>
+  <div class="bottom-right"><%= image_tag("icon-next-mobile.png")%></div>
+  <div class="centered"><p><span style="opacity:0.5;"><%= project.previous.title.upcase  %></span> <span> <%= image_tag("icon-nosound.svg", style: "line-height:1em;", class: 'set-volume')%>&nbsp;<%= project.title.upcase  %> </span>  <span style="opacity:0.5;"> <%= project.next.title.upcase %> </span></p></div>
+</div>
+
+
+<% end %> 
+
+</div>
+<div><h1 class="play">Play</h1>
+<h1 class="set-volume"> MUTE </h1></div>
+    <div style="position: absolute;display:none;">
+     <%= paginate @projects, :page_links => false, :previous_label => image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;border-style: solid;
+    border-color: red;"), :next_label => image_tag("icon-next-mobile.png", id: 'control-img', class: 'control',:style => "float:right;border-style: solid;
+    border-color: red;" ), remote: true %>
+
+</div>
+
+

@@ -7,11 +7,12 @@ class Project < ApplicationRecord
 
 
 	def next
-	    Project.where("id > ?", id).order("id ASC").first || Project.first
+	    Project.where("id < ?", id).order("id DESC").first || Project.last
 	end
 
 	def previous
-	    Project.where("id < ?", id).order("id DESC").first || Project.last
+	    
+	    Project.where("id > ?", id).order("id ASC").first || Project.first
 	end
 
 

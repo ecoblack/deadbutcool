@@ -16,8 +16,3 @@ $(window).scroll(function(e){
 
 
 //underline active menu
-
-
-//TOGGLE MENU BUTTON
-
-

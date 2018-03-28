@@ -27,6 +27,7 @@ li {
     float: left;
 }
 
+
 li a {
     display: inline-block;
     color: white;
@@ -36,7 +37,9 @@ li a {
     -webkit-font-smoothing: antialiased;
     line-height: 0.8518518518518519;
 }  
-
+#header li.active a {
+    text-decoration:underline;
+}
 
  @media (min-width:475px){
      #deskmenu{

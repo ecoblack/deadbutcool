@@ -33,13 +33,13 @@
      @media (min-width: 2550px) { @content ; }
   }
    @else if $point == laptop {
-     @media (min-width: 1900px) { @content ; }
+     @media (min-width: 1500px) { @content ; }
   }
     @else if $point == tablet {
      @media (min-width: 1200px) { @content ; }
   }
    @else if $point == phablet {
-     @media (min-width: 800px)  { @content ; }
+     @media (min-width: 551px)  { @content ; }
   }
   @else if $point == mobileonly {
      @media (max-width: 550px)  { @content ; }
@@ -70,14 +70,26 @@ body, #header {
   }
   #maincontent {
     padding-top:10%;
-   margin-left: 50px;
-   margin-right: 50px;
+   margin: 0px 50px;
   }
+
+.info {
+  column-width: 900px;
+  
+}
   #footer {
   margin-left: 20px;
   }
 }
+/* L A P T O P */
+@include breakpoint(laptop) {
+ 
 
+.info {
+  column-width: 714px;
+  
+}
+}
 /* T A B L E T */
 @include breakpoint(tablet) {
   li a {
@@ -88,6 +100,13 @@ body, #header {
   }
   #header {
   height: 80px;
+  }
+
+  #deskmenu {
+  margin-right:40px;
+  }
+   .next-project, .prev-project {
+  display: block;
   }
  h1 {
     font-size: 60px;
@@ -110,8 +129,12 @@ body, #header {
  
 }
 .grid {
-  margin-left:-10px;
-  margin-right:-10px;
+        margin-left: 20px;
+    margin-right: 20px;
+}
+.static {
+padding-top:100px;
+  margin: 40px 30px;
 }
 .brandlink {
   display:block;
@@ -126,10 +149,12 @@ body, #header {
   margin-left: -10px;
   margin-right: -10px;
   }
-  .mailandtel {
-   
-  }
+  
  
+.info {
+  column-width: 600px;
+  
+}
   
 
   #footer {
@@ -157,10 +182,13 @@ body, #header {
   .content {
       
   }
+ .static {
+padding-top:100px;
+}
     #maincontent {
    min-height: calc(100vh - 50px);
-   padding-top: 150px;
-   margin: 0 50px;
+   padding-top: 50px;
+   margin: 0px 20px;
  
 }
   #footer {
@@ -190,12 +218,10 @@ body, #header {
 #maincontent {
    min-height: calc(100vh - 50px);
    padding-top: 150px;
-   
+   margin: 0px 20px;
  
 }
-.grid .img-item {
-  margin:10px 20px;
-}
+
 #footer {
   margin-left: 20px;
   }
@@ -204,6 +230,7 @@ body, #header {
 html {
   min-height: 1000px;
     background-color: #000000;
+    z-index:1;
 }
 
 body {
@@ -260,11 +287,6 @@ p {
 }
 
 
-.info {
-  column-width: 600px;
-  
-}
-
 
 html.modal-open {
      overflow-y: hidden;
@@ -283,4 +305,13 @@ html.modal-open {
 
 .someClass {
   min-height:800px;
+}
+
+ .next-project, .prev-project {
+  display: none!important;
+  }
+
+
+  .hide {
+    display: none;
 }

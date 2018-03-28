@@ -23,8 +23,9 @@ ActiveAdmin.register Project do
 				f.input :description
 				f.input :link
 				f.input :credits
-				f.input :image, hint: f.project.image? ? image_tag(project.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
 				f.input :brand
+				f.input :image, hint: f.project.image? ? image_tag(project.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
+				
 			end
 			f.actions
 		end
