@@ -1,11 +1,12 @@
-
-<div class="top">
+<div class="top" style='    margin-left: -20px;
+    margin-right: -20px;
+    padding-top: 100px;'>
   <div class="wrapper">
     <iframe src="https://player.vimeo.com/video/<%= @project.link %>?title=0&byline=0&portrait=0&transparent=0&autoplay=1" width="640" height="480" frameborder="0"  webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe>
   </div>
 </div>
 
-  <div class="content"> 
+  <div class="static"> 
 
   <h1 style="width:66%;"><%= @project.title %></h1>
   <div class="info">
@@ -17,7 +18,7 @@
       <%= image_tag @project.image, class: 'project_img', style: 'object-fit:cover;width:63vw;
   height:39vw;width:100%; '  %>
 </div>
-</div>
+
 <div class="credits" style="padding: 10px;">
       <h1>Credits:<br> <%= simple_format(@project.credits, {}, wrapper_tag: "h1") %></h1>
 </div>
@@ -74,4 +75,4 @@
 </div>
 
 
-
+</div>

@@ -1,12 +1,12 @@
 <ul id="header">
   <li style="display: inline-block;"><a href="/" style="font-family:Canela-Light;font-weight:100;text-decoration:none;"  data-remote="true">DEAD BUT COOL</a></li>
 
-  <div id="deskmenu" >
+  <div id="deskmenu">
     
-    <li><%= link_to "WORKS", works_path,   remote: true %></li>
-    <li><%= link_to "INFO", info_path,  remote: true, id: "info" %></li>
-    <li><%= link_to "CONTACT", contact_path,  remote: true, id: "contact" %></li>
-    <li><%= link_to "CLOSE", '#',  style: 'text-decoration:none;display:none;', remote: true, id: "closebtn" %></li>
+    <li><%= link_to "WORKS", works_path,   remote: true, class: 'nav' %></li>
+    <li><%= link_to "INFO", info_path,  remote: true, class: 'nav' %></li>
+    <li><%= link_to "CONTACT", contact_path,  remote: true, class: 'nav' %></li>
+    <li><%= link_to "CLOSE", '#',  style: 'text-decoration:none;display: none;', remote: true, id: "closebtn" %></li>
   
   </div>
  <li>
