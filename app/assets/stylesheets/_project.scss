@@ -1,0 +1,12 @@
+.img_wrap {
+  display:flex;
+  flex-wrap:wrap;
+  margin-top:50px;
+}
+
+.project_img {
+	object-fit:cover;
+	width:63vw;
+	height:39vw;
+	width:100%; 
+}

@@ -18,14 +18,11 @@
 //= require_tree .
 
 
-
-
-
 //BROWSER HISTORY
 $(document).on('click', 'a', function(e) {
-  
-   e.preventDefault();
-
+    e.preventDefault();
+    
+    
   return window.history.pushState(null, "page title", this.href);
 });
 //BROWSER HISTORY BACK
@@ -61,6 +58,7 @@ $(".bottom-left").click(function() {
 
 //VIDEO SLIDE CONTROLS
 $(document).ready(function($) {
+  $("iframe").vimeo("setVolume", 0);
 $( ".play" ).click(function() {
   $("iframe").vimeo("play");
 });
@@ -76,3 +74,9 @@ $( ".set-volume" ).click(function() {
 
 
 
+
+$(document).on('click', '.project-link', function(e){
+  e.preventDefault();
+  $('body').fadeOut();
+  alert('yo');
+});
