@@ -72,11 +72,22 @@ $( ".set-volume" ).click(function() {
 });
 });
 
+//function myfunction(callback) {
+ // something
+
+
+//.trigger( eventType [, extraParameters ] )
+
+//$("#element").on("click", function(e, callback){
+//   callback();
+//}
+//var callback = function(){alert("Hello");}
+//$("#element").trigger("customCall",[callback]);
 
 
 
-$(document).on('click', '.project-link', function(e){
-  e.preventDefault();
-  $('body').fadeOut();
-  alert('yo');
-});
+//$(document).on('click', '.project-link', function(e){
+//  e.preventDefault();
+//  $('body').fadeOut();
+//  alert('yo');
+//});

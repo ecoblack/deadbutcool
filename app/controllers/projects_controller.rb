@@ -15,8 +15,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-  @project = Project.find(params[:id])
-   
+   @project = Project.friendly.find(params[:title])
+
   respond_to do |format|
       format.html { render 'projects/show' }
       format.js
@@ -25,9 +25,6 @@ class ProjectsController < ApplicationController
 
 
   # GET /projects/new
-  def new
-    @project = Project.new
-  end
 
 
   # POST /projects
@@ -44,7 +41,8 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-     @project = Project.find(params[:id])
+     
+     @project = Project.friendly.find(params[:title])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

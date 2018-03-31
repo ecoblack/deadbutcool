@@ -229,27 +229,16 @@ ActiveAdmin.setup do |config|
   #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
   #     end
   #   end
+ActiveAdmin.setup do |config|
+  # == Friendly Id addon
+  ActiveAdmin::ResourceController.class_eval do
+    def find_resource
+      resource_class.is_a?(FriendlyId) ? scoped_collection.friendly.find(params[:id]) : scoped_collection.find(params[:id])
+    end
+  end
 
-  # == Download Links
-  #
-  # You can disable download links on resource listing pages,
-  # or customize the formats shown per namespace/globally
-  #
-  # To disable/customize for the :admin namespace:
-  #
-  #   config.namespace :admin do |admin|
-  #
-  #     # Disable the links entirely
-  #     admin.download_links = false
-  #
-  #     # Only show XML & PDF options
-  #     admin.download_links = [:xml, :pdf]
-  #
-  #     # Enable/disable the links based on block
-  #     #   (for example, with cancan)
-  #     admin.download_links = proc { can?(:view_download_links) }
-  #
-  #   end
+  # initial config
+end
 
   # == Pagination
   #
