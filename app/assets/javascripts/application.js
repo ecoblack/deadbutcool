@@ -86,8 +86,8 @@ $( ".set-volume" ).click(function() {
 
 
 
-//$(document).on('click', '.project-link', function(e){
-//  e.preventDefault();
-//  $('body').fadeOut();
-//  alert('yo');
-//});
+$(document).on('click', '.project-link', function(e){
+  e.preventDefault();
+  $('body').fadeOut();
+  alert('yo');
+});
