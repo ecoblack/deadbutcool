@@ -3,7 +3,7 @@ respond_to :html, :js
 
 
 	  def index
-	  	@projects = Project.all.paginate(page: params[:page], per_page: 1)
+	  	@projects = Project.all.order(created_at: :desc)
 		@project = Project.first
 			 respond_to do |format|
 		      format.html

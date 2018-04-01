@@ -100,3 +100,59 @@ $( ".set-volume" ).click(function() {
       <h1>Independent studio crafting sound-design for Fendi, Chanel, Saint-Lauren  and <a href="/works" data-remote="true" style="word-wrap: break-word;color:white; font-family: Favorit_Regular;font-style: normal;font-stretch: normal;font-weight:100;line-height: normal;letter-spacing: normal;font-size: inherit;text-decoration:underline;">more</a>
       </h1>
     </section>
+    ________________
+     <script src="https://cdn.rawgit.com/jrue/Vimeo-jQuery-API/master/dist/jquery.vimeo.api.min.js"></script>
+
+
+<script>
+
+$(document).ready(function($) {
+$( ".play" ).click(function() {
+  $("iframe").vimeo("play");
+});
+
+$( ".pause" ).click(function() {
+  $("iframe").vimeo("pause");
+});
+
+$( ".set-volume" ).click(function() {
+  $("iframe").vimeo("setVolume", 0);
+});
+$("iframe").on("pause", function(){
+  console.log( "Video is paused" );
+});
+});
+
+</script>
+
+<div class="slide">
+  
+<% @projects.each do |project| %>
+
+   <div class="top" style="position: relative;">
+  <div class="wrapper">
+        
+
+        <!-- Vimeo iframe -->
+        <iframe src='https://player.vimeo.com/video/<%= project.link %>?title=0&byline=0&portrait=0&transparent=0&color=ffffff&autoplay=1' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+      </div>
+  <div class="bottom-left"><%= image_tag("icon-previous-mobile.png", size: "100x50")%></div>
+  <div class="bottom-center"><%= image_tag("icon-play-desktop.png", size: "60x60", class: 'play')%></div>
+  <div class="bottom-right"><%= image_tag("icon-next-mobile.png", size: "100x50")%></div>
+  <div class="centered"><p><span style="opacity:0.5;left: 50px;"><%= project.previous.title.upcase  %></span> <span> <%= image_tag("icon-nosound.svg", style: "line-height:1em;", class: 'set-volume')%>&nbsp;<%= project.title.upcase  %> </span>  <span style="opacity:0.5;"> <%= project.next.title.upcase %> </span></p></div>
+</div>
+
+<span class="projectcase"><%= link_to 'VIEW PROJECT CASE', project, remote: true %></span>
+<% end %> 
+
+</div>
+
+    <div style="position: absolute;display:none;">
+     <%= paginate @projects, :page_links => false, :previous_label => image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;border-style: solid;
+    border-color: red;"), :next_label => image_tag("icon-next-mobile.png", id: 'control-img', class: 'control',:style => "float:right;border-style: solid;
+    border-color: red;", size: "100x50" ), remote: true %>
+
+</div>
+
+

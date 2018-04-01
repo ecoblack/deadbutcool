@@ -22,3 +22,6 @@ Database:
 
 	POSTGRESQL 0.18
 
+Slider: 
+	
+	bxslider

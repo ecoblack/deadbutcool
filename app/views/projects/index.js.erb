@@ -1,19 +1,6 @@
-$("#footer").hide();
 $("#maincontent").hide();
 $(window).scrollTop(0);
 $("#maincontent").fadeIn(1000);
 $("#maincontent").html( "<%= escape_javascript( render( :partial => "projects/index" ) ) %>" );
-$("#footer").fadeIn(2000);
 
 
-$( "#play" ).click(function() {
-  $("iframe").vimeo("play");
-});
-
-$( "#pause" ).click(function() {
-  $("iframe").vimeo("pause");
-});
-
-$( "#set-volume" ).click(function() {
-  $("iframe").vimeo("setVolume", 0);
-});

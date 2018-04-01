@@ -1,17 +1,13 @@
-  <script src="https://cdn.rawgit.com/jrue/Vimeo-jQuery-API/master/dist/jquery.vimeo.api.min.js"></script>
 
-
-<script>
+  <script >
 
 $(document).ready(function($) {
 $( ".play" ).click(function() {
   $("iframe").vimeo("play");
 });
-
 $( ".pause" ).click(function() {
   $("iframe").vimeo("pause");
 });
-
 $( ".set-volume" ).click(function() {
   $("iframe").vimeo("setVolume", 0);
 });
@@ -20,18 +16,24 @@ $("iframe").on("pause", function(){
 });
 });
 
+
+
+
+
 </script>
 
-<div class="slide">
-  
-<% @projects.each do |project| %>
 
-   <div class="top" style="position: relative;">
+  <div class="slider">
+
+  	<!-- RUBY LOOP TO PLACE PROJECT VIDEOS INTO SLIDER-->
+    <% @projects.each do |project| %>
+      <li> 
+       <div class="top" style="position: relative;">
   <div class="wrapper">
         
 
         <!-- Vimeo iframe -->
-        <iframe src='https://player.vimeo.com/video/<%= project.link %>?title=0&byline=0&portrait=0&transparent=0&color=ffffff&autoplay=1' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        <iframe src='https://player.vimeo.com/video/<%= project.link %>?title=0&byline=0&portrait=0&transparent=0&color=ffffff&autoplay=0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
       </div>
   <div class="bottom-left"><%= image_tag("icon-previous-mobile.png", size: "100x50")%></div>
@@ -39,17 +41,8 @@ $("iframe").on("pause", function(){
   <div class="bottom-right"><%= image_tag("icon-next-mobile.png", size: "100x50")%></div>
   <div class="centered"><p><span style="opacity:0.5;left: 50px;"><%= project.previous.title.upcase  %></span> <span> <%= image_tag("icon-nosound.svg", style: "line-height:1em;", class: 'set-volume')%>&nbsp;<%= project.title.upcase  %> </span>  <span style="opacity:0.5;"> <%= project.next.title.upcase %> </span></p></div>
 </div>
+  </li>
 
-<span class="projectcase"><%= link_to 'VIEW PROJECT CASE', project, remote: true %></span>
-<% end %> 
-
-</div>
-
-    <div style="position: absolute;display:none;">
-     <%= paginate @projects, :page_links => false, :previous_label => image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;border-style: solid;
-    border-color: red;"), :next_label => image_tag("icon-next-mobile.png", id: 'control-img', class: 'control',:style => "float:right;border-style: solid;
-    border-color: red;", size: "100x50" ), remote: true %>
-
-</div>
-
-
+    <% end %>
+    <!-- LOOP END -->
+    </div>

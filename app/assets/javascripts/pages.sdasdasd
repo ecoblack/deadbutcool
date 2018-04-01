@@ -44,3 +44,29 @@ function AlertSave() {
    $(".modal").delay(1000).fadeIn('slow');
 
 }
+
+
+/*! Fades out the whole page when clicking links */
+//$('a').click(function(e) {
+//e.preventDefault();
+//newLocation = this.href;
+//$('body').fadeOut('slow', newpage);
+//});
+//function newpage() {
+//return window.history.pushState(null, "page title", newLocation);
+//}
+
+
+//function myfunction(callback) {
+ // something
+
+
+//.trigger( eventType [, extraParameters ] )
+
+//$("#element").on("click", function(e, callback){
+//   callback();
+//}
+//var callback = function(){alert("Hello");}
+//$("#element").trigger("customCall",[callback]);
+
+

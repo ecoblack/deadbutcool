@@ -10,12 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
+//= require jquery.vimeo.api.min.js
+//= require jquery.bxslider.min.js
 //= require header
 //= require home
 //= require overlay
 //= require_tree .
+
 
 
 //BROWSER HISTORY
@@ -25,6 +28,7 @@ $(document).on('click', 'a', function(e) {
     
   return window.history.pushState(null, "page title", this.href);
 });
+
 //BROWSER HISTORY BACK
 $(window).on('popstate', function(e) {
 
@@ -34,60 +38,5 @@ $(window).on('popstate', function(e) {
 });
 
 
+// P L A Y E R  O N   H O M E   P A G E
 
-
-//Replace next/prev with images of next/prev
-
-  $(document).on('click', '.bottom-left', function(event) { 
-    event.preventDefault(); 
-    $(".previous_page").click(); 
-});
-
-  $(document).on('click', '.bottom-right', function(event) { 
-    event.preventDefault(); 
-    $(".next_page").click(); 
-});
-
-
-$(".bottom-left").click(function() {
-    $('html, body').animate({
-        scrollTop: $("iframe").offset().top
-    }, 1000);
-});
-
-
-//VIDEO SLIDE CONTROLS
-$(document).ready(function($) {
-  $("iframe").vimeo("setVolume", 0);
-$( ".play" ).click(function() {
-  $("iframe").vimeo("play");
-});
-
-$( "#pause" ).click(function() {
-  $("iframe").vimeo("pause");
-});
-
-$( ".set-volume" ).click(function() {
-  $("iframe").vimeo("setVolume", 0);
-});
-});
-
-//function myfunction(callback) {
- // something
-
-
-//.trigger( eventType [, extraParameters ] )
-
-//$("#element").on("click", function(e, callback){
-//   callback();
-//}
-//var callback = function(){alert("Hello");}
-//$("#element").trigger("customCall",[callback]);
-
-
-
-$(document).on('click', '.project-link', function(e){
-  e.preventDefault();
-  $('body').fadeOut();
-  alert('yo');
-});

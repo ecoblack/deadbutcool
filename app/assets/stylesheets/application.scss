@@ -5,6 +5,7 @@
 @import 'player';
 @import 'marquee';
 @import 'project';
+
 /* Fonts */
 
 
@@ -78,8 +79,8 @@ body, #header {
   column-width: 900px;
   
 }
-  #footer {
-  /*margin-left: 20px;*/
+ #footer {
+  margin-left: 50px;
   }
 }
 /* L A P T O P */
@@ -90,6 +91,9 @@ body, #header {
   column-width: 714px;
   
 }
+#footer {
+  margin-left: 50px;
+  }
 }
 /* T A B L E T */
 @include breakpoint(tablet) {
@@ -127,8 +131,8 @@ body, #header {
    min-height: calc(100vh - 50px);
    padding-top: 200px;
    margin: 0 50px;
- 
-}
+   }
+
 .grid {
         margin-left: 20px;
     margin-right: 20px;
@@ -157,17 +161,15 @@ padding-top:100px;
   
 }
   
-
-  #footer {
-  /*margin-left: 20px;*/
+#footer {
+  margin-left: 50px;
   }
+ 
   
 }
 /* M O B I L E P L U S*/
 @include breakpoint(phablet) {
-  #footer {
-  /*margin-left: 20px;*/
-  }
+
   .mailandtel {
     
   }
@@ -188,15 +190,16 @@ padding-top:100px;
 }
     #maincontent {
    min-height: calc(100vh - 50px);
-   padding-top: 100px;
+   padding-top: 75px;
    margin: 0px 20px;
+ }
+#footer {
+  
+  }
  
 }
-  #footer {
-  /*margin-left: 20px;*/
-  }
-}
 /* M O B I L E */
+
 @include breakpoint(mobileonly) {
  h1 {
     font-size: 34px;
@@ -224,7 +227,7 @@ padding-top:100px;
 }
 
 #footer {
-  /*margin-left: 20px;*/
+  margin-left: 20px;
   }
 }
 
@@ -308,10 +311,10 @@ html.modal-open {
   min-height:800px;
 }
 
- .next-project, .prev-project {
+ /*.bx-controls {
   display: none!important;
   }
-
+*/
 
   .hide {
     display: none;
