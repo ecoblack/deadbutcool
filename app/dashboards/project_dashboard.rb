@@ -72,10 +72,6 @@ class ProjectDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :image_file_name,
-    :image_content_type,
-    :image_file_size,
-    :image_updated_at,
     :image,
     :title,
     :description,
