@@ -2,7 +2,7 @@
     margin-right: -20px;
     padding-top: 100px;'>
   <div class="wrapper">
-    <iframe src="https://player.vimeo.com/video/<%= @project.link %>?title=0&color=ffffff&byline=0&portrait=0&transparent=0&autoplay=1" width="640" height="480" frameborder="0"  webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe>
+    <iframe src="https://player.vimeo.com/video/<%= @project.link %>?title=0&byline=0&portrait=0&transparent=0&autoplay=1&color=ffffff" width="640" height="480" frameborder="0"  webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe>
   </div>
 </div>
 
@@ -10,17 +10,17 @@
 
   <h1 style="width:66%;"><%= @project.title %></h1>
   <div class="info">
-   <p>I was always somebody who felt quite sorry for myself, what I had not got compared to my friends, how much of a struggle my life seemed to be compared to others. I was caught up in a web of negativity and needed someone or something to help me to escape.<br>
-     <p>I was always somebody who felt quite sorry for myself, what I had not got compared to my friends, how much of a struggle my life seemed to be compared to others. I was caught up in a web of negativity and needed someone or something to help me to escape.
+   <%= simple_format(@project.description, {}, wrapper_tag: "p") %>
      </div><br>
-<div class="img_wrap" style=" display:flex;
-  flex-wrap:wrap;margin-top:50px;" >
-      <%= image_tag @project.image, class: 'project_img', style: 'object-fit:cover;width:63vw;
-  height:39vw;width:100%; '  %>
+<div class="img_wrap">
+      <%= image_tag @project.image, class: 'project_img' %>
 </div>
 
+
 <div class="credits">
-      <h1>Credits:<br> <%= simple_format(@project.credits, {}, wrapper_tag: "h1") %></h1>
+  <h1>Credits:<br> 
+  <%= @project.credits %>
+    </h1>
 </div>
 
 
@@ -30,36 +30,45 @@
 
 
 </div>
-<br>
-
-
-
-<div style="display: block;padding:10px;margin-bottom:100px;">
-<div class="prev-project"style="display: block;    width: 100%;">
-<p style="font-size: 24px;float:left;">PREVIOUS PROJECT</p>
-       
-</div>
-<!-- <p style="float:right;"><%= @project.previous.title.upcase %></p>
-
-
-  <div class="centercontrol" style=" display: flex;
-    flex-wrap: wrap;align-content:center;">
-      <%= image_tag("icon-pause-mobile.png", :style => 'width:150px;height:auto;') %>
-    
-  </div>
-
-  
--->
-      <div class="next-project"> 
-      <p style="font-size:24px;float:right;">NEXT PROJECT</p>
-      </p>
-    <!--     <p style="float:left!important;padding-right:30px;"><%= @project.next.title.upcase %></p>-->
-  </div>
+<!-- Brandlink on mobile view -->
+<div style="display:block;">
+    <div class="brandlink-mobile" style="float:left;">
+      <p><%= @project.previous.brand.upcase %></p>
+    </div>
 </div>
 
 
 
 <div style="display:block;">
+    <div class="brandlink-mobile" style="float:right;">
+      <p> <%= @project.next.brand.upcase %></div>
+    </div>
+</div>
+<!-- Brandlink on mobile view end-->
+<br>
+
+<div style="display:block;">
+<div style="display:block;">
+
+
+<div class="brandlink-tablet" style="float:left;"><p style="font-size:24px;">PREVIOUS PROJECT</p></div>
+</div>
+
+
+<div style="display:block;">
+<div style="display:block;">
+
+
+<div class="brandlink-tablet" style="float:right;"><p style="font-size:24px;">NEXT PROJECT</div>
+</div>
+
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
 <div style="display:block;">
 
 <div class="left" style="float:left;color:purple;"><%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;padding-right:30px;line-height:1em;", size: "100x50")), project_url(@project.previous), remote: true  %></div>

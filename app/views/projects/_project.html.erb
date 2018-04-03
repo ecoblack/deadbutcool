@@ -1,24 +1,6 @@
 
   <script >
 
-$(document).ready(function($) {
-$( ".play" ).click(function() {
-  $("iframe").vimeo("play");
-});
-$( ".pause" ).click(function() {
-  $("iframe").vimeo("pause");
-});
-$( ".set-volume" ).click(function() {
-  $("iframe").vimeo("setVolume", 0);
-});
-$("iframe").on("pause", function(){
-  console.log( "Video is paused" );
-});
-});
-
-
-
-
 
 </script>
 
@@ -33,16 +15,19 @@ $("iframe").on("pause", function(){
         
 
         <!-- Vimeo iframe -->
-        <iframe src='https://player.vimeo.com/video/<%= project.link %>?title=0&byline=0&portrait=0&transparent=0&color=ffffff&autoplay=0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        <iframe id='thevideo' src='https://player.vimeo.com/video/<%= project.link %>?api=1&title=0&byline=0&portrait=0&transparent=0&color=ffffff&autoplay=0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
       </div>
-  <div class="bottom-left"><%= image_tag("icon-previous-mobile.png", size: "100x50")%></div>
-  <div class="bottom-center"><%= image_tag("icon-play-desktop.png", size: "60x60", class: 'play')%></div>
-  <div class="bottom-right"><%= image_tag("icon-next-mobile.png", size: "100x50")%></div>
-  <div class="centered"><p><span style="opacity:0.5;left: 50px;"><%= project.previous.title.upcase  %></span> <span> <%= image_tag("icon-nosound.svg", style: "line-height:1em;", class: 'set-volume')%>&nbsp;<%= project.title.upcase  %> </span>  <span style="opacity:0.5;"> <%= project.next.title.upcase %> </span></p></div>
-</div>
+  <div class="bottom-left"><%= image_tag("icon-previous-mobile.png", size: "100x50", class: 'slider-controls' )%></div>
+  <div class="bottom-center"><%= image_tag("icon-play-desktop.png", size: "60x60", id: 'playpause')%></div>
+  <div class="bottom-right"><%= image_tag("icon-next-mobile.png", size: "100x50", class: 'slider-controls') %></div>
+
+  
+   <p> <span style="opacity:0.5;left: 50px;"><%= project.previous.title.upcase  %></span></p><div class="centered"><p> <span> <%= image_tag("icon-nosound.svg", style: "line-height:1em;", id: 'set-volume')%>&nbsp;<%= project.title.upcase  %> </span></p> </div> <span style="opacity:0.5;"> <%= project.next.title.upcase %> </span></div>
+
   </li>
 
     <% end %>
     <!-- LOOP END -->
+  
     </div>

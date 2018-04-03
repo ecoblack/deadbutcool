@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.vimeo.api.min.js
 //= require jquery.bxslider.min.js
+//= require active_admin/base
 //= require header
 //= require home
 //= require overlay

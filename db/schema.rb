@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331210847) do
+ActiveRecord::Schema.define(version: 20180402155640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,15 @@ ActiveRecord::Schema.define(version: 20180331210847) do
     t.text     "credits"
     t.string   "brand"
     t.string   "slug"
+    t.string   "link0"
+    t.string   "credit1"
+    t.string   "link1"
+    t.string   "credit2"
+    t.string   "link2"
+    t.string   "credit3"
+    t.string   "link3"
+    t.string   "credit4"
+    t.string   "link4"
     t.index ["slug"], name: "index_projects_on_slug", unique: true, using: :btree
   end
 

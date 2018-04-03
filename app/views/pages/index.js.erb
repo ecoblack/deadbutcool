@@ -1,7 +1,8 @@
 $("#footer").hide();
 $("#maincontent").hide();
 $(window).scrollTop(0);
-$("#maincontent").fadeIn(2000);
+$("#maincontent").fadeIn(4000);
 $("#maincontent").html( "<%= escape_javascript( render( :partial => "index" ) ) %>" );
-$("#footer").fadeIn(3000);
+$("#footer").fadeIn(4000);
 $('.bxslider').bxSlider();
+

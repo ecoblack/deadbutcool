@@ -82,6 +82,11 @@ color:red;
 }
 
 
-.bx-pager {
+.bx-controls-direction, .bx-pager {
   display:none;
+}
+
+#slider {
+  margin-left: -20px;
+    margin-right: -20px;
 }

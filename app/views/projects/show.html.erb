@@ -15,8 +15,17 @@
 <div class="img_wrap">
       <%= image_tag @project.image, class: 'project_img' %>
 </div>
+
+
 <div class="credits">
-      <h1>Credits:<br> <%= simple_format(@project.credits, {}, wrapper_tag: "h1") %></h1>
+  <h1>Credits:<br> 
+  <%= @project.credits %>: <%= @project.link0 %> <br> 
+  <%= @project.credit1 %>: <%= @project.link1 %>  <br> 
+  <%= @project.credit2 %>: <%= @project.link2 %>  <br> 
+  <%= @project.credit3 %>: <%= @project.link3 %>  <br> 
+  <%= @project.credit4 %>: <%= @project.link4 %>  <br> 
+      
+    </h1>
 </div>
 
 
@@ -26,49 +35,45 @@
 
 
 </div>
+<!-- Brandlink on mobile view -->
+<div style="display:block;">
+    <div class="brandlink-mobile" style="float:left;">
+      <p><%= @project.previous.brand.upcase %></p>
+    </div>
+</div>
+
+
+
+<div style="display:block;">
+    <div class="brandlink-mobile" style="float:right;">
+      <p> <%= @project.next.brand.upcase %></div>
+    </div>
+</div>
+<!-- Brandlink on mobile view end-->
 <br>
+
 <div style="display:block;">
 <div style="display:block;">
 
-<div class="left" style="float:left;color:purple;"></div>
-<div class="brandlink" style="float:left;"><p><%= @project.previous.brand.upcase %></p></div>
+
+<div class="brandlink-tablet" style="float:left;"><p style="font-size:24px;">PREVIOUS PROJECT</p></div>
 </div>
 
 
 <div style="display:block;">
 <div style="display:block;">
 
-<div class="right" style="float:right;color:purple;"> </div>
-<div class="brandlink" style="float:right;"><p> <%= @project.next.brand.upcase %></div>
+
+<div class="brandlink-tablet" style="float:right;"><p style="font-size:24px;">NEXT PROJECT</div>
 </div>
 
 
 </div>
-<br>
-<br>
-<br>
-<br>
-<div style="display:block;">
-<div style="display:block;">
 
-<div class="left" style="float:left;color:purple;"></div>
-<div class="brandlink" style="float:left;"><p style="font-size:24px;">PREVIOUS PROJECT</p></div>
-</div>
-
-
-<div style="display:block;">
-<div style="display:block;">
-
-<div class="right" style="float:right;"> </div>
-<div class="brandlink" style="float:right;"><p style="font-size:24px;">NEXT PROJECT</div>
-</div>
-
-
-</div>
 <br>
 <br>
 <br>
-<div style="display:block;">
+<br>
 <div style="display:block;">
 
 <div class="left" style="float:left;color:purple;"><%=   link_to (image_tag("icon-previous-mobile.png", id: 'control-img', class: 'control', :style => "float:left;padding-right:30px;line-height:1em;", size: "100x50")), project_url(@project.previous), remote: true  %></div>
