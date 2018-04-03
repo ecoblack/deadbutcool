@@ -35,14 +35,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'friendly_id', '~> 5.2.0'
-gem 'activeadmin'
-gem 'devise'
-gem 'active_skin'
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
+gem 'devise'
+
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem "administrate"
 #pagination
 
 gem 'will_paginate', '~> 3.1.0'
+#only for page transitions
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -14,11 +14,11 @@
 //= require jquery_ujs
 //= require jquery.vimeo.api.min.js
 //= require jquery.bxslider.min.js
-//= require active_admin/base
 //= require header
 //= require home
 //= require overlay
 //= require_tree .
+
 
 
 
@@ -38,6 +38,4 @@ $(window).on('popstate', function(e) {
   return $.getScript(document.location);
 });
 
-
-// P L A Y E R  O N   H O M E   P A G E
 

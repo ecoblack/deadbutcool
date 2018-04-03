@@ -1,7 +1,7 @@
 //NAVIGATION MENU
 
 $(document).on('click', '.youtube', function(e) {
-  window.open('http://www.youtube.com/vapormemory', '_blank');
+  window.open('http://www.youtube.com/', '_blank');
 });
 
 $(document).on('click', '.facebook', function(e) {
@@ -9,10 +9,7 @@ $(document).on('click', '.facebook', function(e) {
 });
 
 $(document).on('click', '.soundcloud', function(e) {
-  window.open('http://www.soundcloud.com/fjordwhore', '_blank'); 
+  window.open('http://www.soundcloud.com/', '_blank'); 
 });
 
 
-$(document).on('click', '#myNav a', function(e) {
-	//alert('yo');
-});

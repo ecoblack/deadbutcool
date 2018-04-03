@@ -11,8 +11,5 @@ $(window).scroll(function(e){
               } 
 });     
 
-//toggle overlay menu
+//this makes the current link containing li of class "active"
 
-
-
-//underline active menu

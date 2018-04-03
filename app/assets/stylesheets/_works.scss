@@ -29,10 +29,9 @@
     width: calc(25% - 10px * 2);
     height: calc(25vw - 15px / 3 - 10px * 2);
   }
-  .grid { 
- 
-        
-    }
+  .brandlink {
+  display: block;
+}
  
 }
 @media (max-width: 1000px) {
@@ -40,10 +39,23 @@
     width: calc(33.3% - 10px * 2);
     height: calc(29vw - 15px / 3 - 10px);
   }
+.bottom-right {
+    position: absolute;
+    bottom: 15%;
+    right: 20px;
+}
+.bottom-left {
+    position: absolute;
+    bottom: 15%;
+    left: 20px;
+}
   .grid {
   margin-left: -10px;
     margin-right: -10px;
   }
+  .brandlink  {
+  display: none;
+}
 }
 @media (max-width: 800px) {
   .grid .img-item {
@@ -51,6 +63,12 @@
     height: calc(50vw - 15px - 10px * 2);
 
   }
+
+.brandlink  {
+  display: none;
+}
+
+
   .grid {
    margin-left: -10px;
     margin-right: -10px;

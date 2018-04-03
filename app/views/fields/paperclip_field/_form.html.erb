@@ -1,0 +1,9 @@
+
+<%= f.label field.attribute %>
+<%= f.file_field field.attribute %>
+
+# app/views/fields/paperclip_field/_index.html.erb
+<%= image_tag field.thumbnail %>
+
+# app/views/fields/paperclip_field/_show.html.erb
+<%= image_tag field.url %>

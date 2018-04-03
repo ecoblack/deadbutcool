@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  
+
+ namespace :admin do
+    # Add dashboard for your models here
+    resources :projects
+   
+
+    root to: "projects#index" # <--- Root route
+  end
+
 	root 'pages#index'
 		get  '/works',   to: 'projects#index'
 	  	get  '/info',   to: 'pages#info'
