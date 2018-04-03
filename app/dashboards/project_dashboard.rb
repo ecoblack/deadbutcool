@@ -15,6 +15,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     image_content_type: Field::String,
     image_file_size: Field::Number,
     image_updated_at: Field::DateTime,
+    image: PaperclipField,
     title: Field::String,
     description: Field::Text,
     link: Field::String,
@@ -39,21 +40,17 @@ class ProjectDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
+    :title,
     :created_at,
     :updated_at,
-    :image_file_name,
+    :brand,
+   
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
-    :created_at,
-    :updated_at,
-    :image_file_name,
-    :image_content_type,
-    :image_file_size,
-    :image_updated_at,
     :title,
     :description,
     :link,
@@ -79,6 +76,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     :image_content_type,
     :image_file_size,
     :image_updated_at,
+    :image,
     :title,
     :description,
     :link,

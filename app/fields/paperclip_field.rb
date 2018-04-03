@@ -1,7 +1,7 @@
 require "administrate/field/base"
 
 class PaperclipField < Administrate::Field::Base
-  def url
+  def image
     data.url
   end
 
