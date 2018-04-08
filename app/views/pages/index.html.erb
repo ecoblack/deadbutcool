@@ -3,21 +3,28 @@
   });
         </script>
 
-<div class="static" style="position: absolute;z-index:10;width:65%;">
+<div class="static" style="width:83%;">
       <h1>Independent studio crafting sound-design for Fendi, Chanel, Saint-Lauren  and <a href="/works" data-remote="true" style="word-wrap: break-word;color:white; font-family: Favorit_Regular;font-style: normal;font-stretch: normal;font-weight:100;line-height: normal;letter-spacing: normal;font-size: inherit;text-decoration:underline;">more</a>
       </h1>
   
 </div>
 
-<div id="slider" style="position: relative;z-index:11;opacity:0.2;">
 
-	<h1><%= render partial: 'projects/project', locals: { project: @project } %></h1>
+
+<div id="slider-wrapper" style="position:relative;margin: -20px;">
+  
+<div id="curtain" style="
+    z-index: 7;
+    position: absolute;
+top:0;
+  
+  position:absolute;
+    "></div>
+	<%= render partial: 'projects/project', locals: { project: @project } %>
+
+
+    <div class="bottom-left"><%= image_tag("icon-previous-mobile@3x.png", size: "100x50", class: 'slider-controls' )%></div>
+  <div class="bottom-center"><%= image_tag("icon-play-desktop@3x.png", size: "60x60", id: 'playpause')%></div>
+  <div class="bottom-right"><%= image_tag("icon-next-mobile@3x.png", size: "100x50", class: 'slider-controls') %></div>
 
 </div>
-
-<script>
-$(document).on('click', '#playpause', function(e) {
-   alert('click');
-});
-
-</script>

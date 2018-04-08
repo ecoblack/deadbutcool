@@ -6,7 +6,7 @@
   </div>
 </div>
 
-  <div class="static" style="margin-bottom:50px;"> 
+  <div class="static-info" style="margin-bottom:50px;"> 
 
   <h1 style="width:66%;"><%= @project.title %></h1>
   <div class="info">
@@ -43,11 +43,11 @@
 <br>
 <br>
 
-<div class="left" style="float:left;"><%=   link_to (image_tag("icon-previous-mobile@3x.png", id: 'control-img', class: 'control', :style => "float:left;padding-right:30px;line-height:1em;", size: "100x50")), project_url(@project.previous), :remote => true %>
+<div class="left" style="float:left;"><%=   link_to (image_tag("icon-previous-mobile@3x.png", id: 'control-img', class: 'control', :style => "float:left;line-height:1em;", size: "100x50")), project_url(@project.previous), :remote => true %>
 </div>
  <%= link_to(project_url(@project.previous), :remote => true) do %>
 <div class="brandlink" style="float:left;">
-  <p><%= @project.previous.brand.upcase %></p>
+  <p>&nbsp;<%= @project.previous.brand.upcase %></p>
 </div>
 <% end %>
 

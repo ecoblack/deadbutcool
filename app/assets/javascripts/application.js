@@ -16,7 +16,9 @@
 //= require jquery.bxslider.min.js
 //= require header
 //= require home
+//= require homeslider
 //= require overlay
+//= require projects
 //= require_tree .
 
 
@@ -27,7 +29,7 @@ $(document).on('click', 'a', function(e) {
     e.preventDefault();
     
     
-  return window.history.pushState(null, "page title", this.href);
+ return window.history.pushState(null, "page title", this.href);
 });
 
 //BROWSER HISTORY BACK
@@ -38,4 +40,10 @@ $(window).on('popstate', function(e) {
   return $.getScript(document.location);
 });
 
+/////////
+//$(document).on('click', '.overlay a', function(){
+
+ //       alert('Load was performed.');
+   
+//}); // End onclick
 

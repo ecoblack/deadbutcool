@@ -1,0 +1,70 @@
+/****************************************************/
+
+/****************************************************/
+ *, *:after, *:before {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/********************** Border **********************/
+
+/****************************************************/
+ #curtain {
+    background: #000;
+    opacity: 0.95;
+}
+
+#curtain {
+	border-style:solid;
+	border-color: #ff00ff;
+	width: 100%;
+
+    
+    
+    position:relative;
+}
+
+.slider-controls 
+{	
+}
+
+//NEXT/PREVIOUS BUTTONS 
+@media (max-width: 600px) {
+
+  #curtain {
+  height: 80%;
+  }
+
+  .bottom-left, .bottom-right {
+    bottom: 30%;
+  }
+  .bottom-right {
+    right:20px;
+}
+.bottom-left {
+    left: 20px;
+   
+}
+
+.bottom-center 
+{
+    position: absolute;
+    bottom: 30%;
+    
+    z-index: 4545;
+}
+
+.slider-controls {
+	 width: 62px;
+  height: 28px;
+  object-fit: contain;
+}
+#playpause {
+	 width: 36px;
+  height: 36px;
+}
+.centered {
+	position: absolute;
+	z-index:9999;
+}
+}

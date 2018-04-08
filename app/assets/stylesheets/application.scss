@@ -2,6 +2,7 @@
 @import 'footer';
 @import 'works';
 @import 'home';
+@import 'homeslider';
 @import 'player';
 @import 'marquee';
 @import 'project';
@@ -85,7 +86,9 @@ body, #header {
 }
 /* L A P T O P */
 @include breakpoint(laptop) {
- 
+ .slider-wrap {
+ padding-top:50px;
+ }
 
 .info {
   column-width: 714px;
@@ -138,8 +141,8 @@ body, #header {
         margin-left: 20px;
     margin-right: 20px;
 }
-.static {
-padding-top:100px;
+.static-info {
+padding-top:75px;
   margin: 40px 30px;
 }
 
@@ -180,7 +183,7 @@ padding-top:100px;
       
   }
  .static {
-
+     margin: 25px;
 }
     #maincontent {
    min-height: calc(75vh - 50px);
@@ -200,11 +203,17 @@ padding-top:100px;
     right: 16px;
 }
 
+.centered {
+    z-index:1488;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: none;
+}
+.static {
+  position: absolute;
 
-#footer {
-  
-  }
-
+}
 
 }
 /* M O B I L E */
@@ -231,10 +240,19 @@ padding-top:100px;
 
 #maincontent {
    min-height: calc(75vh - 50px);
-   padding-top: 100px;
+   padding-top: 70px;
    margin: 0px 20px;
  
 }
+.static {
+  position: static;
+
+}
+
+.centered p {
+  font-size: 13px;
+}
+
 #control-img {
    width: 62px;
   height: 29px;
@@ -249,7 +267,7 @@ width: 62px;
   }
   .bottom-left {
     position: absolute;
-   bottom: 15%;
+   
     left: 20px;
 }
 
@@ -268,14 +286,14 @@ width: 62px;
 
 .bottom-center {
     position: absolute;
-    bottom: 15%;
+    
     left:50%;
     float:left;
 }
 .centered {
 
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 20px;
     transform: none;
 }
@@ -317,8 +335,7 @@ h1 {
   font-weight: 100;
   text-align: left;
   font-family: "Favorit_Regular";
-  letter-spacing: -0.2px;
--webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 p {
@@ -361,7 +378,7 @@ html.modal-open {
   }
 
 .someClass {
-  min-height:800px;
+/*  min-height:800px;*/
 }
 
  /*.bx-controls {
@@ -383,4 +400,8 @@ html.modal-open {
 
 .prev-next-container a {
   font-family: Favorit_Regular;
+
+}
+.prev-next-container a:hover {
+text-decoration:none!important;
 }

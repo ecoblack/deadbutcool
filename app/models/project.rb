@@ -19,5 +19,13 @@ class Project < ApplicationRecord
 
 	
 
+	def should_generate_new_friendly_id? #will change the slug if the name changed
+    	title_changed?
+  end
 
+	 def slug=(value)
+    if value.present?
+      write_attribute(:slug, value)
+    end
+  end
 end

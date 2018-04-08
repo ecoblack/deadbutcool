@@ -2,7 +2,7 @@
   <li style="display: inline-block;"><a href="/" style="font-family:Canela-Light;font-weight:100;text-decoration:none;"  data-remote="true">DEAD BUT COOL</a></li>
 
   <div id="deskmenu">
-    
+     
     <li><%= link_to "WORKS", works_path,   remote: true, class: 'nav' %></li>
     <li><%= link_to "INFO", info_path,  remote: true, class: 'nav' %></li>
     <li><%= link_to "CONTACT", contact_path,  remote: true, class: 'nav' %></li>
@@ -34,11 +34,7 @@
 
 <script>
 //DISABLE SCROLL WHEN MENU OPENED
-$(document).on('click', '.overlay-content a', function() {
-    $("html").removeClass("modal-open");
-    $('#myNav').toggle(1);
-    $("#menu").text("MENU");
- });  
+
 
 $("#menu").click(function() { 
 $('#myNav').toggle(1, function() {
@@ -56,6 +52,7 @@ $('#myNav').toggle(1, function() {
 });
 
 $("#header li a").click(function() {
+
   $("#header li").removeClass("active");                                     
   $(this).parent().addClass("active");
 });
