@@ -45,8 +45,6 @@ $(document).ready(function () {
 
 
 
-
-
 // if visible iframe visible
 // 1. change id of iframe
 // 2. unload prev iframe
@@ -59,6 +57,3 @@ $(document).ready(function () {
            // alert("The paragraph is now hidden");
         });
     });
-
-
-

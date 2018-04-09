@@ -1,6 +1,90 @@
-  <script>$(document).ready(function(){
-      $('.slider').bxSlider();
+  <script>
+  $(document).ready(function(){
+  $('.slider').bxSlider({
+
+      onSlideAfter: function (currentSlideNumber, totalSlideQty, currentSlideHtmlObject) {
+       alert('ON SLIDE AFTER');
+      },  
+    onSliderLoad: function () {
+  alert('ok');
+    
+    },
+    
+    
   });
+});
+
+
+
+
+  //
+
+  $(document).ready(function(){
+        /* Vimeo Player */
+        var vid = $('#video'), 
+            video_length = 0, 
+            video_state = 'paused',
+            $pauseplay = $("#playpause");
+            
+        if(vid.length) {
+            video_state = 'playing';
+
+            $('.video-wrapper').append($pauseplay);
+        
+            vid.vimeo("play")
+                .vimeo("setVolume", 1)
+                .vimeo("getDuration", function(data){
+                    video_length = data;
+                    console.log("Length "+ video_length);
+                })
+
+                // Hide Video Overlay 
+                .on("play", function(){
+                    console.log("playing");
+                    $('.video-poster').addClass('playing');
+                    $pauseplay.removeClass('play').addClass('pause').find('span').text('Pause');
+                })
+                // Paused Video
+                .on("pause", function(){
+                    $pauseplay.removeClass('pause').addClass('play').find('span').text('Play');
+                })
+                // Hide Outro
+                .on("playProgress", function(event, data){
+                    if(data.seconds < 1) {
+                        $('.video-poster').addClass('playing');
+                        $pauseplay.removeClass('play').addClass('pause').find('span').text('Pause');
+
+                    }
+                    if (video_length - data.seconds < 1) $('.video-poster').removeClass('playing');
+                    if (video_length - data.seconds < 0.5) { console.log("Rewind video"); vid.vimeo("unload"); video_state = 'paused'; }
+                })
+                // please rewind
+
+                .on("finish", function(){
+                    vid.vimeo("unload");
+                    video_state = 'paused';
+
+                    console.log("Finished "+video_state);
+
+                });
+
+                // Play / Pause
+                $pauseplay.on('click', function(){
+                    console.log(video_state);
+
+                    if(video_state == 'paused') {
+                        vid.vimeo("play");
+                        video_state = 'playing';
+
+                    } else {
+                        vid.vimeo("pause");
+                        video_state = 'paused';
+
+                    }
+                });
+            }
+
+       });
         </script>
 
 <div class="static" style="width:83%;">
@@ -20,7 +104,7 @@ top:0;
   
   position:absolute;
     "></div>
-	<%= render partial: 'projects/project', locals: { project: @project } %>
+  <%= render partial: 'projects/project', locals: { project: @project } %>
 
 
     <div class="bottom-left"><%= image_tag("icon-previous-mobile@3x.png", size: "100x50", class: 'slider-controls' )%></div>

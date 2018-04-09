@@ -27,7 +27,76 @@
 .slider-controls 
 {	
 }
+//NEXT/PREVIOUS BUTTONS 
+@media (min-width: 1201px) {
+  .static {
+  margin: 25px;
+  }
+  #curtain {
+  height: 95%;
+  }
 
+  .bottom-left, .bottom-right {
+    bottom: 20%;
+  }
+  .bottom-right {
+    right:50px;
+}
+.bottom-left {
+    left: 50px;
+   
+}
+.static {
+       position: absolute;
+    z-index: 8;
+}
+}
+//NEXT/PREVIOUS BUTTONS 
+@media (max-width: 1200px) {
+
+  #curtain {
+  height: 95%;
+  }
+  .static {
+  margin: 0px;
+  }
+  .bottom-left, .bottom-right {
+    bottom: 30%;
+  }
+  .bottom-right {
+    right:20px;
+}
+.bottom-left {
+    left: 20px;
+   
+}
+.static {
+       position: absolute;
+    z-index: 8;
+}
+}
+//NEXT/PREVIOUS BUTTONS 
+@media (max-width: 800px) {
+
+  #curtain {
+  height: 95%;
+  }
+
+  .bottom-left, .bottom-right {
+    bottom: 30%;
+  }
+  .bottom-right {
+    right:20px;
+}
+.bottom-left {
+    left: 20px;
+   
+}
+.static {
+       position: absolute;
+    z-index: 8;
+}
+}
 //NEXT/PREVIOUS BUTTONS 
 @media (max-width: 600px) {
 

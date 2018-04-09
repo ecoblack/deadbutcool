@@ -22,35 +22,37 @@ $(document).on('click', '.project-link', function(e){
 });
 */
 
+
 $(document).on('click', '#playpause', function(e) {
-   alert('click');
+   //alert('click');
 });
 
 
 $('.bxslider').bxSlider();
 
 
-$(document).on('click', '#playpause', function(){
+//$(document).on('click', '#playpause', function(){
     
     
-    if(video_state == 'paused') {
-                        vid.vimeo("play");
-                        video_state = 'playing';
+  //  if(video_state == 'paused') {
+    //                    vid.vimeo("play");
+      //                  video_state = 'playing';
 
-                    } else {
-                      alert("video is paused");
-                        vid.vimeo("pause");
-                        video_state = 'paused';
+        //            } else {
+          //            alert("video is paused");
+            //            vid.vimeo("pause");
+              //          video_state = 'paused';
 
-                    }
-});
+                //    }
+//});
 
 
 // When video in slider finishes playing slide 'NEXT'.
 
-$("#myvideo").on("finish", function(){
+$("#video").on("finish", function(){
   $(".bx-next").click(); 
 });
+
 
 //Replace next/prev with images of next/prev
 
@@ -66,67 +68,5 @@ $(document).on('click', '.bottom-right', function(event) {
 
 
 
-
-        /* Vimeo Player */
-        var vid = $('#thevideo'), 
-            video_length = 0, 
-            video_state = 'paused',
-            $pauseplay = $("#playpause");
-            $setvolume = $(".set-volume");
-        
- //           vid.vimeo("setVolume", 1)
- //              .vimeo("getDuration", function(data){
- //                   video_length = data;
- //                   console.log("Length "+ video_length);
- //               })
-                //NEXT SLIDE IF VIDEO FINISHED
-                vid.on("finish", function(event){
- 
-                    $(".bx-next").click();
-                });
-
-                vid.on("play", function(e){
-                    console.log("play event was triggered");
-                })
-                .on("pause", function(e){
-                    console.log("pause event was triggered");
-                })
-                .on("playProgress", function(event, data){
-                    console.log(data);
-                })
-                .on("finish", function(e){
-                    //vid.vimeo("unload");
-                    console.log("Finished event was triggered");
-                });
-
-                // Play / Pause
-                $pauseplay.on('click', function(){
-
-                    if(video_state == 'paused') {
-                        vid.vimeo("play");
-                        video_state = 'playing';
-
-                    } else {
-                        vid.vimeo("pause");
-                        video_state = 'paused';
-
-                    }
-                });
-                //MUTE
-                window.addEventListener('load', function() {
-            //Attach the ready event to the iframe
-            $f(document.getElementById('player')).addEvent('ready', ready);
-        });
-                 // Play / Pause
-                $pauseplay.on('click', function(){
-
-                    if(video_state == 'paused') {
-                        vid.vimeo("setVolume", 0.5);
-
-                    } else {
-                        vid.vimeo("setVolume", 0);
-
-                    }
-                });
 
 
