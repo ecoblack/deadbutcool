@@ -1,22 +1,17 @@
-/****************************************************/
 
-/****************************************************/
  *, *:after, *:before {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-/********************** Border **********************/
 
-/****************************************************/
  #curtain {
     background: #000;
     opacity: 0.95;
 }
 
 #curtain {
-	border-style:solid;
-	border-color: #ff00ff;
+
 	width: 100%;
 
     
@@ -36,8 +31,9 @@
   height: 95%;
   }
 
-  .bottom-left, .bottom-right {
+  .bottom-left, .bottom-right, .bottom-center {
     bottom: 20%;
+    z-index: 4545;
   }
   .bottom-right {
     right:50px;
@@ -59,9 +55,11 @@
   }
   .static {
   margin: 0px;
+  position: static;
   }
-  .bottom-left, .bottom-right {
+  .bottom-left, .bottom-right, .bottom-center {
     bottom: 30%;
+    z-index: 4545;
   }
   .bottom-right {
     right:20px;
@@ -71,7 +69,7 @@
    
 }
 .static {
-       position: absolute;
+       position: static;
     z-index: 8;
 }
 }
@@ -82,8 +80,9 @@
   height: 95%;
   }
 
-  .bottom-left, .bottom-right {
+  .bottom-left, .bottom-right, .bottom-center {
     bottom: 30%;
+    z-index: 4545;
   }
   .bottom-right {
     right:20px;
@@ -93,7 +92,7 @@
    
 }
 .static {
-       position: absolute;
+       position: static;
     z-index: 8;
 }
 }
@@ -104,7 +103,7 @@
   height: 80%;
   }
 
-  .bottom-left, .bottom-right {
+  .bottom-left, .bottom-right, .bottom-center {
     bottom: 30%;
   }
   .bottom-right {

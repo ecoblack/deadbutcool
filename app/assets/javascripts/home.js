@@ -31,23 +31,6 @@ $(document).on('click', '#playpause', function(e) {
 $('.bxslider').bxSlider();
 
 
-//$(document).on('click', '#playpause', function(){
-    
-    
-  //  if(video_state == 'paused') {
-    //                    vid.vimeo("play");
-      //                  video_state = 'playing';
-
-        //            } else {
-          //            alert("video is paused");
-            //            vid.vimeo("pause");
-              //          video_state = 'paused';
-
-                //    }
-//});
-
-
-// When video in slider finishes playing slide 'NEXT'.
 
 $("#video").on("finish", function(){
   $(".bx-next").click(); 

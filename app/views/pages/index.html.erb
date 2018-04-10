@@ -1,12 +1,11 @@
-  <script>
-  $(document).ready(function(){
+  <script>  $(document).ready(function(){
   $('.slider').bxSlider({
 
       onSlideAfter: function (currentSlideNumber, totalSlideQty, currentSlideHtmlObject) {
-       alert('ON SLIDE AFTER');
+       //
       },  
     onSliderLoad: function () {
-  alert('ok');
+  //
     
     },
     
@@ -14,13 +13,11 @@
   });
 });
 
-
-
-
   //
 
   $(document).ready(function(){
         /* Vimeo Player */
+        var togSrc = [ "/assets/icon-pause-desktop@3x.png", "/assets/icon-play-desktop@3x.png" ];
         var vid = $('#video'), 
             video_length = 0, 
             video_state = 'paused',
@@ -32,33 +29,13 @@
             $('.video-wrapper').append($pauseplay);
         
             vid.vimeo("play")
-                .vimeo("setVolume", 1)
+                .vimeo("setVolume", 0)
                 .vimeo("getDuration", function(data){
                     video_length = data;
                     console.log("Length "+ video_length);
                 })
 
-                // Hide Video Overlay 
-                .on("play", function(){
-                    console.log("playing");
-                    $('.video-poster').addClass('playing');
-                    $pauseplay.removeClass('play').addClass('pause').find('span').text('Pause');
-                })
-                // Paused Video
-                .on("pause", function(){
-                    $pauseplay.removeClass('pause').addClass('play').find('span').text('Play');
-                })
-                // Hide Outro
-                .on("playProgress", function(event, data){
-                    if(data.seconds < 1) {
-                        $('.video-poster').addClass('playing');
-                        $pauseplay.removeClass('play').addClass('pause').find('span').text('Pause');
-
-                    }
-                    if (video_length - data.seconds < 1) $('.video-poster').removeClass('playing');
-                    if (video_length - data.seconds < 0.5) { console.log("Rewind video"); vid.vimeo("unload"); video_state = 'paused'; }
-                })
-                // please rewind
+                
 
                 .on("finish", function(){
                     vid.vimeo("unload");
@@ -68,15 +45,18 @@
 
                 });
 
-                // Play / Pause
+                // Play / Pause toggle
                 $pauseplay.on('click', function(){
                     console.log(video_state);
-
+                    
                     if(video_state == 'paused') {
+ 
+                        this.src =  togSrc.reverse()[0];
                         vid.vimeo("play");
                         video_state = 'playing';
 
                     } else {
+                      this.src =  togSrc.reverse()[0];
                         vid.vimeo("pause");
                         video_state = 'paused';
 
@@ -106,9 +86,13 @@ top:0;
     "></div>
   <%= render partial: 'projects/project', locals: { project: @project } %>
 
-
-    <div class="bottom-left"><%= image_tag("icon-previous-mobile@3x.png", size: "100x50", class: 'slider-controls' )%></div>
-  <div class="bottom-center"><%= image_tag("icon-play-desktop@3x.png", size: "60x60", id: 'playpause')%></div>
+<div class="bottom-left"><%= image_tag("icon-previous-mobile@3x.png", size: "100x50", class: 'slider-controls' )%></div>
+<div class="bottom-center">
+  <img id="playpause" src="/assets/icon-pause-desktop@3x.png", width="60" height="60"/>
+  <img id="playpause" style="display:none;" src="/assets/icon-play-desktop@3x.png", width="60" height="60"/>
+</div>
   <div class="bottom-right"><%= image_tag("icon-next-mobile@3x.png", size: "100x50", class: 'slider-controls') %></div>
 
 </div>
+
+ 

@@ -82,6 +82,7 @@
   .brandlink  {
   display: none;
 }
+
 }
 @media (max-width: 800px) {
   .grid .img-item {
@@ -90,7 +91,7 @@
 
   }
   .static {
-    position: absolute;
+    position: static;
     z-index: 9;
 }
 .brandlink  {

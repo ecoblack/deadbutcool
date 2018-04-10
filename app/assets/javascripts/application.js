@@ -16,26 +16,10 @@
 //= require jquery.bxslider.min.js
 //= require header
 //= require home
-//= require player
 //= require homeslider
 //= require overlay
 //= require projects
 //= require_tree .
-
-
-$(document).ready(function(){
-     $('#slider1').bxSlider({
-
-        onSlideAfter: function (currentSlideNumber, totalSlideQty, currentSlideHtmlObject) {
-   		 alert('ON SLIDE AFTER');
-   		},  
-		onSliderLoad: function () {
-	alert('ok');
-    
-		}
-     });
- 
- });    
 
 
 
@@ -55,14 +39,3 @@ $(window).on('popstate', function(e) {
   return $.getScript(document.location);
 });
 
-/////////
-//$(document).on('click', '.overlay a', function(){
-
- //       alert('Load was performed.');
-   
-//}); // End onclick
-$("iframe").each(function() {
-   
-        alert('yooo');
-    
-});

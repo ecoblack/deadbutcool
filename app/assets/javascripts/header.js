@@ -11,5 +11,4 @@ $(window).scroll(function(e){
               } 
 });     
 
-//this makes the current link containing li of class "active"
 

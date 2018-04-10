@@ -2,13 +2,11 @@
   <li style="display: inline-block;"><a href="/" style="font-family:Canela-Light;font-weight:100;text-decoration:none;"  data-remote="true">DEAD BUT COOL</a></li>
 
   <div id="deskmenu">
-     
+    <li><a id="closebtn" style="text-decoration: none;display:none;" href="#"> CLOSE</a></li>
     <li><%= link_to "WORKS", works_path,   remote: true, class: 'nav' %></li>
     <li><%= link_to "INFO", info_path,  remote: true, class: 'nav' %></li>
     <li><%= link_to "CONTACT", contact_path,  remote: true, class: 'nav' %></li>
-    <li><%= link_to "CLOSE", '#',  style: 'text-decoration:none;display: none;', remote: true, id: "closebtn" %></li>
-  
-  </div>
+    </div>
  <li>
    <li id="menu" class="openbtn">MENU</li>
    
@@ -31,9 +29,8 @@
   </div>
 </div>
 
-
 <script>
-//DISABLE SCROLL WHEN MENU OPENED
+//OVERLAY MENU/CLOSE
 
 
 $("#menu").click(function() { 
@@ -50,13 +47,10 @@ $('#myNav').toggle(1, function() {
     }
 }); 
 });
-
+// underline current nav menu
 $("#header li a").click(function() {
 
   $("#header li").removeClass("active");                                     
   $(this).parent().addClass("active");
 });
-
-
-
 </script>
