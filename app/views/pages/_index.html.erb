@@ -1,91 +1,3 @@
-  <script>  $(document).ready(function(){
-  $('.slider').bxSlider({
-
-      onSlideAfter: function (currentSlideNumber, totalSlideQty, currentSlideHtmlObject) {
-       //
-      },  
-    onSliderLoad: function () {
-  //
-    
-    },
-    
-    
-  });
-});
-
-  //
-
-  $(document).ready(function(){
-        /* Vimeo Player */
-        var togSrc = [ "/assets/icon-pause-desktop@3x.png", "/assets/icon-play-desktop@3x.png" ];
-        var vid = $('#video'), 
-            video_length = 0, 
-            video_state = 'paused',
-            $pauseplay = $("#playpause");
-            
-        if(vid.length) {
-            video_state = 'playing';
-
-            $('.video-wrapper').append($pauseplay);
-        
-            vid.vimeo("play")
-                .vimeo("setVolume", 1)
-                .vimeo("getDuration", function(data){
-                    video_length = data;
-                    console.log("Length "+ video_length);
-                })
-
-                // Hide Video Overlay 
-                .on("play", function(){
-                    console.log("playing");
-                    $('.video-poster').addClass('playing');
-                    $pauseplay.removeClass('play').addClass('pause').find('span').text('Pause');
-                })
-                // Paused Video
-                .on("pause", function(){
-                    $pauseplay.removeClass('pause').addClass('play').find('span').text('Play');
-                })
-                // Hide Outro
-                .on("playProgress", function(event, data){
-                    if(data.seconds < 1) {
-                        $('.video-poster').addClass('playing');
-                        $pauseplay.removeClass('play').addClass('pause').find('span').text('Pause');
-
-                    }
-                    if (video_length - data.seconds < 1) $('.video-poster').removeClass('playing');
-                    if (video_length - data.seconds < 0.5) { console.log("Rewind video"); vid.vimeo("unload"); video_state = 'paused'; }
-                })
-                // please rewind
-
-                .on("finish", function(){
-                    vid.vimeo("unload");
-                    video_state = 'paused';
-
-                    console.log("Finished "+video_state);
-
-                });
-
-                // Play / Pause
-                $pauseplay.on('click', function(){
-                    console.log(video_state);
-                    
-                    if(video_state == 'paused') {
- 
-                        this.src =  togSrc.reverse()[0];
-                        vid.vimeo("play");
-                        video_state = 'playing';
-
-                    } else {
-                      this.src =  togSrc.reverse()[0];
-                        vid.vimeo("pause");
-                        video_state = 'paused';
-
-                    }
-                });
-            }
-
-       });
-        </script>
 
 <div class="static" style="width:83%;">
       <h1>Independent studio crafting sound-design for Fendi, Chanel, Saint-Lauren  and <a href="/works" data-remote="true" style="word-wrap: break-word;color:white; font-family: Favorit_Regular;font-style: normal;font-stretch: normal;font-weight:100;line-height: normal;letter-spacing: normal;font-size: inherit;text-decoration:underline;">more</a>
@@ -104,15 +16,252 @@ top:0;
   
   position:absolute;
     "></div>
-  <%= render partial: 'projects/project', locals: { project: @project } %>
+ <div class="slider" style="position:relative;">
 
-<div class="bottom-left"><%= image_tag("icon-previous-mobile@3x.png", size: "100x50", class: 'slider-controls' )%></div>
+    
+
+
+      <!-- RUBY LOOP TO PLACE PROJECT VIDEOS INTO SLIDER-->
+<li> 
+  <div class="top" style="position:relative;">
+
+    <div class="wrapper" style="position:relative;">
+        
+
+        <!-- Vimeo iframe -->
+        <iframe class='video' src='https://player.vimeo.com/video/247958907?api=1&title=0&byline=0&portrait=0&transparent=0&color=ffffff&autoplay=0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+  </div>
+  
+
+
+
+  
+   <p> 
+    <span style="opacity:0.5;left: 50px;">FIRST PROJECT</span>
+  </p>
+<div style="position:relative;left:20px;">
+   <div class="centered" style="position:absolute;">
+    <p> 
+      <span> <img style="line-height:1em;" id="set-volume" src="assets/icon-nosound-c47ed454394c3a4c0c0b9e97225858db3c073e1b3432af1e3daa8afc7261c8e8.svg" alt="Icon nosound" />&nbsp;THIRD PROJECT </span>
+    </p> 
+  </div> 
+</div>
+  <span style="opacity:0.5;">
+   SECOND PROJECT 
+  </span>
+ </div>
+
+        <a class="viewcase" style="display:none;" data-remote="true" href="/projects/third-project">VIEW PROJECT CASE</a>
+</li>
+
+<li> 
+  <div class="top" style="position:relative;">
+
+    <div class="wrapper" style="position:relative;">
+        
+
+        <!-- Vimeo iframe -->
+        <iframe class='video' src='https://player.vimeo.com/video/135814309?api=1&title=0&byline=0&portrait=0&transparent=0&color=ffffff&autoplay=0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+  </div>
+  
+
+
+
+  
+   <p> 
+    <span style="opacity:0.5;left: 50px;">THIRD PROJECT</span>
+  </p>
+<div style="position:relative;left:20px;">
+   <div class="centered" style="position:absolute;">
+    <p> 
+      <span> <img style="line-height:1em;" id="set-volume" src="assets/icon-nosound-c47ed454394c3a4c0c0b9e97225858db3c073e1b3432af1e3daa8afc7261c8e8.svg" alt="Icon nosound" />&nbsp;SECOND PROJECT </span>
+    </p> 
+  </div> 
+</div>
+  <span style="opacity:0.5;">
+   FIRST PROJECT 
+  </span>
+ </div>
+
+        <a class="viewcase" style="display:none;" data-remote="true" href="/projects/second-project">VIEW PROJECT CASE</a>
+</li>
+
+<li> 
+  <div class="top" style="position:relative;">
+
+    <div class="wrapper" style="position:relative;">
+        
+
+        <!-- Vimeo iframe -->
+        <iframe class='video' src='https://player.vimeo.com/video/113025608?api=1&title=0&byline=0&portrait=0&transparent=0&color=ffffff&autoplay=0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+  </div>
+  
+
+
+
+  
+   <p> 
+    <span style="opacity:0.5;left: 50px;">SECOND PROJECT</span>
+  </p>
+<div style="position:relative;left:20px;">
+   <div class="centered" style="position:absolute;">
+    <p> 
+      <span> <img style="line-height:1em;" id="set-volume" src="assets/icon-nosound-c47ed454394c3a4c0c0b9e97225858db3c073e1b3432af1e3daa8afc7261c8e8.svg" alt="Icon nosound" />&nbsp;FIRST PROJECT </span>
+    </p> 
+  </div> 
+</div>
+  <span style="opacity:0.5;">
+   THIRD PROJECT 
+  </span>
+ </div>
+
+        <a class="viewcase" style="display:none;" data-remote="true" href="/projects/first-project">VIEW PROJECT CASE</a>
+</li>
+
+    <!-- LOOP END -->
+  
+    </div>
+
+
+
+
+<div class="bottom-left"><img class="slider-controls" src="assets/icon-previous-mobile@3x-0675c69133cc60426a9eb87ebb38a14b2c345b8dbbfd2aaae4ef91b0f0db0694.png" alt="Icon previous mobile@3x" width="100" height="50" /></div>
 <div class="bottom-center">
-  <img id="playpause" src="/assets/icon-pause-desktop@3x.png", width="60" height="60"/>
-  <img id="playpause" style="display:none;" src="/assets/icon-play-desktop@3x.png", width="60" height="60"/>
+  <img id="playpause" src="assets/icon-pause-desktop@3x.png", width="60" height="60"/>
 </div>
-  <div class="bottom-right"><%= image_tag("icon-next-mobile@3x.png", size: "100x50", class: 'slider-controls') %></div>
+  <div class="bottom-right"><img class="slider-controls" src="assets/icon-next-mobile@3x-156721a4bfcd29e022cc6f1d6aa922e475119022e33ac0babd4722bcc7d37b71.png" alt="Icon next mobile@3x" width="100" height="50" /></div>
+    <div class="top-left">
+  <p>LEFT TITLE
+  </div>
 
-</div>
+<div class="top-center">
 
+   <p id="top-center" style="    display: inline-block;line-height:1;">
+   <img id="setvolume" src="assets/icon-nosound@3x.png"/> 
+    <span id="sound-control-center">
+      
+       &nbsp;CENTER TITLE
+       </span>
+        
+     </p> 
  
+</div>
+
+  <div id="right-wing">
+    <p>RIGHT TITLE
+  </div>
+
+ <p class="centered-title">
+
+
+
+
+
+</div>
+
+<script>
+
+             
+
+    $(function() {
+        /* Vimeo Player */
+        var togSrc = ["assets/icon-pause-desktop@3x.png", "assets/icon-play-desktop@3x.png"],
+        togSrcSound = ["assets/DBC_SOUNDOFF.svg", "assets/DBC_SOUNDON.svg"],
+            video,
+            volume_level = 0;
+            video_state = 'paused',
+            $pauseplay = $("#playpause"),
+            $setvolume = $("#setvolume"),
+
+            initVideo = function() {
+                video_state = 'playing';
+                $pauseplay[0].src = togSrc[0];
+                $setvolume[0].src = togSrcSound[0];
+               
+                if (!video.data('init')) {
+                    video.data('init', true);
+                    video.on("finish", function(){
+                            video.vimeo("unload");
+                            // video_state = 'paused';
+
+                            console.log("Finished " + video_state);
+                            $('.bottom-right').click();
+                        })
+                        .vimeo("play")
+                        //.vimeo("setVolume", 0);
+                }
+
+                video.vimeo("play");
+            };
+        
+        if ($('.video').length) {
+            $('.slider').bxSlider({
+
+                onSliderLoad: function(currentIndex){
+                    xxvideo = slideElement.find('.viewcase');
+                    alert(currentIndex);
+                    xxxy = xxvideo.attr("href");
+                    alert(xxxy);
+                    $("#viewcase").attr("href", xxxy)
+                },
+                onSlideBefore: function (slideElement, oldIndex, newIndex) {
+                    console.log('slide before', slideElement, oldIndex, newIndex);
+                    
+                    video.vimeo("pause");
+                    video_state = 'paused';
+
+                    video = slideElement.find('.video');
+                   // projecttitle =   slideElement.find('.centered');
+                    initVideo();
+                    //$('.top-center').prepend($setvolume);
+                },
+                onSlideAfter: function (slideElement, oldIndex, newIndex) {
+                    console.log('slide after', slideElement, oldIndex, newIndex);
+                    xxvideo = slideElement.find('.viewcase');
+                    xxxy = xxvideo.attr("href");
+                   $("#viewcase").attr("href", xxxy);
+
+                }
+            });
+
+
+            video = $('.slider').find('.video:first');
+            initVideo();
+
+            $('.video-wrapper').append($pauseplay);
+
+            // Play / Pause toggle
+            $pauseplay.on('click', function(){
+                console.log(video_state);
+                
+                if (video_state == 'paused') {
+                    this.src =  togSrc[0];
+                    video.vimeo("play");
+                    video_state = 'playing';
+                } else {
+                    this.src =  togSrc[1];
+                    video.vimeo("pause");
+                    video_state = 'paused';
+                }
+            });
+            $setvolume.on('click', function(){
+
+              if (volume_level == 1) {
+                this.src =  togSrcSound[0];
+                video.vimeo("setVolume", 0);
+                volume_level = 0;
+                console.log( "Volume is", volume_level ); 
+              } else {
+                this.src =  togSrcSound[1]; 
+                video.vimeo("setVolume", 1);
+                console.log( "Volume is", volume_level ); 
+                volume_level = 1; 
+              }
+             //
+           });     
+        }
+    });
+</script>

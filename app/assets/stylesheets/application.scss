@@ -6,7 +6,7 @@
 @import 'player';
 @import 'marquee';
 @import 'project';
-
+@import 'static';
 /* Fonts */
 
 
@@ -49,7 +49,7 @@
 
   }
 }
-
+.bxslider li{ width:100%!important; }
 /* D E S K T O P */
 @include breakpoint(desktop) {
 body, #header {
@@ -68,9 +68,7 @@ body, #header {
   margin:auto;
   margin-bottom: 50px;
   }
-  .independent {
-      width: 65%;
-  }
+
   #maincontent {
     padding-top:10%;
    margin: 0px 50px;
@@ -87,7 +85,7 @@ body, #header {
 /* L A P T O P */
 @include breakpoint(laptop) {
  .slider-wrap {
- padding-top:50px;
+ /*padding-top:50px;*/
  }
 
 .info {
@@ -98,21 +96,31 @@ body, #header {
   margin-left: 50px;
   }
 
+
 }
 /* T A B L E T */
 @include breakpoint(tablet) {
+.logo-right a {
+  margin-top: 40px;
+}
   li a {
    
-    padding-left:50px;
-    padding-bottom:0px;
-    padding-top:40px;
+    /* padding-left:50px;*/
+    /* padding-bottom:0px;*/
+    /* padding-top:40px;*/
   }
+  li a + li a {
+    margin-left: 10px;
+}
   #header {
   height: 100px;
   }
-
+  #header a{
+  margin-left: 0;
+  margin-right: 0;
+  }
   #deskmenu {
-  margin-right:40px;
+    
   }
    .next-project, .prev-project {
   display: block;
@@ -123,14 +131,22 @@ body, #header {
   p {
     font-size: 24px;
   }
+  #header{
+  padding-left:50px;
+  padding-right:50px;
+  }
   #header a {
     font-size: 27px;
   }
   .mailandtel {
-    width:60%;
-    margin:auto;
-
+    
+ width: 60%;
+    margin-left: 25%;
   }
+
+.static-contact {
+      margin-bottom: 0;
+}
   #maincontent {
    min-height: calc(100vh - 50px);
    padding-top: 200px;
@@ -145,8 +161,10 @@ body, #header {
 padding-top:75px;
   margin: 40px 30px;
 }
-
-
+.static-contact{
+padding-top:75px;
+  margin: 40px 30px;
+}
   .imgcontent {
   padding-top: 120px;
   margin-left: -10px;
@@ -189,17 +207,7 @@ padding-top:75px;
    margin: 0px 20px;
  }
 
-.top-left {
-    position: absolute;
-    top: 8px;color:red;
-    left: 16px;
-}
 
-.top-right {
-    position: absolute;
-    top: 8px;color:red;
-    right: 16px;
-}
 
 .centered {
     z-index:1488;
@@ -234,8 +242,8 @@ padding-top:75px;
 
 
 #maincontent {
-   min-height: calc(75vh - 50px);
-   padding-top: 70px;
+   min-height: calc(65vh - 50px);
+   padding-top: 30px;
    margin: 0px 20px;
  
 }
@@ -264,18 +272,6 @@ width: 62px;
     position: absolute;
    
     left: 20px;
-}
-
-.top-left {
-    position: absolute;
-    top: 8px;color:red;
-    left: 16px;
-}
-
-.top-right {
-    position: absolute;
-    top: 8px;color:red;
-    right: 16px;
 }
 
 
@@ -361,9 +357,7 @@ html.modal-open {
      overflow-y: hidden;
 }
 
- .independent {
-    width: 65%;
-  }
+
 .current {
   text-decoration:underline!important;
 }
@@ -396,4 +390,17 @@ html.modal-open {
 }
 .prev-next-container a:hover {
 text-decoration:none!important;
+}
+.prev-next-brand a {
+  font-family: Favorit_Regular;
+
+}
+.prev-next-brand a:hover {
+text-decoration:none!important;
+}
+
+#slider-wrapper {
+  
+  margin-left:-20px;
+  margin-right:-20px;
 }

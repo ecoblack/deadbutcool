@@ -1,0 +1,151 @@
+.info p {
+    	line-height: 1.25;
+    }
+
+ @mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (min-width: 2550px) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (min-width: 1500px) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 1200px) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (min-width: 551px)  { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 550px)  { @content ; }
+
+  }
+}
+
+
+    /* D E S K T O P */
+@include breakpoint(desktop) {
+body, #header {
+  
+  width: 70%;
+  margin:auto!important;
+}
+
+#deskmenu a {
+  font-size:27px;
+  
+  }
+  
+  .mainandtel {
+  width: 50%;
+  margin:auto;
+  margin-bottom: 50px;
+  }
+
+  #maincontent {
+    padding-top:10%;
+   margin: 0px 50px;
+  }
+
+.info {
+  column-width: 900px;
+  
+}
+ #footer {
+  margin-left: 50px;
+  }
+}
+/* L A P T O P */
+@include breakpoint(laptop) {
+    .info {
+    margin-top: 80px;
+    }
+
+    
+    .mainandtel{
+
+ width: 60%;
+    margin-left: 33%;
+    }
+   .mainandtel {
+
+   }
+
+
+}
+/* T A B L E T */
+@include breakpoint(tablet) {
+ .info {
+    margin-top: 80px;
+    }
+       logo-right a{
+        margin-left: 30px;
+	}
+	li ~ li {
+padding-left: 32px;
+}
+#deskmenu {
+	margin-right: -32px;
+}
+.logo-right {
+  margin-left: 0!important;
+}
+   .independent {
+       width: 70%;
+   }
+}
+/* M O B I L E P L U S*/
+@include breakpoint(phablet) {
+  li ~ li {
+padding-left: 32px;
+}
+  
+#deskmenu {
+  margin-right: -32px;
+}
+.static-contact {
+      padding-top: 115px;
+    margin-top: 0!important;
+}
+.independent {
+      width: 83%;
+}
+#header a {
+  margin-top:30px;
+  margin-left:20px;
+  margin-right:20px;
+}
+.info {
+  margin-top: 80px;
+}
+.static-info {
+  margin-top: 100px;
+}
+}
+/* M O B I L E */
+
+@include breakpoint(mobileonly) {
+ .static-info {
+     margin-top: 80px;
+ }
+ .info {
+     margin-top: 40px;
+}
+.prev-next-container {
+  display:none;
+}
+#menu {
+          margin-top: 18px;
+      margin-right: 20px;
+}
+.logo-right {
+      margin-top: 10px;
+      margin-left: 20px;
+}
+.static-info h1 {
+      margin-bottom: 30px;
+}
+.static-contact {
+  margin-top: 80px;
+}
+}
+

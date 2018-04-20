@@ -32,7 +32,7 @@ li a {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 20px;
+    
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
     line-height: 0.8518518518518519;
@@ -49,7 +49,7 @@ li a {
     }
 }
 
-@media only screen and (max-width: 539px) { 
+@media only screen and (max-width: 755px) { 
   #deskmenu { 
     display: none; 
   } 
@@ -57,7 +57,7 @@ li a {
 
 
 
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 754px) {
   #menu  { display: none; 
   }
 }
@@ -76,8 +76,7 @@ li a {
 
 
 @media screen and (min-width: 540px) {
-  #menu  { display: none; 
-  }
+ 
   .overlay{
   display:none!important;
   }
@@ -175,12 +174,8 @@ position: fixed;
   float:right;
   color:white;
   font-family:Canela-Light;
-        font-size: 19px;
-    
-    
-    z-index: 0;
-    padding: 20px;
-    -webkit-font-smoothing: antialiased;
+  font-size: 19px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .social p span:hover {

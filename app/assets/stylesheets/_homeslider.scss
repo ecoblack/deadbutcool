@@ -4,12 +4,13 @@
     box-sizing: border-box;
 }
 
-
  #curtain {
     background: #000;
     opacity: 0.95;
 }
-
+.viewcase {
+  display:none;
+}
 #curtain {
 
 	width: 100%;
@@ -19,20 +20,50 @@
     position:relative;
 }
 
+.top-left p {
+  opacity:0.5;
+}
+#right-wing p {
+  opacity:0.5;
+}
+#sound-control-center {
+  
+}
+#set-volume {
+  line-height: 1em;
+}
 .slider-controls 
 {	
 }
-//NEXT/PREVIOUS BUTTONS 
+// DESKTOP
 @media (min-width: 1201px) {
   .static {
   margin: 25px;
+  position: absolute;
+  z-index: 8;
+  width: 79%;
   }
   #curtain {
-  height: 95%;
+  height: 90%;
+  }
+  #slider-wrapper {
+  margin-top: 30px;
+  position: absolute;
   }
 
+  #sound-control-center > img,
+#top-center > p {
+    display: inline-block;
+}
+#setvolume {
+
+  float: left;
+  width: 24px;
+  height: 24px;
+  line-height:1;
+}
   .bottom-left, .bottom-right, .bottom-center {
-    bottom: 20%;
+    bottom: 30%;
     z-index: 4545;
   }
   .bottom-right {
@@ -42,20 +73,24 @@
     left: 50px;
    
 }
-.static {
-       position: absolute;
-    z-index: 8;
-}
-}
-//NEXT/PREVIOUS BUTTONS 
-@media (max-width: 1200px) {
 
+}
+
+// TABLET
+@media (max-width: 1200px) {
+ #header a {
+ font-size: 27px;
+ } 
+ #menu {
+ font-size: 27px;
+ }
   #curtain {
   height: 95%;
   }
   .static {
   margin: 0px;
-  position: static;
+    position: static;
+    z-index: 88;
   }
   .bottom-left, .bottom-right, .bottom-center {
     bottom: 30%;
@@ -68,16 +103,38 @@
     left: 20px;
    
 }
-.static {
-       position: static;
-    z-index: 8;
+#setvolume {
+    /* margin-left: 20px; */
+    /* position: absolute; */
+    width: 36px;
+    height: 36px;
+    bottom: 65%;
+    float: left;
+    width: 24px;
+    height: 24px;
+    line-height: 1em;
+}
+#slider-wrapper {
+  margin-top:15px;
+  margin-left:-20px;
+  margin-right:-20px;
 }
 }
-//NEXT/PREVIOUS BUTTONS 
+
+// PHABLET
 @media (max-width: 800px) {
+.static h1 {
+margin-bottom:0;
+      margin-top: 110px;
+}
 
+  #slider-wrapper {
+  margin-top:0px;
+  margin-left:-20px;
+  margin-right:-20px;
+}
   #curtain {
-  height: 95%;
+      height: 85%;
   }
 
   .bottom-left, .bottom-right, .bottom-center {
@@ -91,20 +148,72 @@
     left: 20px;
    
 }
+#setvolume {
+
+    margin-left: 20px;
+    width: 26px;
+    height: 26px;
+    bottom: 65%;
+        float: left;
+}
+.centered-title{
+position: absolute;
+    bottom: 59%;
+    margin-left:60px;
+    z-index: 4545;
+    font-size: 24px;
+}
+
 .static {
        position: static;
     z-index: 8;
+    width: 88%;
 }
+.static h1 {
+  font-size: 60px;
 }
-//NEXT/PREVIOUS BUTTONS 
-@media (max-width: 600px) {
+#header a {
+  font-size: 27px;
+  margin-top:10px;
+} 
+#menu {
+  font-size: 27px;margin-top:10px;
+}
 
+#right-wing, .top-left {
+  display:none;
+}
+
+.top-center {
+  float:left;
+  left:0;
+}
+}
+
+/////// M O B I L E
+@media (max-width: 600px) {
+    #header a {
+ font-size: 19px;
+ } 
+ #menu {
+ font-size: 19px;
+ }
+.top-center {
+  float:left;
+  left:0;
+}
+  .static h1 {
+  margin-top: 40px;
+  font-size:34px;
+  letter-spacing: -0.18;
+  }
+  .static {width:95%;}
   #curtain {
   height: 80%;
   }
 
   .bottom-left, .bottom-right, .bottom-center {
-    bottom: 30%;
+    bottom: 25%;
   }
   .bottom-right {
     right:20px;
@@ -117,22 +226,50 @@
 .bottom-center 
 {
     position: absolute;
-    bottom: 30%;
-    
     z-index: 4545;
 }
 
 .slider-controls {
-	 width: 62px;
+   width: 62px;
   height: 28px;
   object-fit: contain;
 }
+
+#slider-wrapper {
+  margin-top:15px;
+  margin-left:-20px;
+  margin-right:-20px;
+}
+
+#setvolume {
+  
+  margin-left: 20px;
+  width: 24px;
+  height: 24px;
+  bottom: 75%;
+}
+
+.centered-title{
+position: absolute;
+    bottom: 70%;
+    margin-left:50px;
+    z-index: 4545;
+    font-size: 13px;
+}
+
 #playpause {
-	 width: 36px;
+   width: 36px;
   height: 36px;
 }
 .centered {
-	position: absolute;
-	z-index:9999;
+  position: absolute;
+  z-index:9999;
 }
+
+.push {
+    height: 60px;
 }
+
+
+}
+

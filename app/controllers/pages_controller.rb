@@ -2,7 +2,9 @@ class PagesController < ApplicationController
 respond_to :html, :js
 
 
-	  def index
+	 def index
+    
+  		
 	  	@projects = Project.all.order(created_at: :desc)
 		@project = Project.first
 			 respond_to do |format|
