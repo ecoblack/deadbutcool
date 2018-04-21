@@ -41,25 +41,10 @@
 <% end %>
 
 </div>
-
-
-<div class="prev-next-brand">
-
-   
- <%= link_to(project_url(@project.previous), :remote => true) do %>
-  <p style='float:left;    margin-bottom: 0px;'><%= @project.previous.brand.upcase %>
-<% end %>
-
-  
-    
-  <%= link_to(project_url(@project.next), :remote => true) do %>
-  <p style='float:right;    margin-bottom: 0px;font-size:13px;'><%= @project.next.brand.upcase %>
-<% end %>
-
-</div>
 <br>
 <br>
-<div class="prev-next-brand">
+<br>
+
 <div class="left" style="float:left;"><%=   link_to (image_tag("icon-previous-mobile@3x.png", id: 'control-img', class: 'control', :style => "float:left;line-height:1em;", size: "100x50")), project_url(@project.previous), :remote => true %>
 </div>
  <%= link_to(project_url(@project.previous), :remote => true) do %>
@@ -78,6 +63,6 @@
   <p> <%= @project.next.brand.upcase %>&nbsp;&nbsp;
 </div>
 <% end %>
-</div>
+
 
 
