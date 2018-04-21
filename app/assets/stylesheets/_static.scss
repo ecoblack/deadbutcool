@@ -92,6 +92,9 @@ padding-left: 32px;
    .independent {
        width: 70%;
    }
+   #footer  {
+   margin-left:50px;
+   }
 }
 /* M O B I L E P L U S*/
 @include breakpoint(phablet) {
