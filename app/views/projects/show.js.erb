@@ -1,3 +1,4 @@
+$("#footer").hide();
 $("#maincontent").hide();
 $("#closebtn").hide();
 $("#viewcase").hide();
@@ -6,3 +7,4 @@ $(window).scrollTop(0);
 $("#maincontent").fadeIn(2000);
 $('#maincontent').html("<%= j render 'projects/show', locals: {project: @project} %>");
 
+$("#footer").fadeIn(2000);
