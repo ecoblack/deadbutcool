@@ -1,6 +1,4 @@
-<div class="top" style='    margin-left: -20px;
-    margin-right: -20px;
-    padding-top: 100px;'>
+<div class="project-top">
   <div class="wrapper">
     <iframe src="https://player.vimeo.com/video/<%= @project.link %>?title=0&byline=0&portrait=0&transparent=0&autoplay=1&color=ffffff" width="640" height="480" frameborder="0"  webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe>
   </div>
@@ -30,36 +28,21 @@
 <div class="prev-next-container">
 
    
- <%= link_to(project_url(@project.previous), :remote => true) do %>
-  <p style='float:left;'>PREVIOUS PROJECT 
-<% end %>
+             <%= link_to(project_url(@project.previous), :remote => true) do %>
+              <p style='float:left;'>PREVIOUS PROJECT 
+            <% end %>
 
-  
-    
-  <%= link_to(project_url(@project.next), :remote => true) do %>
-  <p style='float:right;'>NEXT PROJECT
-<% end %>
-
-</div>
-
-
-<div class="prev-next-brand">
-
-   
- <%= link_to(project_url(@project.previous), :remote => true) do %>
-  <p style='float:left;    margin-bottom: 0px;'><%= @project.previous.brand.upcase %>
-<% end %>
-
-  
-    
-  <%= link_to(project_url(@project.next), :remote => true) do %>
-  <p style='float:right;    margin-bottom: 0px;font-size:13px;'><%= @project.next.brand.upcase %>
-<% end %>
+              
+                
+              <%= link_to(project_url(@project.next), :remote => true) do %>
+              <p style='float:right;'>NEXT PROJECT
+            <% end %>
 
 </div>
 <br>
 <br>
-<div class="prev-next-brand">
+<br>
+
 <div class="left" style="float:left;"><%=   link_to (image_tag("icon-previous-mobile@3x.png", id: 'control-img', class: 'control', :style => "float:left;line-height:1em;", size: "100x50")), project_url(@project.previous), :remote => true %>
 </div>
  <%= link_to(project_url(@project.previous), :remote => true) do %>
@@ -78,6 +61,6 @@
   <p> <%= @project.next.brand.upcase %>&nbsp;&nbsp;
 </div>
 <% end %>
-</div>
+
 
 

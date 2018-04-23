@@ -147,11 +147,7 @@ body, #header {
 .static-contact {
       margin-bottom: 0;
 }
-  #maincontent {
-   min-height: calc(100vh - 50px);
-   padding-top: 200px;
-   margin: 0 50px;
-   }
+  
 
 .grid {
         margin-left: 20px;
@@ -173,7 +169,7 @@ padding-top:75px;
   
  
 .info {
-  column-width: 600px;
+  column-width: 550px;
   
 }
   
@@ -201,11 +197,6 @@ padding-top:75px;
       
   }
 
-    #maincontent {
-   min-height: calc(75vh - 50px);
-   padding-top: 75px;
-   margin: 0px 20px;
- }
 
 
 
@@ -241,12 +232,7 @@ padding-top:75px;
 
 
 
-#maincontent {
-   min-height: calc(65vh - 50px);
-   padding-top: 30px;
-   margin: 0px 20px;
- 
-}
+
 .static {
   position: static;
 
@@ -293,15 +279,18 @@ width: 62px;
   }
 }
 
+
+
+
+
 html {
-  min-height: 1000px;
+    min-height: 100vw;
     background-color: #000000;
     z-index:1;
 }
 
 body {
   min-height:100%;
-  margin-top: 100px;
   margin: 0px;
   padding: 0px;
  
@@ -353,21 +342,9 @@ p {
 
 
 
-html.modal-open {
-     overflow-y: hidden;
-}
-
 
 .current {
   text-decoration:underline!important;
-}
-
-#welcome {
-  width: 66%;
-  }
-
-.someClass {
-/*  min-height:800px;*/
 }
 
  /*.bx-controls {

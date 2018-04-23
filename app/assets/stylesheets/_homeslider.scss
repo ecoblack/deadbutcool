@@ -4,20 +4,23 @@
     box-sizing: border-box;
 }
 
- #curtain {
-    background: #000;
-    opacity: 0.95;
+
+#slider-wrapper {
+  position:relative;margin: 0 px-20px;
 }
+
 .viewcase {
   display:none;
 }
+
+
 #curtain {
-
-	width: 100%;
-
-    
-    
-    position:relative;
+  background: #000;
+  width: 100%;
+  z-index: 7;
+  top:0;
+  position:absolute;
+  opacity: 0.95;
 }
 
 .top-left p {

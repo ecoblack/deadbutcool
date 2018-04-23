@@ -2,7 +2,7 @@
 
 
 .grid {
-  margin-top: 50px;
+  
   display: -ms-flexbox;
   display: flex;
   
@@ -24,7 +24,7 @@
   height: calc(12.5vw - 15px / 5 - 10px * 2);
   margin: 10px;
 }
-@media (min-width: 1001px) {
+@media (min-width: 1201px) {
   .grid .img-item {
     width: calc(25% - 10px * 2);
     height: calc(25vw - 15px / 3 - 10px * 2);
@@ -53,7 +53,7 @@
     z-index: 4545;
 }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .grid .img-item {
     width: calc(33.3% - 10px * 2);
     height: calc(29vw - 15px / 3 - 10px);
@@ -166,7 +166,6 @@
   z-index: 99439;
   left:40px;
   top:40px;
-  
   position:absolute;
   
 
@@ -175,6 +174,7 @@
 .bx-wrapper {
    float:none;
 }
+
 li iframe {
   max-width: 100%;
 }

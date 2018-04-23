@@ -5285,7 +5285,7 @@ $(document).on("click", ".nav a", function() {
 function startupAnime() {
 
     $("#curtain").slideToggle(2200);
-    $(".static").fadeToggle(1500).promise().then(function(){
+    $(".static").fadeTo( 2000, 0 ).promise().then(function(){
 
         return $(".nav").fadeToggle(1400).promise();
     }).done(function(){

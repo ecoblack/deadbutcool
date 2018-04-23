@@ -7,7 +7,7 @@ height: 60px;
 width: 100%;
 margin-top:0;
 margin: 0px auto;
-
+    top: 0;
 }
 
 /* NAVIGATION LINKS RIGHT */
@@ -43,7 +43,7 @@ li a {
 
  @media (min-width:475px){
      #deskmenu{
-        display:block;
+        
         float:right;
         
     }
@@ -89,6 +89,14 @@ li a {
 
 
 /* OVERLAY MENU */
+
+
+
+
+/*  Prevent vertical scroll */
+html.modal-open {
+     overflow-y: hidden;
+}
 
 
 .overlay {
