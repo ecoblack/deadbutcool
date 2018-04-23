@@ -29,7 +29,7 @@ $(function() {
             video_state = 'paused',
             $pauseplay = $("#playpause"),
             $setvolume = $("#setvolume"),
-
+            $viewcase = $('.viewcase'),
             initVideo = function() {
                 video_state = 'playing';
                 $pauseplay[0].src = togSrc[0];
@@ -54,12 +54,12 @@ $(function() {
         if ($('.video').length) {
             $('.slider').bxSlider({
 
-                onSliderLoad: function(currentIndex){
-                    xxvideo = slideElement.find('.viewcase');
-                    alert(currentIndex);
-                    xxxy = xxvideo.attr("href");
-                    alert(xxxy);
-                    $("#viewcase").attr("href", xxxy)
+                onSliderLoad: function(slideElement){
+                    
+                   
+                    caseLink = $viewcase.attr("href");
+                    $("#viewcase").attr("href", caseLink);
+                   
                 },
                 onSlideBefore: function (slideElement, oldIndex, newIndex) {
                     console.log('slide before', slideElement, oldIndex, newIndex);

@@ -1,0 +1,96 @@
+<div class="static">
+      <h1>Independent studio crafting sound-design for Fendi, Chanel, Saint-Lauren  and <a href="/works" data-remote="true" style="word-wrap: break-word;color:white; font-family: Favorit_Regular;font-style: normal;font-stretch: normal;font-weight:100;line-height: normal;letter-spacing: normal;font-size: inherit;text-decoration:underline;">more</a>
+      </h1>
+  
+</div>
+
+
+
+<div id="slider-wrapper" style="">
+  
+<div id="curtain" style="
+   
+    "></div>
+  <div class="slider" style="position:relative;">
+
+     <!-- ruby loop start -->
+
+    <% @projects.each do |project| %>
+<li> 
+  <div class="top" style="position:relative;">
+
+    <div class="wrapper" style="position:relative;">
+        
+
+        <!-- Vimeo iframe -->
+        <iframe class='video' src='https://player.vimeo.com/video/<%= project.link %>?api=1&title=0&byline=0&portrait=0&transparent=0&color=ffffff&autoplay=0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+  </div>
+  
+
+
+
+  
+   <p> 
+    <span style="opacity:0.5;left: 50px;"><%= project.previous.title.upcase  %></span>
+  </p>
+<div style="position:relative;left:20px;">
+   <div class="centered" style="position:absolute;">
+    <p> 
+      <span> 
+        <!-- <%= image_tag("icon-nosound.svg", style: "line-height:1em;", id: 'set-volume')%>-->&nbsp;<%= project.title.upcase  %> </span>
+    </p> 
+  </div> 
+</div>
+  <span style="opacity:0.5;">
+   <%= project.next.title.upcase %> 
+  </span>
+ </div>
+
+        <%= link_to "VIEW PROJECT CASE", project_path(project),   remote: true, class: 'viewcase', style: "display:none;" %>
+</li>
+ 
+    <% end %>
+  <!-- ruby loop end -->
+
+
+    </div>
+
+
+
+
+<div class="bottom-left"><img class="slider-controls" src="assets/icon-previous-mobile@3x-0675c69133cc60426a9eb87ebb38a14b2c345b8dbbfd2aaae4ef91b0f0db0694.png" alt="Icon previous mobile@3x" width="100" height="50" /></div>
+<div class="bottom-center">
+  <img id="playpause" src="assets/icon-pause-desktop@3x.png", width="60" height="60"/>
+</div>
+  <div class="bottom-right"><img class="slider-controls" src="assets/icon-next-mobile@3x-156721a4bfcd29e022cc6f1d6aa922e475119022e33ac0babd4722bcc7d37b71.png" alt="Icon next mobile@3x" width="100" height="50" /></div>
+    <div class="top-left">
+  <p>LEFT TITLE
+  </div>
+
+<div class="top-center">
+
+   <p id="top-center" style="    display: inline-block;line-height:1;">
+   <img id="setvolume" src="assets/icon-nosound@3x.png"/> 
+    <span id="sound-control-center">
+      
+       &nbsp;CENTER TITLE
+       </span>
+        
+     </p> 
+ 
+</div>
+
+  <div id="right-wing">
+    <p>RIGHT TITLE
+  </div>
+
+ <p class="centered-title">
+
+
+
+
+
+</div>
+
+
