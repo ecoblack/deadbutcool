@@ -5305,7 +5305,7 @@ $(document).on("click", "#curtain", function() {
 function finishAnime() {
 $("#closebtn, #viewcase").fadeToggle(500);
     $("#curtain").slideToggle(1500);
-    $(".static").fadeToggle(1500).promise().then(function(){
+    $(".static").fadeTo( 1500, 1 ).promise().then(function(){
         
         return $("#closebtn, #viewcase").fadeOut(800).promise();
        }).done(function(){
