@@ -8,18 +8,13 @@
   </head>
 
   <body>
-  	<%= render 'partials/header' %>
-
-
-
-      <div id="maincontent">
-        <%= yield %>
-      </div>
-
-    <!--<%= render 'partials/footer' %>-->
-
+  <%= render "partials/header" %>
+  <div id="maincontent">
+    <%= yield %>
+  
+    <%= render "partials/footer" %>
+    </div>
   </body>
-
 
 
 </html>

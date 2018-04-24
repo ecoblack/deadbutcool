@@ -5237,15 +5237,13 @@ $(document).on("click", ".facebook", function() {
 $(document).on("click", ".soundcloud", function() {
     window.open("http://www.soundcloud.com/", "_blank")
 }),
+
 $(document).on("click", ".overlay a", function() {
-    $(this).attr("href");
-    return $(".overlay").fadeOut(500, function() {
-        $("html").removeClass("modal-open"),
-        $("#myNav").fadeOut(),
-        $("#menu").text("MENU")
-    }),
-    !1
+  
+        $("html").removeClass("modal-open");
+       
 }),
+
 $(document).on("click", ".onhover", function() {
     var e = $(this).parents(".img-item").find("a").attr("href");
     return $(".gallery").fadeOut(1500, function() {
@@ -5253,33 +5251,8 @@ $(document).on("click", ".onhover", function() {
     }),
     !1
 }),
-$(document).on("click", "a", function(e) {
-    return e.preventDefault(),
-   
-    window.history.pushState(null, "page title", this.href)
-}),
-$(window).on("popstate", function(e) {
-    return e.preventDefault(),
-    $.getScript(document.location)
-});
 
-$(document).on("click", "#viewcase", function() {
-    $(this).attr("href");
-    return $("#maincontent").fadeOut(1500, function() {
-        $("html").removeClass("modal-open");
-        
-    }),
-    !1
-});
 
-$(document).on("click", ".nav a", function() {
-    $(this).attr("href");
-    return $("#maincontent").fadeOut(500, function() {
-        $("html").removeClass("modal-open"),
-        $("#menu").text("MENU")
-    }),
-    !1
-});
 
 
 function startupAnime() {
@@ -5320,4 +5293,108 @@ $(document).on("click", "#closebtn", function() {
 
     //})    
 });
+
+
+
+
+             
+
+    $(function() {
+        /* Vimeo Player */
+        var togSrc = ["assets/icon-pause-desktop@3x.png", "assets/icon-play-desktop@3x.png"],
+        togSrcSound = ["assets/DBC_SOUNDOFF.svg", "assets/DBC_SOUNDON.svg"],
+            video,
+            volume_level = 0;
+            video_state = 'paused',
+            $pauseplay = $("#playpause"),
+            $setvolume = $("#setvolume"),
+            $viewcase = $('.viewcase'),
+            initVideo = function() {
+                video_state = 'playing';
+                $pauseplay[0].src = togSrc[0];
+                $setvolume[0].src = togSrcSound[0];
+               
+                if (!video.data('init')) {
+                    video.data('init', true);
+                    video.on("finish", function(){
+                            video.vimeo("unload");
+                            // video_state = 'paused';
+
+                            console.log("Finished " + video_state);
+                            $('.bottom-right').click();
+                        })
+                        .vimeo("play")
+                        //.vimeo("setVolume", 0);
+                }
+
+                video.vimeo("play");
+            };
+        
+        if ($('.video').length) {
+            $('.slider').bxSlider({
+
+                onSliderLoad: function(slideElement){
+                    
+                   
+                    caseLink = $viewcase.attr("href");
+                    $("#viewcase").attr("href", caseLink);
+                   
+                },
+                onSlideBefore: function (slideElement, oldIndex, newIndex) {
+                    console.log('slide before', slideElement, oldIndex, newIndex);
+                    
+                    video.vimeo("pause");
+                    video_state = 'paused';
+
+                    video = slideElement.find('.video');
+                   // projecttitle =   slideElement.find('.centered');
+                    initVideo();
+                    //$('.top-center').prepend($setvolume);
+                },
+                onSlideAfter: function (slideElement, oldIndex, newIndex) {
+                    console.log('slide after', slideElement, oldIndex, newIndex);
+                    xxvideo = slideElement.find('.viewcase');
+                    xxxy = xxvideo.attr("href");
+                   $("#viewcase").attr("href", xxxy);
+
+                }
+            });
+
+
+            video = $('.slider').find('.video:first');
+            initVideo();
+
+            $('.video-wrapper').append($pauseplay);
+
+            // Play / Pause toggle
+            $pauseplay.on('click', function(){
+                console.log(video_state);
+                
+                if (video_state == 'paused') {
+                    this.src =  togSrc[0];
+                    video.vimeo("play");
+                    video_state = 'playing';
+                } else {
+                    this.src =  togSrc[1];
+                    video.vimeo("pause");
+                    video_state = 'paused';
+                }
+            });
+            $setvolume.on('click', function(){
+
+              if (volume_level == 1) {
+                this.src =  togSrcSound[0];
+                video.vimeo("setVolume", 0);
+                volume_level = 0;
+                console.log( "Volume is", volume_level ); 
+              } else {
+                this.src =  togSrcSound[1]; 
+                video.vimeo("setVolume", 1);
+                console.log( "Volume is", volume_level ); 
+                volume_level = 1; 
+              }
+             //
+           });     
+        }
+    });
 

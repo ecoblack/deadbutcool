@@ -1,13 +1,13 @@
 
 <div class="static" style="width:83%;">
-      <h1>Independent studio crafting sound-design for Fendi, Chanel, Saint-Lauren  and <a href="/works" data-remote="true" style="word-wrap: break-word;color:white; font-family: Favorit_Regular;font-style: normal;font-stretch: normal;font-weight:100;line-height: normal;letter-spacing: normal;font-size: inherit;text-decoration:underline;">more</a>
+      <h1>Independent studio crafting sound-design for Fendi, Chanel, Saint-Lauren  and <a href="/works" style="word-wrap: break-word;color:white; font-family: Favorit_Regular;font-style: normal;font-stretch: normal;font-weight:100;line-height: normal;letter-spacing: normal;font-size: inherit;text-decoration:underline;">more</a>
       </h1>
   
 </div>
 
 
 
-<div id="slider-wrapper" style="position:relative;margin: -20px;">
+<div id="slider-wrapper" style="position:relative;">
   
 <div id="curtain" style="
     z-index: 7;
@@ -52,7 +52,7 @@ top:0;
   </span>
  </div>
 
-        <%= link_to "VIEW PROJECT CASE", project_path(project),   remote: true, class: 'viewcase', style: "display:none;" %>
+        <%= link_to "VIEW PROJECT CASE", project_path(project), class: 'viewcase', style: "display:none;" %>
 </li>
  
     <% end %>
@@ -134,7 +134,7 @@ top:0;
 
                 onSliderLoad: function(slideElement){
                     
-                    alert($viewcase);
+                   
                     caseLink = $viewcase.attr("href");
                     $("#viewcase").attr("href", caseLink);
                    

@@ -1,13 +1,13 @@
 <ul id="header">
-  <li style="display: inline-block;" class="logo-right"><a href="/" style="font-family:Canela-Light;font-weight:100;text-decoration:none;" data-remote="true">DEAD BUT COOL</a></li>
+  <li style="display: inline-block;" class="logo-right"><a href="/" style="font-family:Canela-Light;font-weight:100;text-decoration:none;">DEAD BUT COOL</a></li>
 
   <div id="deskmenu">
-    <li><a id="viewcase" style="text-decoration: none;display:none;" href="#" data-remote="true">VIEW PROJECT CASE</a></li>
+    <li><a id="viewcase" style="text-decoration: none;display:none;" href="#" >VIEW PROJECT CASE</a></li>
     <li><a id="closebtn" style="    position: fixed;
     right: 0;text-decoration: none;display:none;" href="#"> CLOSE</a></li>
-    <li><%= link_to "WORKS", works_path,   remote: true, class: 'nav' %></li>
-    <li><%= link_to "INFO", info_path,  remote: true, class: 'nav' %></li>
-    <li><%= link_to "CONTACT", contact_path,  remote: true, class: 'nav' %></li>
+    <li><%= link_to "WORKS", works_path, class: 'nav' %></li>
+    <li><%= link_to "INFO", info_path, class: 'nav' %></li>
+    <li><%= link_to "CONTACT", contact_path, class: 'nav' %></li>
     </div>
  <li>
    <li id="menu" class="openbtn">MENU</li>
@@ -19,9 +19,9 @@
   
   
   <div class="overlay-content">
-     <%= link_to "WORKS", works_path,  remote: true %>
-     <%= link_to "INFO", info_path,  remote: true, id: "info" %>
-     <%= link_to "CONTACT", contact_path,  remote: true, id: "contact" %>
+     <%= link_to "WORKS", works_path %>
+     <%= link_to "INFO", info_path, id: "info" %>
+     <%= link_to "CONTACT", contact_path, id: "contact" %>
     
   </div>
 

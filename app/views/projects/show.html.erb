@@ -28,13 +28,13 @@
 <div class="prev-next-container">
 
    
-             <%= link_to(project_url(@project.previous), :remote => true) do %>
+             <%= link_to(project_url(@project.previous)) do %>
               <p style='float:left;'>PREVIOUS PROJECT 
             <% end %>
 
               
                 
-              <%= link_to(project_url(@project.next), :remote => true) do %>
+              <%= link_to(project_url(@project.next)) do %>
               <p style='float:right;'>NEXT PROJECT
             <% end %>
 
@@ -43,20 +43,20 @@
 <br>
 <br>
 
-<div class="left" style="float:left;"><%=   link_to (image_tag("icon-previous-mobile@3x.png", id: 'control-img', class: 'control', :style => "float:left;line-height:1em;", size: "100x50")), project_url(@project.previous), :remote => true %>
+<div class="left" style="float:left;"><%=   link_to (image_tag("icon-previous-mobile@3x.png", id: 'control-img', class: 'control', :style => "float:left;line-height:1em;", size: "100x50")), project_url(@project.previous) %>
 </div>
- <%= link_to(project_url(@project.previous), :remote => true) do %>
+ <%= link_to(project_url(@project.previous)) do %>
 <div class="brandlink" style="float:left;">
   <p>&nbsp;<%= @project.previous.brand.upcase %></p>
 </div>
 <% end %>
 
 
-<div class="right" style="float:right;"> <%= link_to (image_tag("icon-next-mobile@3x.png", id: 'control-img', class: 'control', :style => "float:right;line-height:1em;", size: "100x50", remote: true)), project_url(@project.next), :remote => true %>
+<div class="right" style="float:right;"> <%= link_to (image_tag("icon-next-mobile@3x.png", id: 'control-img', class: 'control', :style => "float:right;line-height:1em;", size: "100x50")), project_url(@project.next) %>
 </div>
 
 
-  <%= link_to(project_url(@project.next), :remote => true) do %>
+  <%= link_to(project_url(@project.next)) do %>
 <div class="brandlink" style="float:right;">
   <p> <%= @project.next.brand.upcase %>&nbsp;&nbsp;
 </div>

@@ -5,17 +5,15 @@
 
     <div class="img-item" style="position: relative;">
 
-      	<%= link_to (image_tag(project.image, class: 'img-responsive', style: "height:100%;", remote: true )), project, remote: true,  class: 'gallery' %> 
+      	<%= link_to (image_tag(project.image, class: 'img-responsive', style: "height:100%;")), project, class: 'gallery' %> 
 
-
-
-     	<%= link_to(project, class: 'project-link', :remote => true) do %> 
+<%=   link_to(project) do %> 
         
+            
+             <p class="brand"><%= project.brand.upcase %></p>
 
-			        <div class="onhover">   
-			             <p class="brand"><%= project.brand.upcase %></p>
-			        </div>
-    	<% end %> 
+       
+  <% end %> 
 	</div>
    
  

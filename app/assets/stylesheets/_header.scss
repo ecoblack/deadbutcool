@@ -49,15 +49,18 @@ li a {
     }
 }
 
-@media only screen and (max-width: 755px) { 
+@media only screen and (max-width: 800px) { 
   #deskmenu { 
     display: none; 
   } 
+   #header a {
+    font-size: 19px;
+  }
 }
 
 
 
-@media screen and (min-width: 754px) {
+@media screen and (min-width: 801px) {
   #menu  { display: none; 
   }
 }
