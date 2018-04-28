@@ -69,22 +69,22 @@ top:0;
   <img id="playpause" src="assets/icon-pause-desktop@3x.png", width="60" height="60"/>
 </div>
   <div class="bottom-right"><img class="slider-controls" src="assets/icon-next-mobile@3x-156721a4bfcd29e022cc6f1d6aa922e475119022e33ac0babd4722bcc7d37b71.png" alt="Icon next mobile@3x" width="100" height="50" /></div>
+    
     <div class="top-left">
-  <p>LEFT TITLE
-  </div>
+      <p>LEFT
+    </div>
 
 <div class="top-center">
 
    <p id="top-center" style="    display: inline-block;line-height:1;">
-   <img id="setvolume" src="assets/icon-nosound@3x.png"/> 
-   
-     </p> 
+      <img id="setvolume" src="assets/icon-nosound@3x.png"/> 
+   </p> 
  
 </div>
 
-  <div id="right-wing">
-    <p>RIGHT TITLE
-  </div>
+    <div class="top-right">
+      <p>RIGHT
+    </div>
 
  <p class="centered-title">
 
@@ -93,108 +93,4 @@ top:0;
 
 
 </div>
-
-<script>
-
-             
-
-    $(function() {
-        /* Vimeo Player */
-        var togSrc = ["assets/icon-pause-desktop@3x.png", "assets/icon-play-desktop@3x.png"],
-        togSrcSound = ["assets/DBC_SOUNDOFF.svg", "assets/DBC_SOUNDON.svg"],
-            video,
-            volume_level = 0;
-            video_state = 'paused',
-            $pauseplay = $("#playpause"),
-            $setvolume = $("#setvolume"),
-            $viewcase = $('.viewcase'),
-            initVideo = function() {
-                video_state = 'playing';
-                $pauseplay[0].src = togSrc[0];
-                $setvolume[0].src = togSrcSound[0];
-               
-                if (!video.data('init')) {
-                    video.data('init', true);
-                    video.on("finish", function(){
-                            video.vimeo("unload");
-                            // video_state = 'paused';
-
-                            console.log("Finished " + video_state);
-                            $('.bottom-right').click();
-                        })
-                        .vimeo("play")
-                        //.vimeo("setVolume", 0);
-                }
-
-                video.vimeo("play");
-            };
-        
-        if ($('.video').length) {
-            $('.slider').bxSlider({
-
-                onSliderLoad: function(slideElement){
-                    
-                   
-                    caseLink = $viewcase.attr("href");
-                    $("#viewcase").attr("href", caseLink);
-                   
-                },
-                onSlideBefore: function (slideElement, oldIndex, newIndex) {
-                    console.log('slide before', slideElement, oldIndex, newIndex);
-                    
-                    video.vimeo("pause");
-                    video_state = 'paused';
-
-                    video = slideElement.find('.video');
-                   // projecttitle =   slideElement.find('.centered');
-                    initVideo();
-                    //$('.top-center').prepend($setvolume);
-                },
-                onSlideAfter: function (slideElement, oldIndex, newIndex) {
-                    console.log('slide after', slideElement, oldIndex, newIndex);
-                    xxvideo = slideElement.find('.viewcase');
-                    xxxy = xxvideo.attr("href");
-                   $("#viewcase").attr("href", xxxy);
-
-                }
-            });
-
-
-            video = $('.slider').find('.video:first');
-            initVideo();
-
-            $('.video-wrapper').append($pauseplay);
-
-            // Play / Pause toggle
-            $pauseplay.on('click', function(){
-                console.log(video_state);
-                
-                if (video_state == 'paused') {
-                    this.src =  togSrc[0];
-                    video.vimeo("play");
-                    video_state = 'playing';
-                } else {
-                    this.src =  togSrc[1];
-                    video.vimeo("pause");
-                    video_state = 'paused';
-                }
-            });
-            $setvolume.on('click', function(){
-
-              if (volume_level == 1) {
-                this.src =  togSrcSound[0];
-                video.vimeo("setVolume", 0);
-                volume_level = 0;
-                console.log( "Volume is", volume_level ); 
-              } else {
-                this.src =  togSrcSound[1]; 
-                video.vimeo("setVolume", 1);
-                console.log( "Volume is", volume_level ); 
-                volume_level = 1; 
-              }
-             //
-           });     
-        }
-    });
-</script>
 

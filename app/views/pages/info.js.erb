@@ -1,8 +1,0 @@
-$("#footer").hide();
-$("#maincontent").hide();
-$(window).scrollTop(0);
-$("#maincontent").fadeIn(1000);
-$("#maincontent").html( "<%= escape_javascript( render( :partial => "info" ) ) %>" );
-$("#footer").fadeIn(2000);
-
-

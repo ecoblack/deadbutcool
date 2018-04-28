@@ -23,12 +23,10 @@
   opacity: 0.95;
 }
 
-.top-left p {
+.top-left, .top-right p {
   opacity:0.5;
 }
-#right-wing p {
-  opacity:0.5;
-}
+
 #sound-control-center {
   
 }
@@ -189,7 +187,7 @@ position: absolute;
   font-size: 24px;margin-top:10px;
 }
 
-#right-wing, .top-left {
+.top-right, .top-left {
   display:none;
 }
 
@@ -275,9 +273,7 @@ position: absolute;
   z-index:9999;
 }
 
-.push {
-    height: 60px;
-}
+
 
 
 }

@@ -5192,6 +5192,8 @@ function(X) {
         }
     }
 }(jQuery),
+
+
 $(window).scroll(function() {
     $("#header");
     120 < $(this).scrollTop() && $("#header").fadeOut(215),
@@ -5206,19 +5208,15 @@ $(document).on("click", ".bottom-left", function(e) {
     e.preventDefault(),
     $(".bx-prev").click()
 }),
+
+
 $(document).on("click", ".bottom-right", function(e) {
     e.preventDefault(),
     $(".bx-next").click()
 }),
-$(document).on("click", ".bx-viewport", function() {
-    $(".static").animate({
-        opacity: 0
-    }, "2000", function() {
-        $("#curtain").slideToggle(2555),
-        $(".nav:visible").hide(),
-        $("#closebtn:hidden").show()
-    })
-}),
+
+// curtain fade funtion
+
 //$(document).on("click", "#closebtn", function() {
 //    $(".static").animate({
  //       opacity: 1
@@ -5254,24 +5252,13 @@ $(document).on("click", ".onhover", function() {
 
 
 
-
-function startupAnime() {
-
-    $("#curtain").slideToggle(2200);
-    $(".static").fadeTo( 2000, 0 ).promise().then(function(){
-
-        return $(".nav").fadeToggle(1400).promise();
-    }).done(function(){
-        $("#closebtn, #viewcase").fadeToggle(500);
-    });
-
-}  
+   
 
 $(document).on("click", "#curtain", function() {
-
+   
     startupAnime();
 
-    //})    
+       
 });
 
 
@@ -5287,20 +5274,34 @@ $("#closebtn, #viewcase").fadeToggle(500);
 
 }  
 
-$(document).on("click", "#closebtn", function() {
+ function startupAnime() {
 
+    $("#curtain").slideToggle(2200);
+    $(".static").fadeTo( 2000, 0 ).promise().then(function(){
+
+        return $(".nav").fadeToggle(1400).promise();
+    }).done(function(){
+        $("#closebtn, #viewcase").fadeToggle(500);
+    });
+
+}  
+
+$(document).on("click", "#closebtn", function(e) {
+   
     finishAnime();
 
-    //})    
+       
 });
-
-
 
 
              
 
     $(function() {
-        /* Vimeo Player */
+        
+
+      
+        /*Vimeo Player / slider
+                */
         var togSrc = ["assets/icon-pause-desktop@3x.png", "assets/icon-play-desktop@3x.png"],
         togSrcSound = ["assets/DBC_SOUNDOFF.svg", "assets/DBC_SOUNDON.svg"],
             video,
@@ -5347,9 +5348,9 @@ $(document).on("click", "#closebtn", function() {
                     video_state = 'paused';
 
                     video = slideElement.find('.video');
-                   // projecttitle =   slideElement.find('.centered');
+                   
                     initVideo();
-                    //$('.top-center').prepend($setvolume);
+                    
                 },
                 onSlideAfter: function (slideElement, oldIndex, newIndex) {
                     console.log('slide after', slideElement, oldIndex, newIndex);
@@ -5398,3 +5399,9 @@ $(document).on("click", "#closebtn", function() {
         }
     });
 
+/*AJAXify app
+1. transitions between pages
+2. remove extra header elements on transitions
+3. move projects (links, images, descriptions) & hardcoded youtube/facebook/etc links from ruby to json(?)
+4. script for index page to insert prev/next projects titles in .top-left/.top-right
+*/

@@ -58,6 +58,7 @@ body, #header {
 @include breakpoint(laptop) {
     .info {
     margin-top: 80px;
+        column-width: 880px;
     }
 
     
@@ -69,9 +70,7 @@ body, #header {
    .mainandtel {
 
    }
-   #footer  {
-   margin-left:50px;
-   }
+
 .prev-next-container a{
   font-size: 24px;
 }
@@ -87,25 +86,14 @@ body, #header {
 	li ~ li {
 padding-left: 32px;
 }
-#deskmenu {
-	margin-right: -32px;
-}
+
 .logo-right {
   margin-left: 0!important;
 }
    .independent {
        width: 70%;
    }
-   #footer  {
-   margin-left:50px;
-       height: 50px;
-    position: static;
-    z-index: 67676;
-    left: 0;
-    right: 0;
-    bottom: 0;
-        
-   }
+
    #closebtn {
    margin-right:50px!important;
    }
@@ -118,7 +106,10 @@ padding-left: 32px;
   li ~ li {
 padding-left: 32px;
 }
-  
+#header {
+  padding-left: 20px;
+    padding-right: 20px;
+}
 #deskmenu {
   margin-right: -32px;
 }
@@ -136,13 +127,11 @@ padding-left: 32px;
 .info {
   margin-top: 80px;
 }
-.static-info {
-  margin-top: 100px;
-}
+
   
    #menu {
    margin-top: 30px;
-    margin-right: 20px;
+    
 }
 #maincontent {
     margin: 170px 20px 50px 20px;
@@ -152,6 +141,7 @@ padding-left: 32px;
 /*left margin is 20px */
 
 }
+
 }
 /* M O B I L E */
 
@@ -188,6 +178,8 @@ padding-left: 32px;
 .static-info {
   width: 95%;
 }
+
+
 .project-top {
   padding-top: 90px;
 }

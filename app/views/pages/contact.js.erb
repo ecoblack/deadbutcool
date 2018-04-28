@@ -1,9 +1,0 @@
-$("#footer").hide();
-$("#maincontent").hide();
-$("#viewcase").hide();
-$("#closebtn").hide();
-$(window).scrollTop(0);
-$("#maincontent").fadeIn(2000);
-$(".nav").show();
-$("#maincontent").html( "<%= escape_javascript( render( :partial => "contact" ) ) %>" );
-$("#footer").fadeIn(2000);
