@@ -5401,7 +5401,8 @@ $(document).on("click", "#closebtn", function(e) {
 
 /*AJAXify app
 1. transitions between pages
-2. remove extra header elements on transitions
+2. remove extra header elements on transitions + make sure scripts from "_header.html.erb" work
 3. move projects (links, images, descriptions) & hardcoded youtube/facebook/etc links from ruby to json(?)
 4. script for index page to insert prev/next projects titles in .top-left/.top-right
+5. logic for projects without video
 */

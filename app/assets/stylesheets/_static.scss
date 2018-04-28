@@ -86,7 +86,12 @@ body, #header {
 	li ~ li {
 padding-left: 32px;
 }
-
+#footer {
+margin-left: 30px;
+}
+.push {
+  height: 66px;
+}
 .logo-right {
   margin-left: 0!important;
 }
@@ -139,7 +144,9 @@ padding-left: 32px;
 /*right margin is 20px */
 /*bottom margin is 50px */
 /*left margin is 20px */
-
+.push {
+  height: 50px;
+}
 }
 
 }
@@ -154,7 +161,9 @@ padding-left: 32px;
 /*left margin is 20px */
 
 }
-
+.push {
+  height: 40px;
+}
  .info {
      margin-top: 40px;
 }
